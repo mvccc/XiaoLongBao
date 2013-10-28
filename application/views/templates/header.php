@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh">
   <head>
@@ -11,7 +10,7 @@
     <title>MVCCC</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="mvccc.css" rel="stylesheet">
@@ -36,13 +35,13 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">教會首頁</a></li>
+            <li class="active"><a href="<?php echo base_url(); ?>index.php/pages/index">教會首頁</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">教會簡介</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/church">教會簡介</a></li>
                 <li><a href="#">信仰宣言</a></li>
-                <li><a href="#">教會章程</a></li>
+                <li><a href="#">教會會章</a></li>
                 <li><a href="#">牧者介紹</a></li>
                 <li><a href="#">服侍部門</a></li>
                 <li><a href="#">地址電話</a></li>
