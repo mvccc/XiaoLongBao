@@ -35,11 +35,11 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="<?php echo base_url(); ?>index.php/pages/index">教會首頁</a></li>
+            <li class="active"><a href="<?php echo base_url(); ?>index.php/pages">教會首頁</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="<?php echo base_url(); ?>index.php/pages/church">教會簡介</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/church/introduction">教會簡介</a></li>
                 <li><a href="#">信仰宣言</a></li>
                 <li><a href="#">教會會章</a></li>
                 <li><a href="#">牧者介紹</a></li>
