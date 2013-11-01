@@ -37,7 +37,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="<?php echo base_url(); ?>index.php/pages">教會首頁</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
+              <a href="#" class="pull-left dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo base_url(); ?>index.php/pages/church/introduction">教會簡介</a></li>
                 <li><a href="#">信仰宣言</a></li>

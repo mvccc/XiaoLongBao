@@ -1,4 +1,4 @@
-
+        <hr class="featurette-divider">
       	<footer>
         	<p>&copy; MVCCC 2013</p>
      	</footer>
