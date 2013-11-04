@@ -40,8 +40,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-		  <h2><span class="glyphicon glyphicon-globe"></span><span style="font-family: Arial">&nbsp;每日金句</span></h2>
-          <hr>
+		  <h2><span class="glyphicon glyphicon-globe"></span>&nbsp;每日金句</h2>
           <p>神愛世人、甚至將他的獨生子賜給他們、叫一切信他的、不至滅亡、反得永生。
           <p class="pull-right">---約翰福音 3:16
         	<!--
@@ -54,33 +53,29 @@
           	-->
         </div>    
       </div>	
-      <hr>
+      <div class="spaceBanner"/>
       <div class="row">
       	<div class="col-lg-6">
-      		<img src="<?php echo base_url(); ?>assets/img/decorative_line_1.gif"/>
+      		<img src="<?php echo base_url(); ?>assets/img/divider_1.gif"/>
       	</div>
        	<div class="col-lg-6">
-      		<img src="<?php echo base_url(); ?>assets/img/decorative_line_1.gif"/>
+      		<img src="<?php echo base_url(); ?>assets/img/divider_1.gif"/>
       	</div>
       </div>
       <div class="row">
         <div class="col-lg-4">
-          <h2><span class="glyphicon glyphicon-home"></span><span style="font-family: Arial">&nbsp;初次來訪</span></h2>
-          <hr>
+          <h2><span class="glyphicon glyphicon-home"></span>&nbsp;初次來訪</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-primary" href="#" role="button">詳細內容 &raquo;</a></p>
         </div>
         <div class="col-lg-4">
-          <h2><span class="glyphicon glyphicon-thumbs-up"></span><span style="font-family: Arial">&nbsp;近期活動</span></h2>
-          <hr>
+          <h2><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;近期活動</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-primary" href="#" role="button">詳細內容 &raquo;</a></p>
        </div>
         <div class="col-lg-4">
-          <h2><span class="glyphicon glyphicon-volume-up"></span><span style="font-family: Arial">&nbsp;最新主日信息</span></h2>
-          <hr>
+          <h2><span class="glyphicon glyphicon-volume-up"></span>&nbsp;最新主日信息</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
           <p><a class="btn btn-primary" href="#" role="button">詳細內容 &raquo;</a></p>
         </div>
       </div>
-<script src="<?php echo base_url(); ?>assets/js/holder.js"></script>
