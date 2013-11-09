@@ -13,7 +13,7 @@
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="mvccc.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/mvccc.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
