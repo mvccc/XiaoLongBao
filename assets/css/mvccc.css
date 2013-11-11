@@ -22,3 +22,46 @@ h2
 {
 	font-family: CKanHK
 } 
+
+hr
+{
+	display: block; 
+	height: 1px;
+    border: 0; 
+    border-top: 1px solid black;
+    margin: 1em 0; 
+    padding: 0; 
+}
+
+/* TOC style */
+.toc ul
+{
+	list-style-type:none;
+}
+
+.toc
+{
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        font-family: Arial;
+        font-size: 20px;
+        text-decoration:none;
+}
+
+.toc li a
+{
+        transition:.5s;
+}
+
+.toc li a:link, .toc li a:visited
+{
+        color: grey;
+        text-decoration:none;
+}
+
+.toc li a:hover, .toc li a:active
+{
+        color: black;
+        text-decoration:none;
+}
