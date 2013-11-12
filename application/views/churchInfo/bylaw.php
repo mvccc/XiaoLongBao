@@ -7,7 +7,7 @@
 
     <div class="toc">
     <ul>
-      <li><a href="#Chapter1">第一章 總綱</a></li>
+	  <li><a href="#Chapter1">第一章 總綱</a></li>
 	  <li><a href="#Chapter2">第二章 會籍</a></li>
 	  <li><a href="#Chapter3">第三章 會友大會</a></li>
 	  <li><a href="#Chapter4">第四章 禮儀</a></li>

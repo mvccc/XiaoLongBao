@@ -39,7 +39,7 @@ class Pages extends CI_Controller {
 		$this->load->model('fellowship_model', 'fellowship');
 
 		$data['fellowships'] = $this->fellowship->get_entries();
-    	$data['name'] = $this->fellowship->get_entry($name);
+		$data['name'] = $this->fellowship->get_entry($name);
 
 		$this->load->view('templates/header');
 		$this->load->view('activities/fellowship', $data);
