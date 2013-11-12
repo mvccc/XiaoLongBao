@@ -10,6 +10,7 @@
     <title>MVCCC</title>
 
     <!-- Bootstrap core CSS -->
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -83,6 +84,9 @@
                 <li><a href="#">錄音錄像</a></li>
               </ul>
             </li>
+
+            <li><a href="<?php echo base_url(); ?>index.php/pages/login/loginpage">會員登錄</a></li>
+
             <li><a href="#">English</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
