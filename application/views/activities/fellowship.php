@@ -1,4 +1,3 @@
-<div class="container">
   <div class="row">
     <div class="col-lg-3">
    	  <div class="side-menu">
@@ -18,4 +17,3 @@
       <hr>
     </div>
   </div>
-</div>

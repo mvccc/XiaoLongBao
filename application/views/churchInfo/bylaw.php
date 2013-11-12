@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
+  	<a id="top"></a>
     <h1>山景城中國基督教會會章</h1>
     (2010年9月26日修訂)<br/>
     <hr/>
@@ -32,7 +33,7 @@
 	</ul>
 	<ul>第四條：本教會奉主耶穌基督為教會元首，以宣揚基督福音，領人歸主，聖徒各盡其職，肢體配搭服事，相顧相愛，建立基督的身體，完成主所託付之使命為職責。</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter2"></a>
 	<h2>第二章 會籍</h2>
@@ -53,7 +54,7 @@ Back to Top
 	  <ul>(2)凡會友言行有嚴重違反聖經教訓或本教會會章者，曾經牧長勸告無效，由長執會表決後停止其會籍。</ul>
 	</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter3"></a>
     <h2>第三章 會友大會</h2>
@@ -64,7 +65,7 @@ Back to Top
 	</ul>
 	<ul>第三條：前條所列之會友大會及臨時會友大會，除本會章內另有規定外，概以現場出席會友過半數以上通過表決為原刖。</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter4"></a>
 	<h2>第四章 禮儀</h2>
@@ -73,7 +74,7 @@ Back to Top
 	  <ul>(2)主餐：由長執會規定日期，在主日崇拜中舉行，記念主耶穌為我們捨身流血贖罪之救恩，該禮儀由牧師主持，全體信徒均可分領餅與杯。</ul>
 	</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter5"></a>
 	<h2>第五章 聖工推展之體制</h2>
@@ -106,7 +107,7 @@ Back to Top
 	  </ul>
 	</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter6"></a>
 	<h2>第六章 長老執事會</h2>
@@ -219,7 +220,7 @@ Back to Top
 	<ul>第七條：長執們如有感聖工日漸繁重，有增加人手之必要，可徵得主席同意，各自邀請會友襄助，組成工作小組，配搭推行聖工。</ul>
 	<ul>第八條：長執會開會討論議案以三分之二通過為原則。</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter7"></a>
 	<h2>第七章 受俸之規定</h2>
@@ -240,13 +241,13 @@ Back to Top
 	<ul>第十一條：本教會牧師、傳道人及職員在任職期間，如被發現其信仰上有違背真道、謬講聖經、隨從異端，或行為品格不正，或家庭破裂等嚴重問題，經查明屬實，
 	  	由長執會提交會友大會三分之二通過，予以解聘或解雇。</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter8"></a>
 	<h2>第八章 不動產業</h2>
 	<ul>本會之不動產業購買、出售或轉移須由長執會三分之二通過,並提交會員大會三分之二通過, 才能實行。</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter9"></a>
 	<h2>第九章 設立分會</h2>
@@ -261,7 +262,7 @@ Back to Top
 	<ul>第九條: 分會之不動產業購買、出售或轉移須經分會按會章通過, 並取得本會長執會三分之二通過書面批准, 才可實行。</ul>
 	<ul>第十條: 分會如欲脫離本會, 應有分會會員三分之二通過,並經本會長執會三分之二通過書面批准, 始得脫離關係。</ul>
 
-Back to Top
+	<a href="#top">Back to Top</a>
 
 	<a id="Chapter10"></a>
 	<h2>第十章  附則</h2>
