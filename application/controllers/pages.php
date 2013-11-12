@@ -28,5 +28,23 @@ class Pages extends CI_Controller {
 		$this->load->view('churchInfo/'.$page);
 		$this->load->view('templates/footer');
 	}
+
+	public function fellowship($name = 'sister')
+	{
+		if ( ! file_exists('application/views/activities/fellowship.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->load->model('fellowship_model', 'fellowship');
+
+        $data['fellowships'] = $this->fellowship->get_entries();
+        $data['name'] = $this->fellowship->get_entry($name);
+
+		$this->load->view('templates/header');
+		$this->load->view('activities/fellowship', $data);
+		$this->load->view('templates/footer');
+	}
 }
 ?>
