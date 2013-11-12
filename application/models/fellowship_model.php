@@ -28,11 +28,13 @@ class Fellowship_model extends CI_Model {
         parent::__construct();
     }
     
+    /* Get all fellowships */
     function get_entries()
     {
         return self::$fellowships;
     }
 
+    /* Get fellowship by name */
     function get_entry($name)
     {
         return self::$fellowships[$name];
