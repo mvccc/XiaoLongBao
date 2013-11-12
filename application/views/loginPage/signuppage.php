@@ -1,4 +1,3 @@
-  <body>
       <form class="form-signin">
           <h2 class="form-signin-heading">註冊</h2>
             <input type="text" class="form-control" placeholder="名字" required autofocus>
@@ -12,4 +11,3 @@
             <input type="password" class="form-control" placeholder="確認密碼" required autofocus>
             <button type="submit" class="btn btn-lg btn-primary btn-block" >創建我的帳號</button>
       </form>
-  </body>
