@@ -35,7 +35,7 @@
           <a class="navbar-brand" href="#">MVCCC</a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav secondary-nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="<?php echo base_url(); ?>index.php/pages">教會首頁</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>

@@ -1,5 +1,4 @@
   <body>
-    <div class="container">
       <form class="form-signin">
         <h2 class="form-signin-heading">請登錄</h2>
         <input type="text" class="form-control" placeholder="郵件地址" required autofocus>
@@ -10,5 +9,4 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">登錄</button>
         <button class="btn-block"><a href="<?php echo base_url(); ?>index.php/pages/login/signuppage">註冊帳號</a></button>
       </form>
-    </div> <!-- /container -->
   </body>
