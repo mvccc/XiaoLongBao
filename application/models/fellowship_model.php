@@ -29,23 +29,23 @@ class Fellowship_model extends CI_Model {
     }
     
     /* Get all fellowships */
-    function get_entries()
+    function get_fellowships()
     {
         return self::$fellowships;
     }
 
     /* Get fellowship by name */
-    function get_entry($name)
+    function get_fellowship($name)
     {
         return self::$fellowships[$name];
     }
 
-    function insert_entry()
+    function add_fellowship()
     {
         // TODO
     }
 
-    function update_entry()
+    function update_fellowship()
     {
         // TODO
     }
