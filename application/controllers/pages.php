@@ -29,6 +29,23 @@ class Pages extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function fellowship($name = 'sister')
+	{
+		if ( ! file_exists('application/views/activities/fellowship.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+		$this->load->model('fellowship_model', 'fellowship');
+
+		$data['fellowships'] = $this->fellowship->get_fellowships();
+		$data['name'] = $this->fellowship->get_fellowship($name);
+
+		$this->load->view('templates/header');
+		$this->load->view('activities/fellowship', $data);
+		$this->load->view('templates/footer');
+	}
+
 	public function login($page = 'loginpage')
 	{
 		if ( ! file_exists('application/views/loginPage/'.$page.'.php'))
@@ -36,7 +53,6 @@ class Pages extends CI_Controller {
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
-
 		$this->load->view('templates/header');
 		$this->load->view('loginPage/'.$page);
 		$this->load->view('templates/footer');

@@ -41,10 +41,11 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo base_url(); ?>index.php/pages/church/introduction">教會簡介</a></li>
-                <li><a href="#">信仰宣言</a></li>
-                <li><a href="#">教會會章</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/church/faith-statement">信仰宣言</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/church/bylaw">教會會章</a></li>
                 <li><a href="#">牧者介紹</a></li>
                 <li><a href="#">服侍部門</a></li>
+                <li><a href="#">教會歷史</a></li>
                 <li><a href="#">地址電話</a></li>
               </ul>
             </li>
@@ -65,7 +66,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">團契生活</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/fellowship">團契生活</a></li>
                 <li><a href="#">主日學</a></li>
                 <li><a href="#">詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
