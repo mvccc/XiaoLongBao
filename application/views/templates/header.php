@@ -67,7 +67,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo base_url(); ?>index.php/pages/fellowship">團契生活</a></li>
-                <li><a href="#">主日學</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/activities/sundaySchoolAdults">主日學</a></li>
                 <li><a href="#">詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
                 <li><a href="#">禱告會</a></li>

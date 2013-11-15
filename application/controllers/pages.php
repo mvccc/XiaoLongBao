@@ -46,6 +46,19 @@ class Pages extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function activities($page = 'sundaySchoolKids')
+	{
+		if ( ! file_exists('application/views/activities/'.$page.'.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->load->view('templates/header');
+		$this->load->view('activities/'.$page);
+		$this->load->view('templates/footer');
+	}
+
 	public function login($page = 'loginpage')
 	{
 		if ( ! file_exists('application/views/loginPage/'.$page.'.php'))
