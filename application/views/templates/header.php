@@ -76,7 +76,7 @@
               </ul>
             </li>
             <li><a href="#">代禱贊美</a></li>
-            <li><a href="#">差傳事工</a></li>
+            <li><a href="<?php echo base_url(); ?>index.php/pages/missions">差傳事工</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
               <ul class="dropdown-menu">
