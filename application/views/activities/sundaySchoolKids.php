@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-lg-3">
-    <br><br>
+    <br><br><br>
     <div class="side-menu">
         <ul>
-          <li><a href="<?php echo base_url().'index.php/pages/activities/sundaySchoolAdults'; ?>">成人主日學</a></li>
-          <li><a href="<?php echo base_url().'index.php/pages/activities/sundaySchoolAdults'; ?>">兒童主日學</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/pages/activities/sundaySchoolAdults">成人主日學</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/pages/activities/sundaySchoolKids">兒童主日學</a></li>
         </ul>
     </div>
   </div>
 
-  <div class="col-lg-9">
+  <div class="col-lg-9 well">
     <h2>兒童敬拜與主日學</h2>
     <hr>
     <p>

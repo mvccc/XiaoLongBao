@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-12 well">
     <h2>宣教士</h2>
     我們所支持的宣教士
     <hr>

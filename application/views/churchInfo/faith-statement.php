@@ -1,5 +1,5 @@
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 well">
           <h2>我們的信仰</h2>
           <ul>
             <li>我們相信－全部新舊約聖經六十六卷均係上帝所默示，為我們信仰及生活唯一最高權威與指標。</li>
