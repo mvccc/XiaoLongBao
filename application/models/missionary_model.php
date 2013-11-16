@@ -324,33 +324,32 @@ class Missionary_model extends CI_Model {
 			),
 		);
 
-function __construct()
-{
-        // Call the Model constructor
-	parent::__construct();
-}
+	function __construct()
+	{
+    	// Call the Model constructor
+		parent::__construct();
+	}
 
-/* Get all missionaries */
-function get_missionaries()
-{
-	return self::$missionaries;
-}
+	/* Get all missionaries */
+	function get_missionaries()
+	{
+		return self::$missionaries;
+	}
 
-/* Get missionary by id */
-function get_missionary($id)
-{
-	return self::$missionaries[$id];
-}
+	/* Get missionary by id */
+	function get_missionary($id)
+	{
+		return self::$missionaries[$id];
+	}
 
-function add_missionary()
-{
-        // TODO
-}
+	function add_missionary()
+	{
+    	// TODO
+	}
 
-function update_missionary()
-{
-        // TODO
-}
-
+	function update_missionary()
+	{
+    	// TODO
+	}
 }
 ?>
