@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-12 well">
   	<a id="top"></a>
     <h1>山景城中國基督教會會章</h1>
     (2010年9月26日修訂)<br/>

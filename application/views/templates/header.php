@@ -67,7 +67,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo base_url(); ?>index.php/pages/fellowship">團契生活</a></li>
-                <li><a href="#">主日學</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/activities/sundaySchoolAdults">主日學</a></li>
                 <li><a href="#">詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
                 <li><a href="#">禱告會</a></li>
@@ -76,7 +76,7 @@
               </ul>
             </li>
             <li><a href="#">代禱贊美</a></li>
-            <li><a href="#">差傳事工</a></li>
+            <li><a href="<?php echo base_url(); ?>index.php/pages/missions">差傳事工</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
               <ul class="dropdown-menu">

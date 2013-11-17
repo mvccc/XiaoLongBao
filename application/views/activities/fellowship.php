@@ -1,5 +1,6 @@
   <div class="row">
     <div class="col-lg-3">
+      <br><br><br>
    	  <div class="side-menu">
    	  	<ul>
    	  	<?php
@@ -12,7 +13,7 @@
    	  	</ul>
 	  </div>
     </div>
-    <div class="col-lg-9">
+    <div class="col-lg-9 well">
       <h2><?php echo $name ?></h2>
       <hr>
       description<br>
