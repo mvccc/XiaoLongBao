@@ -5,7 +5,11 @@
   */
 class Pages extends CI_Controller {
 
-
+  private function loadHeader($lang)
+  {
+    $this->load->view('templates/header_'.$lang);
+  }
+  
 	/**
 	  * Loads default home page.
 	  */
@@ -17,7 +21,7 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
-		$this->load->view('templates/header');
+		$this->loadHeader($lang);
 		$this->load->view($lang.'/index');
 		$this->load->view('templates/footer');
 	}
@@ -33,7 +37,7 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
-		$this->load->view('templates/header');
+		$this->loadHeader($lang);
 		$this->load->view($lang.'/churchInfo/'.$page);
 		$this->load->view('templates/footer');
 	}
@@ -53,7 +57,7 @@ class Pages extends CI_Controller {
 		$data['fellowships'] = $this->fellowship->get_fellowships();
 		$data['name'] = $this->fellowship->get_fellowship($name);
 
-		$this->load->view('templates/header');
+		$this->loadHeader($lang);
 		$this->load->view($lang.'/activities/fellowship', $data);
 		$this->load->view('templates/footer');
 	}
@@ -61,7 +65,7 @@ class Pages extends CI_Controller {
 	/**
 	  * Loads pages in church activities menu.
 	  */
-	public function activities($page = 'sundaySchoolKids', $lang = 'ch')
+	public function activities($page = 'sundaySchoolAdults', $lang = 'ch')
 	{
 		if ( ! file_exists('application/views/'.$lang.'/activities/'.$page.'.php'))
 		{
@@ -69,7 +73,7 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
-		$this->load->view('templates/header');
+		$this->loadHeader($lang);
 		$this->load->view($lang.'/activities/'.$page);
 		$this->load->view('templates/footer');
 	}
@@ -88,7 +92,7 @@ class Pages extends CI_Controller {
 		$this->load->model('missionary_model','missionary');
 		$data['missionaries'] = $this->missionary->get_missionaries();
 
-		$this->load->view('templates/header');
+		$this->loadHeader($lang);
 		$this->load->view($lang.'/missions', $data);
 		$this->load->view('templates/footer');
 	}
@@ -103,7 +107,7 @@ class Pages extends CI_Controller {
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
-		$this->load->view('templates/header');
+		$this->loadHeader($lang);
 		$this->load->view($lang.'/loginPage/'.$page);
 		$this->load->view('templates/footer');
 	}
