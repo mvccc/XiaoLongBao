@@ -43,6 +43,14 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	 * Loads pages in church worship menu
+	 */
+	public function worship()
+	{
+		// TODO:
+	}
+
+	/**
 	  * Loads fellowship pages.
 	  */
 	public function fellowship($name = 'sister', $lang = 'ch')
