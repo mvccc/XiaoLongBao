@@ -45,6 +45,7 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement">信仰宣言</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/bylaw">教會會章</a></li>
                 <li><a href="#">牧者介紹</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
                 <li><a href="#">服侍部門</a></li>
                 <li><a href="#">教會歷史</a></li>
                 <li><a href="#">地址電話</a></li>
@@ -57,13 +58,7 @@
                 <li><a href="#">近期活動</a></li>
               </ul>
             </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">主日崇拜<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">主日信息</a></li>
-                <li><a href="<?php echo base_url(); ?>index.php/pages/sunday/sundaySchedule">聚會時間</a></li>
-              </ul>
-            </li>
+            <li><a href="#">主日崇拜</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -71,7 +66,6 @@
                 <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">主日學</a></li>
                 <li><a href="#">詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
-                <li><a href="#">禱告會</a></li>
                 <li><a href="#">預查</a></li>
                 <li><a href="#">AWANA</a></li>
               </ul>
