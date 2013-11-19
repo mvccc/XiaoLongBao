@@ -43,6 +43,25 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	  * Loads pastor page.
+	  */
+	public function pastors($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/churchInfo/pastors.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+		$this->load->model('pastor_model', 'pastor');
+
+		$data['pastors'] = $this->pastor->get_current_pastors($lang);
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/churchInfo/pastors', $data);
+		$this->load->view('templates/footer');
+	}
+
+	/**
 	 * Loads pages in church worship menu
 	 */
 	public function worship()

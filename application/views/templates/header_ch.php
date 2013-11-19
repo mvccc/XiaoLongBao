@@ -44,7 +44,7 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/introduction">教會簡介</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement">信仰宣言</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/bylaw">教會會章</a></li>
-                <li><a href="#">牧者介紹</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/pastors">牧者介紹</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
                 <li><a href="#">服侍部門</a></li>
                 <li><a href="#">教會歷史</a></li>
