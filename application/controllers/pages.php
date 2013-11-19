@@ -39,6 +39,22 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	 * Loads pages in church worship menu
+	 */
+	public function sunday($page = 'worship')
+	{
+		if ( ! file_exists('application/views/sunday/'.$page.'.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->load->view('templates/header');
+		$this->load->view('sunday/'.$page);
+		$this->load->view('templates/footer');
+	}
+
+	/**
 	  * Loads fellowship pages.
 	  */
 	public function fellowship($name = 'sister')

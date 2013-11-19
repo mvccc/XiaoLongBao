@@ -61,7 +61,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">主日崇拜<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">主日信息</a></li>
-                <li><a href="#">聚會時間</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/pages/sunday/sundaySchedule">聚會時間</a></li>
               </ul>
             </li>
             <li class="dropdown">
