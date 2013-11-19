@@ -9,41 +9,41 @@ class Pages extends CI_Controller {
 	/**
 	  * Loads default home page.
 	  */
-	public function index()
+	public function index($lang = 'ch')
 	{
-		if ( ! file_exists('application/views/index.php'))
+		if ( ! file_exists('application/views/'.$lang.'/index.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 
 		$this->load->view('templates/header');
-		$this->load->view('index');
+		$this->load->view($lang.'/index');
 		$this->load->view('templates/footer');
 	}
 
 	/**
 	  * Loads pages in church general information menu.
 	  */
-	public function church($page = 'introduction')
+	public function church($page = 'introduction', $lang = 'ch')
 	{
-		if ( ! file_exists('application/views/churchInfo/'.$page.'.php'))
+		if ( ! file_exists('application/views/'.$lang.'/churchInfo/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 
 		$this->load->view('templates/header');
-		$this->load->view('churchInfo/'.$page);
+		$this->load->view($lang.'/churchInfo/'.$page);
 		$this->load->view('templates/footer');
 	}
 
 	/**
 	  * Loads fellowship pages.
 	  */
-	public function fellowship($name = 'sister')
+	public function fellowship($name = 'sister', $lang = 'ch')
 	{
-		if ( ! file_exists('application/views/activities/fellowship.php'))
+		if ( ! file_exists('application/views/'.$lang.'/activities/fellowship.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -54,32 +54,32 @@ class Pages extends CI_Controller {
 		$data['name'] = $this->fellowship->get_fellowship($name);
 
 		$this->load->view('templates/header');
-		$this->load->view('activities/fellowship', $data);
+		$this->load->view($lang.'/activities/fellowship', $data);
 		$this->load->view('templates/footer');
 	}
 
 	/**
 	  * Loads pages in church activities menu.
 	  */
-	public function activities($page = 'sundaySchoolKids')
+	public function activities($page = 'sundaySchoolKids', $lang = 'ch')
 	{
-		if ( ! file_exists('application/views/activities/'.$page.'.php'))
+		if ( ! file_exists('application/views/'.$lang.'/activities/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 
 		$this->load->view('templates/header');
-		$this->load->view('activities/'.$page);
+		$this->load->view($lang.'/activities/'.$page);
 		$this->load->view('templates/footer');
 	}
 
 	/**
 	  * Loads mission pages
 	  */
-	public function missions()
+	public function missions($lang = 'ch')
 	{
-		if ( ! file_exists('application/views/missions.php'))
+		if ( ! file_exists('application/views/'.$lang.'/missions.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -89,22 +89,22 @@ class Pages extends CI_Controller {
 		$data['missionaries'] = $this->missionary->get_missionaries();
 
 		$this->load->view('templates/header');
-		$this->load->view('missions', $data);
+		$this->load->view($lang.'/missions', $data);
 		$this->load->view('templates/footer');
 	}
 
 	/**
 	  * Loads member login page.
 	  */
-	public function login($page = 'loginpage')
+	public function login($page = 'loginpage', $lang = 'ch')
 	{
-		if ( ! file_exists('application/views/loginPage/'.$page.'.php'))
+		if ( ! file_exists('application/views/'.$lang.'/loginPage/'.$page.'.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 		$this->load->view('templates/header');
-		$this->load->view('loginPage/'.$page);
+		$this->load->view($lang.'/loginPage/'.$page);
 		$this->load->view('templates/footer');
 	}
 }
