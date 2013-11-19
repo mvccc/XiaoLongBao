@@ -8,11 +8,11 @@ class Missionary_model extends CI_Model {
 	}
 
 	/* Get all missionaries */
-	function get_missionaries()
+	function get_missionaries($lang)
 	{
 		$missionaries = array();
 		$this->load->helper('file');
-		$rawData = read_file('./assets/data/missionary.json');
+		$rawData = read_file('./assets/data/'.$lang.'/missionary.json');
 		if ($rawData)
 		{
 			$missionaries = json_decode($rawData, true);

@@ -117,7 +117,7 @@ class Pages extends CI_Controller {
 		}
 
 		$this->load->model('missionary_model','missionary');
-		$data['missionaries'] = $this->missionary->get_missionaries();
+		$data['missionaries'] = $this->missionary->get_missionaries($lang);
 
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/missions', $data);
