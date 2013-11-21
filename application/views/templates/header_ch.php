@@ -58,7 +58,7 @@
                 <li><a href="#">近期活動</a></li>
               </ul>
             </li>
-            <li><a href="#">主日崇拜</a></li>
+            <li><a href="<?php echo site_url(); ?>/pages/worship">主日崇拜</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">

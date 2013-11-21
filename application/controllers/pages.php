@@ -64,9 +64,20 @@ class Pages extends CI_Controller {
 	/**
 	 * Loads pages in church worship menu
 	 */
-	public function worship()
+	public function worship($lang = 'ch')
 	{
-		// TODO:
+		if ( ! file_exists('application/views/'.$lang.'/worship.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+		$this->load->model('message_model', 'message');
+
+		$data['messages'] = $this->message->get_messages();
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/worship', $data);
+		$this->load->view('templates/footer');
 	}
 
 	/**
