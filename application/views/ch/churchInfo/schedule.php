@@ -19,7 +19,7 @@
             <tbody>
                 <tr><td style="width: 30%">每主日 10:00am</td><td>教會</td></tr>
                 <tr><td style="width: 30%">每週三 08:00pm</td><td>教會</td></tr>
-                <tr><td style="width: 30%">每週三 08:00pm</td><td>徐 鵬, 魯潔因夫婦家</td></tr>
+                <tr><td style="width: 30%">每週三 08:00pm</td><td>徐 鵬弟兄家</td></tr>
                 <tr><td style="width: 30%">每週三 08:00pm</td><td>李世登弟兄的音樂學院</td></tr>
             </tbody>
         </table>
