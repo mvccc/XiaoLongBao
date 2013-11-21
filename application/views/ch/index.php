@@ -41,8 +41,8 @@
         </div>
         <div class="col-lg-4">
 		  <h2><span class="glyphicon glyphicon-globe"></span>&nbsp;每日金句</h2>
-          <p>神愛世人、甚至將他的獨生子賜給他們、叫一切信他的、不至滅亡、反得永生。
-          <p class="pull-right">---約翰福音 3:16
+          <p>神愛世人、甚至將他的獨生子賜給他們、叫一切信他的、不至滅亡、反得永生。</p>
+          <small><cite class="pull-right">約翰福音 3:16</cite></small>
         	<!--
         	<div class row>
           	  <img data-src="holder.js/350x166/auto/#777:#ffffff/text:Audio" alt="audio">
