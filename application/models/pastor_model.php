@@ -21,8 +21,8 @@ class Pastor_model extends CI_Model {
 		}
 
 		// mw: Keep the current pastors only.
-		foreach ($pastors as $key => $value) {
-			if($value['status'] != 'current')
+		foreach ($pastors as $key => $pastor) {
+			if($pastor['status'] != 'current')
 			{
 				unset($pastors[$key]);
 			}
