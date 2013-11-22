@@ -12,7 +12,7 @@
   		<li><a href="#">&raquo;</a></li>
 	</ul>
     <table class="table table-striped table-hover">
-      <thead><th>时间</th><th>信息</th><th>讲员</th><th>录音</th><th>录像</th><th>經文</th></thead>
+      <thead><th>時間</th><th>信息</th><th>講員</th><th>錄音</th><th>錄像</th><th>經文</th></thead>
       <tbody>
       	<?php
       		foreach ($messages as $key => $message) {

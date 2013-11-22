@@ -1,4 +1,4 @@
-      <div class="row">
+      <div class="row well">
         <div class="col-lg-8">
          <div id="carousel-generic" class="carousel slide">
             <!-- Indicators -->
