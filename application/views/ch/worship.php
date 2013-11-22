@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-lg-12 well">
-    <h2>主日信息</h2>
-    <hr>
+  	<div class="page-header">
+    	<h2>主日信息</h2>
+	</div>
     <ul class="pagination">
   		<li><a href="#">&laquo;</a></li>
   		<li><a href="#">1</a></li>

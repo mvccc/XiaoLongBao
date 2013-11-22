@@ -1,5 +1,8 @@
 <div class="row">
   <div class="col-lg-12 well">
+  	<div class="page-header">
+  	<h1>牧者介紹</h1>
+  	</div>
   	<?php
   	    foreach ($pastors as $key => $pastor) {
 	  	    $imgName = $pastor['img'];
