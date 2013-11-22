@@ -117,6 +117,22 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	  * Loads prayer page.
+	  */
+	public function prayer($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/prayer.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/prayer');
+		$this->load->view('templates/footer');
+	}
+
+	/**
 	  * Loads mission pages
 	  */
 	public function missions($lang = 'ch')
