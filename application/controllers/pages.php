@@ -43,11 +43,41 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	  * Loads pastor page.
+	  */
+	public function pastors($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/churchInfo/pastors.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+		$this->load->model('pastor_model', 'pastor');
+
+		$data['pastors'] = $this->pastor->get_current_pastors($lang);
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/churchInfo/pastors', $data);
+		$this->load->view('templates/footer');
+	}
+
+	/**
 	 * Loads pages in church worship menu
 	 */
-	public function worship()
+	public function worship($lang = 'ch')
 	{
-		// TODO:
+		if ( ! file_exists('application/views/'.$lang.'/worship.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+		$this->load->model('message_model', 'message');
+
+		$data['messages'] = $this->message->get_messages();
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/worship', $data);
+		$this->load->view('templates/footer');
 	}
 
 	/**
@@ -87,6 +117,22 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	  * Loads prayer page.
+	  */
+	public function prayer($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/prayer.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/prayer');
+		$this->load->view('templates/footer');
+	}
+
+	/**
 	  * Loads mission pages
 	  */
 	public function missions($lang = 'ch')
@@ -98,7 +144,7 @@ class Pages extends CI_Controller {
 		}
 
 		$this->load->model('missionary_model','missionary');
-		$data['missionaries'] = $this->missionary->get_missionaries();
+		$data['missionaries'] = $this->missionary->get_missionaries($lang);
 
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/missions', $data);

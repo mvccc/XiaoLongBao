@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-static-top mvccc-nav " role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -42,11 +42,10 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo site_url(); ?>/pages/church/introduction">教會簡介</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement">信仰宣言</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/bylaw">教會會章</a></li>
-                <li><a href="#">牧者介紹</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/pastors">牧者介紹</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
-                <li><a href="#">服侍部門</a></li>
+                <li><a href="#">事工部門</a></li>
                 <li><a href="#">教會歷史</a></li>
                 <li><a href="#">地址電話</a></li>
               </ul>
@@ -58,7 +57,7 @@
                 <li><a href="#">近期活動</a></li>
               </ul>
             </li>
-            <li><a href="#">主日崇拜</a></li>
+            <li><a href="<?php echo site_url(); ?>/pages/worship">主日崇拜</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -66,11 +65,10 @@
                 <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">主日學</a></li>
                 <li><a href="#">詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
-                <li><a href="#">預查</a></li>
                 <li><a href="#">AWANA</a></li>
               </ul>
             </li>
-            <li><a href="#">代禱贊美</a></li>
+            <li><a href="<?php echo site_url(); ?>/pages/prayer">代禱贊美</a></li>
             <li><a href="<?php echo site_url(); ?>/pages/missions">差傳事工</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
