@@ -86,9 +86,18 @@
                 <li><a href="#">Videos</a></li>
               </ul>
             </li>
-
-            <!-- no login right now -->
-            <!--<li><a href="<?php echo site_url(); ?>/pages/login/loginpage/en">Login</a></li> -->
+            <?php
+              if(isset($logged_in) && $logged_in == TRUE)
+              {
+                $url = site_url() . '/auth/doLogout';
+                printf("<li><a href=\"%s\">Member Logout</a></li>", $url);
+              }
+              else
+              {
+                $url = site_url() . '/auth/login/en';
+                printf("<li><a href=\"%s\">Member Login</a></li>", $url);
+              }
+            ?>
 
             <li><a href="<?php echo site_url(); ?>/pages/index">中文網站</a></li>
           </ul>
