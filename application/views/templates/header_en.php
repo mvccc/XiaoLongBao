@@ -89,12 +89,12 @@
             <?php
               if(isset($logged_in) && $logged_in == TRUE)
               {
-                $url = site_url() . '/auth/doLogout';
+                $url = site_url() . '/auth/doLogout/en';
                 printf("<li><a href=\"%s\">Member Logout</a></li>", $url);
               }
               else
               {
-                $url = site_url() . '/auth/login/en';
+                $url = site_url() . '/auth/login/loginpage/en';
                 printf("<li><a href=\"%s\">Member Login</a></li>", $url);
               }
             ?>

@@ -82,7 +82,7 @@
             <?php
               if(isset($logged_in) && $logged_in == TRUE)
               {
-                $url = site_url() . '/auth/doLogout';
+                $url = site_url() . '/auth/doLogout/ch';
                 printf("<li><a href=\"%s\">會員注銷</a></li>", $url);
               }
               else
