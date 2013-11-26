@@ -87,6 +87,7 @@
               </ul>
             </li>
             <?php
+              $logged_in = $this->session->userdata('logged_in');
               if(isset($logged_in) && $logged_in == TRUE)
               {
                 $url = site_url() . '/auth/doLogout/en';

@@ -7,8 +7,7 @@ class Pages extends CI_Controller {
 
 	private function loadHeader($lang)
  	{
- 		$data['logged_in'] = $this->session->userdata('logged_in');
- 		$this->load->view('templates/header_'.$lang, $data);
+ 		$this->load->view('templates/header_'.$lang);
 	}
 
 	function __construct()

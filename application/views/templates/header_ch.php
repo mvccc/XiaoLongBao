@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">MVCCC</a>
+          <a class="navbar-brand" href="#">山景城中國基督教會</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -80,6 +80,7 @@
             </li>
 
             <?php
+              $logged_in = $this->session->userdata('logged_in');
               if(isset($logged_in) && $logged_in == TRUE)
               {
                 $url = site_url() . '/auth/doLogout/ch';
