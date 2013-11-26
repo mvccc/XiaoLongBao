@@ -25,6 +25,7 @@ class Auth extends CI_Controller
 
 		$this->loadResouces($lang);
 		$data['logged_in'] = $this->session->userdata('logged_in');
+		$data['lang'] = $lang;
 
 		$this->load->view('templates/header_'.$lang, $data);
 		$this->load->view('auth/'.$page);
