@@ -10,7 +10,6 @@ class Auth extends CI_Controller
         // Call the Controller constructor
         parent::__construct();
         $this->load->library('session');
-        $this->load->helper('language');
     }
 
 	/**
