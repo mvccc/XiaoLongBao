@@ -1,15 +1,5 @@
 <?php
   $this->load->helper('form');
-
-  if ($lang == 'ch')
-  {
-    $this->lang->load('res', 'chinese');
-  }
-  else
-  {
-    $this->lang->load('res', 'english');
-  }
-
   $attributes = array('class' => 'form-signin', 'id' => 'loginForm');
   echo form_open('auth/doLogin/'.$lang, $attributes);
 ?>

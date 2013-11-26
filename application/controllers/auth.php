@@ -23,6 +23,7 @@ class Auth extends CI_Controller
 			show_404();
 		}
 
+		$this->loadResouces($lang);
 		$data['logged_in'] = $this->session->userdata('logged_in');
 		$data['lang'] = $lang;
 
@@ -55,6 +56,7 @@ class Auth extends CI_Controller
 			show_404();
 		}
 
+		$this->loadResouces($lang);
 		$data['logged_in'] = $this->session->userdata('logged_in');
 
 		$this->load->view('templates/header_'.$lang, $data);
@@ -72,6 +74,21 @@ class Auth extends CI_Controller
 		$this->load->view('templates/header_'.$lang, $data);
 		$this->load->view($lang.'/index');
 		$this->load->view('templates/footer');		
+	}
+
+	/**
+	  * Load resources bundle files.
+	  */
+	private function loadResouces($lang = 'ch')
+	{
+		if ($lang == 'ch')
+		{
+			$this->lang->load('res', 'chinese');
+		}
+		else
+		{
+			$this->lang->load('res', 'english');
+		}
 	}
 }
 ?>
