@@ -6,11 +6,11 @@
 class Auth extends CI_Controller 
 {
 	function __construct()
-    {
-        // Call the Controller constructor
-        parent::__construct();
-        $this->load->library('session');
-    }
+	{
+		// Call the Controller constructor
+		parent::__construct();
+		$this->load->library('session');
+	}
 
 	/**
 	  * Loads member login page.
@@ -24,6 +24,8 @@ class Auth extends CI_Controller
 		}
 
 		$this->loadResouces($lang);
+
+		// mw: we will need the lang for constructing the action URL in the form.
 		$data['lang'] = $lang;
 
 		$this->load->view('templates/header_'.$lang, $data);
@@ -43,9 +45,9 @@ class Auth extends CI_Controller
 			// TODO: User login
 			$username = $this->input->post('username');
 			$newdata = array(
-            	       'username'  => $username,
-                	   'logged_in' => TRUE
-               	);
+						'username'  => $username,
+						'logged_in' => TRUE
+			);
 			$this->session->set_userdata($newdata);
 		}
 
@@ -68,8 +70,7 @@ class Auth extends CI_Controller
 	public function doLogout($lang = 'ch')
 	{
 		$this->session->sess_destroy();
-		$data['logged_in'] = FALSE;
-		$this->load->view('templates/header_'.$lang, $data);
+		$this->load->view('templates/header_'.$lang);
 		$this->load->view($lang.'/index');
 		$this->load->view('templates/footer');		
 	}

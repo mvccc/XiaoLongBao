@@ -6,17 +6,17 @@
 class Pages extends CI_Controller {
 
 	private function loadHeader($lang)
- 	{
- 		$this->load->view('templates/header_'.$lang);
+	{
+		$this->load->view('templates/header_'.$lang);
 	}
 
 	function __construct()
-    {
-        // Call the Controller constructor
-        parent::__construct();
-        $this->load->library('session');
-    }
-  
+	{
+		// Call the Controller constructor
+		parent::__construct();
+		$this->load->library('session');
+	}
+
 	/**
 	  * Loads default home page.
 	  */

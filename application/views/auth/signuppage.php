@@ -1,4 +1,4 @@
-<form id="signUpForm" class="form-signin" method="post" accept-charset="utf-8" action="<?php echo site_url().'/auth/doLogin/'?>" />
+<form id="signUpForm" class="form-signin" method="post" accept-charset="utf-8" action="<?php echo site_url().'/auth/doLogin/'.$lang?>" />
   <h2 class="form-signin-heading"><?php echo $this->lang->line('auth_sign_up') ?></h2>
   <input type="text" class="form-control" placeholder="<?php echo $this->lang->line('auth_first_name')?>" required autofocus>
   <input type="text" class="form-control" placeholder="<?php echo $this->lang->line('auth_last_name')?>" required autofocus>
