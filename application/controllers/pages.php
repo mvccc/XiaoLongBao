@@ -5,11 +5,18 @@
   */
 class Pages extends CI_Controller {
 
-  private function loadHeader($lang)
-  {
-    $this->load->view('templates/header_'.$lang);
-  }
-  
+	private function loadHeader($lang)
+	{
+		$this->load->view('templates/header_'.$lang);
+	}
+
+	function __construct()
+	{
+		// Call the Controller constructor
+		parent::__construct();
+		$this->load->library('session');
+	}
+
 	/**
 	  * Loads default home page.
 	  */
@@ -148,21 +155,6 @@ class Pages extends CI_Controller {
 
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/missions', $data);
-		$this->load->view('templates/footer');
-	}
-
-	/**
-	  * Loads member login page.
-	  */
-	public function login($page = 'loginpage', $lang = 'ch')
-	{
-		if ( ! file_exists('application/views/'.$lang.'/loginPage/'.$page.'.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/loginPage/'.$page);
 		$this->load->view('templates/footer');
 	}
 }

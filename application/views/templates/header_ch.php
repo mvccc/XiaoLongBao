@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">MVCCC</a>
+          <a class="navbar-brand" href="#">山景城中國基督教會</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -63,7 +63,7 @@
               <ul class="dropdown-menu">
                 <li><a href="<?php echo site_url(); ?>/pages/fellowship/sister">團契生活</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">主日學</a></li>
-                <li><a href="#">詩班</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/activities/choir">詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
                 <li><a href="#">AWANA</a></li>
               </ul>
@@ -79,7 +79,19 @@
               </ul>
             </li>
 
-            <li><a href="<?php echo site_url(); ?>/pages/login/loginpage">會員登錄</a></li>
+            <?php
+              $logged_in = $this->session->userdata('logged_in');
+              if(isset($logged_in) && $logged_in == TRUE)
+              {
+                $url = site_url() . '/auth/doLogout/ch';
+                printf("<li><a href=\"%s\">會員注銷</a></li>", $url);
+              }
+              else
+              {
+                $url = site_url() . '/auth/login';
+                printf("<li><a href=\"%s\">會員登錄</a></li>", $url);
+              }
+            ?>
 
             <li><a href="<?php echo site_url(); ?>/pages/index/en">English</a></li>
           </ul>

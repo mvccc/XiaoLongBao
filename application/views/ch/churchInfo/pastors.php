@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col-lg-12 well">
+<div class="row well">
+  <div class="col-lg-12">
   	<div class="page-header">
   	<h1>牧者介紹</h1>
   	</div>
