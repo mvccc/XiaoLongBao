@@ -1,4 +1,4 @@
-<div class="row well half">
+<div class="row well well-half">
   <br>
   <div class="col-lg-12">
 
