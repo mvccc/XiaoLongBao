@@ -88,11 +88,11 @@ class Pages extends CI_Controller {
 	}
 
 	/**
-	  * Loads fellowship pages.
+	  * Loads fellowships page.
 	  */
-	public function fellowship($name = 'sister', $lang = 'ch')
+	public function fellowships($lang = 'ch')
 	{
-		if ( ! file_exists('application/views/'.$lang.'/activities/fellowship.php'))
+		if ( ! file_exists('application/views/'.$lang.'/activities/fellowships.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -100,7 +100,25 @@ class Pages extends CI_Controller {
 		$this->load->model('fellowship_model', 'fellowship');
 
 		$data['fellowships'] = $this->fellowship->get_fellowships();
-		$data['name'] = $this->fellowship->get_fellowship($name);
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/activities/fellowships', $data);
+		$this->load->view('templates/footer');
+	}
+
+	/**
+	  * Loads fellowship pages.
+	  */
+	public function fellowship($fellowshipKey = 'pine', $lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/activities/fellowship.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->load->model('fellowship_model', 'fellowship');
+		$data['fellowship'] = $this->fellowship->get_fellowship($fellowshipKey);
 
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/activities/fellowship', $data);
