@@ -45,16 +45,10 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/bylaw">教會會章</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/pastors">牧者介紹</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷事件</a></li>
                 <li><a href="#">事工部門</a></li>
                 <li><a href="#">教會歷史</a></li>
                 <li><a href="#">地址電話</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">神家近況<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">最新消息</a></li>
-                <li><a href="#">近期活動</a></li>
               </ul>
             </li>
             <li><a href="<?php echo site_url(); ?>/pages/worship">主日崇拜</a></li>

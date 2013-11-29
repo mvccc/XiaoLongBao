@@ -69,7 +69,26 @@ class Pages extends CI_Controller {
 	}
 
 	/**
-	 * Loads pages in church worship menu
+	* Loads calendar page.	
+	*/
+	public function calendar($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/churchInfo/calendar.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		# $this->load->model('event_model', 'event');
+		# $data['events'] = $this->event->get_events();
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/churchInfo/calendar');
+		$this->load->view('templates/footer');		
+	}
+
+	/**
+	 * Loads pages in church worship menu.
 	 */
 	public function worship($lang = 'ch')
 	{

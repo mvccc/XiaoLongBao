@@ -146,7 +146,7 @@ hr
   background-color: rgba(255,255,255,0.6);
 }
 
-/* Calendar & Events List*/
+/* Calendar & Events List on Home Page */
 .listing 
 { 
   overflow: hidden; 
@@ -189,6 +189,14 @@ hr
   width: 32px; 
   height: 45px;
 }
+
+/* Calendar & Events List on Calendar Page */
+.event-list { width: 100%; overflow: hidden; border-bottom: 1px solid #dddddd; padding: 14px 0 14px 0; }
+.event-date { width: 60px; text-align: center; margin-top: 8px; }
+.event-day { font-size: 3.4em; color: #aaa; font-weight: bold; line-height: .7em; font-family: Helvetica, Arial, sans-serif; }
+.event-mon { font-size: 1em; color: #aaa; text-transform: uppercase; font-family: Helvetica, Arial, sans-serif; font-weight: bold; margin: 5px 0 0 2px; letter-spacing: .4em; line-height: 1em;}
+
+.event-title { width: 400px; display: inline; }
 
 /* Sign In & Sign Up Form */
 .form-signin 
