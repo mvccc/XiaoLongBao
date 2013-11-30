@@ -44,17 +44,12 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/introduction/en">Introduction</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement/en">Faith Statement</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/bylaw/en">Constitution</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/pastors/en">Pastors</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/pastors/en">Our Staff</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Calendar and Events</a></li>
                 <li><a href="#">Departments</a></li>
                 <li><a href="#">Church History</a></li>
                 <li><a href="#">Contact Us</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">News</a></li>
-                <li><a href="#">Upcoming Events</a></li>
               </ul>
             </li>
             <li class="dropdown">
