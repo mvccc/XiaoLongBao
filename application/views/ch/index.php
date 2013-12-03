@@ -110,7 +110,7 @@
             </div>
             <div class="panel-body">
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-primary" href="#" role="button">詳細內容 &raquo;</a></p>
+              <p><a class="btn btn-primary mvccc-btn-blue" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
             <div class="panel-body">
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               </p>
-              <p><a class="btn btn-primary" href="#" role="button">詳細內容 &raquo;</a></p>
+              <p><a class="btn btn-primary mvccc-btn-blue" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
           </div>          
           <!--
@@ -144,7 +144,7 @@
             </div>
             <div class="panel-body">
               <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-              <p><a class="btn btn-primary" href="#" role="button">詳細內容 &raquo;</a></p>
+              <p><a class="btn btn-primary mvccc-btn-blue" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
           </div>
         </div>

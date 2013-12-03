@@ -14,6 +14,11 @@ body
 }
 */
 
+/* Button */
+.mvccc-btn-blue { background: #151B54; border-color: #151B54;}
+.mvccc-btn-blue:hover { background: #151B54;}
+h3 { color: #151B54; }
+
 /* MVCCC Menu */
 .mvccc-nav 
 {
@@ -165,12 +170,13 @@ hr
   width: 74%; 
   float: right; 
   display: inline; 
-  overflow: hidden; 
+  overflow: hidden;
 }
 .event-right-listing a 
 {
   font-weight: 300; 
   font-size: 1.5em; 
+  color: #151B54; /* midnight blue */
 }
 .event-right-listing p
 {
@@ -191,12 +197,126 @@ hr
 }
 
 /* Calendar & Events List on Calendar Page */
+.event-header { width: 100%; border-bottom: 1px solid #cccccc; overflow: hidden; padding-bottom: 10px; }
+.event-header-left { margin-bottom: 0px; padding-bottom: 0px; }
+.event-header-right { font-size: 2.0em; color: #aaa; font-weight: bold; margin-bottom: 0px; padding-bottom: 0px;}
+.event-pager { margin-bottom: 0px; }
 .event-list { width: 100%; overflow: hidden; border-bottom: 1px solid #dddddd; padding: 14px 0 14px 0; }
 .event-date { width: 60px; text-align: center; margin-top: 8px; }
 .event-day { font-size: 3.4em; color: #aaa; font-weight: bold; line-height: .7em; font-family: Helvetica, Arial, sans-serif; }
 .event-mon { font-size: 1em; color: #aaa; text-transform: uppercase; font-family: Helvetica, Arial, sans-serif; font-weight: bold; margin: 5px 0 0 2px; letter-spacing: .4em; line-height: 1em;}
 
-.event-title { width: 400px; display: inline; }
+.event-title>h4>a { color: #151B54; /* midnight blue */ }
+
+/* History */
+#history{
+  overflow: hidden;
+  width: 100%;
+}
+
+#history li{
+  float: right;
+  margin: 0 .5em 0 1em;
+}
+
+#history a{
+  background: #ddd;
+  padding: .7em 1em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+  position: relative;
+}
+
+#history a:hover{
+  background: #99db76;
+}
+
+#history a::before{
+  content: "";
+  position: absolute;
+  top: 50%; 
+  margin-top: -1.5em;   
+  border-width: 1.5em 0 1.5em 1em;
+  border-style: solid;
+  border-color: #ddd #ddd #ddd transparent;
+  left: -1em;
+}
+
+#history a:hover::before{
+  border-color: #99db76 #99db76 #99db76 transparent;
+}
+
+#history a::after{
+  content: "";
+  position: absolute;
+  top: 50%; 
+  margin-top: -1.5em;   
+  border-top: 1.5em solid transparent;
+  border-bottom: 1.5em solid transparent;
+  border-left: 1em solid #ddd;
+  right: -1em;
+}
+
+#history a:hover::after{
+  border-left-color: #99db76;
+}
+
+#history .current,
+#history .current:hover{
+  font-weight: bold;
+  background: none;
+}
+
+#history .current::after,
+#history .current::before{
+  content: normal;
+}
+
+/* History Item */
+.history-item
+{
+  height: 200px;
+}
+
+/* History List */
+.history-listing 
+{ 
+  overflow: hidden; 
+  padding: 10px 0; 
+  width: 100%; 
+  border-bottom: thick solid #dddddd;
+}
+
+.history-left-listing 
+{
+  width: 20%; 
+  float: left; 
+  display: inline; 
+}
+.history-right-listing 
+{
+  padding-left: 10px;
+  width: 80%; 
+  float: right; 
+  display: inline; 
+  overflow: hidden;
+}
+
+/* History Circle */
+.circle {
+  width: 10px;
+  height: 10px;
+  background: gray;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.verticalLine {
+    border-left: thick solid #dddddd;
+}
 
 /* Sign In & Sign Up Form */
 .form-signin 

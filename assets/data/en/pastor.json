@@ -1,7 +1,7 @@
 {
 	"0"	: {
 		"name"		: "TongSu Liu",
-		"position"	: "Reverend",
+		"position"	: "Rev.",
 		"title" 	: "Senior Pastor",
 		"status"	: "current",
 		"img"		: "pastorliu.png",
@@ -10,7 +10,7 @@
 	},
 	"1"	: {
 		"name"		: "JunLi Hou",
-		"position"	: "Reverend",
+		"position"	: "Rev.",
 		"title" 	: "Associate pastor in Chinese Congregation",
 		"status"	: "current",
 		"img"		: "pastorhou.png",
@@ -19,7 +19,7 @@
 	},
 	"2"	: {
 		"name"		: "YouWan Kang",
-		"position"	: "Pastor",
+		"position"	: "Rev.",
 		"title" 	: "Associate pastor in English Congregation",
 		"status"	: "current",
 		"img"		: "ministerkang.jpg",
