@@ -107,6 +107,29 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	  * Loads page for adding Sunday message.
+	  */
+	public function add_sunday_message($lang = 'ch')
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		if (!isset($logged_in) || $logged_in === FALSE)
+		{
+			// TODO: show authentication error.
+			show_404();
+		}
+
+		if ( ! file_exists('application/views/'.$lang.'/addSundayMessage.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/addSundayMessage');
+		$this->load->view('templates/footer');
+	}
+
+	/**
 	  * Loads fellowships page.
 	  */
 	public function fellowships($lang = 'ch')

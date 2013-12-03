@@ -225,6 +225,7 @@ hr
   float: left;
   text-decoration: none;
   color: #444;
+  font-weight: bold;
   text-shadow: 0 1px 0 rgba(255,255,255,.5); 
   position: relative;
 }
@@ -284,9 +285,10 @@ hr
 .history-listing 
 { 
   overflow: hidden; 
-  padding: 10px 0; 
+  padding-top: 0px;
+  padding-bottom: 0px; 
   width: 100%; 
-  border-bottom: thick solid #dddddd;
+  /* border-bottom: thick solid #dddddd; */
 }
 
 .history-left-listing 
@@ -298,6 +300,7 @@ hr
 .history-right-listing 
 {
   padding-left: 10px;
+  /* padding-top: 10px;*/
   width: 80%; 
   float: right; 
   display: inline; 
