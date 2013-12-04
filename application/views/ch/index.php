@@ -101,6 +101,14 @@
       </div>	
       <br>
       <hr>
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="text-center mvccc-h4">
+            <i><span style="">中文堂敬拜時間</span> 禮拜日 上午 <span style="color: #254117">11:00</span></i>
+          </p>
+        </div>
+      </div>
+      <hr>
       <br>
       <div class="row">
         <div class="col-lg-4">
