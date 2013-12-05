@@ -1,10 +1,8 @@
-<div class="row well well-half">
-  <br>
-  <div class="col-lg-12">
+
 
       <!-- first row -->
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
          <div id="carousel-generic" class="carousel slide">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -16,19 +14,23 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
               <div class="item active">
-                  <img data-src="holder.js/800x400/auto/gray:#000/text:First slide" alt="First slide">
+                  <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/001.jpg" alt="First slide">
+                    <div class="mvccc-slides-text">
+                      歡迎來到山景城中國基督教會
+                    </div>
+                  </img>
                    <div class="carousel-caption">
                       First Slide
                   </div>
               </div>
               <div class="item">
-                 <img data-src="holder.js/800x400/auto/gray:#000/text:Second slide" alt="second slide">
+                 <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/002.jpg" alt="Second slide">
                    <div class="carousel-caption">
                       Second Slide
                   </div>
               </div>
               <div class="item">
-                 <img data-src="holder.js/800x400/auto/gray:#000/text:Third slide" alt="third slide">
+                 <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/003.jpg" alt="Third slide">
                    <div class="carousel-caption">
                       Third Slide
                   </div>
@@ -44,6 +46,7 @@
             </a>
           </div>
         </div>
+        <!--
         <div class="col-lg-4">
           <div class="panel panel-default mvccc-panel">
             <div class="panel-heading">
@@ -88,6 +91,7 @@
               </div>
             </div>
           </div>
+        -->
 
         	<!--
         	<div class row>
@@ -97,19 +101,25 @@
           	  <img data-src="holder.js/350x166/auto/#777:#ffffff/text:Video" alt="video">
           	</div>
           	-->
-        </div>    
-      </div>	
+        </div>    	
       <br>
-      <hr>
+
       <div class="row">
         <div class="col-lg-12">
+          <hr class="mvccc-hr">
           <p class="text-center mvccc-h4">
-            <i><span style="">中文堂敬拜時間</span> 禮拜日 上午 <span style="color: #254117">11:00</span></i>
+            <span style="">中文堂敬拜時間</span> 禮拜日 上午 <span style="color: #254117">11:00</span>
           </p>
+          <p class="text-center">
+          175 East Dana Street, Mountain View, CA 94041 | Tel (650) 964-1591 
+          </p> 
+          <hr class="mvccc-hr">
         </div>
       </div>
-      <hr>
+
       <br>
+
+      <!--
       <div class="row">
         <div class="col-lg-4">
           <div class="panel panel-default mvccc-panel">
@@ -132,7 +142,8 @@
               </p>
               <p><a class="btn btn-primary mvccc-btn-blue" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
-          </div>          
+          </div>
+          -->        
           <!--
           <div class="panel panel-default mvccc-panel">
             <div class="panel-heading">
@@ -144,6 +155,7 @@
             </div>
           </div>
           -->
+          <!--
         </div>
         <div class="col-lg-4">
           <div class="panel panel-default mvccc-panel">
@@ -157,5 +169,30 @@
           </div>
         </div>
       </div>
-  </div>
-</div>
+    -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle mvccc-home-img" src="<?php echo base_url()?>/assets/img/pastorliu.jpg" alt="Generic placeholder image">
+          <h2>牧者的話</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/calendar/Calendar-icon.png" alt="Generic placeholder image">
+          <h2>最新消息</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/holy_bible.png" alt="Generic placeholder image">
+          <h2>最新主日信息</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+

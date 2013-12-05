@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <div class="navbar navbar-inverse navbar-static-top mvccc-nav " role="navigation">
+    <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,11 +33,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">山景城中國基督教會</a>
+          <a class="navbar-brand mvccc-brand" href="<?php echo site_url(); ?>/pages/index">山景城中國基督教會</a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="<?php echo site_url(); ?>/pages/index">教會首頁</a></li>
+          <ul class="nav navbar-nav navbar-right mvccc-nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -92,5 +91,6 @@
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
+
 
     <div class="container">
