@@ -1,13 +1,13 @@
-/*
+
 body
 {
-  background: url(../img/bg001.jpg) no-repeat center center fixed;
+  background: url(../img/bg002.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-*/
+
 
 /*
 body
@@ -18,6 +18,12 @@ body
 */
 
 /* General */
+.mvccc-container
+{
+  border-left: thick solid #dddddd;
+  border-right: thick solid #dddddd;
+}
+
 .mvccc-hr
 {
   display: block; 
@@ -26,6 +32,30 @@ body
   border-top: 1px solid #eeeeee;
   margin: 1em 0; 
   padding: 0; 
+}
+
+.headline2 {
+  border-bottom: 1px solid #aaa;
+  margin: 15px 0;
+  padding: 5px 0;
+  position: relative;
+}
+
+.headline2:before,
+.headline2:after {
+  content: '';
+  border-right: 20px solid #fff;
+  border-top: 15px solid #aaa;
+  bottom: -15px;
+  position: absolute;
+  left: 25px;
+}
+
+.headline2:after {
+  border-top-color: #fff;
+  border-right-color: transparent;
+  bottom: -13px;
+  left: 26px;
 }
 
 
@@ -237,7 +267,7 @@ hr
 }
 .well-half
 {
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.8);
 }
 
 /* Calendar & Events List on Home Page */

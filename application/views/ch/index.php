@@ -1,5 +1,5 @@
 
-
+<div class="well well-half">
       <!-- first row -->
       <div class="row">
         <div class="col-lg-12">
@@ -176,9 +176,9 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle mvccc-home-img" src="<?php echo base_url()?>/assets/img/pastorliu.jpg" alt="Generic placeholder image">
+          <img class="img-circle mvccc-home-img" src="<?php echo base_url()?>/assets/img/pastorliu6.png" alt="Generic placeholder image">
           <h2>牧者的話</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+          <p>盼望教會能夠成為神在硅谷地區設立的金燈臺，使更多的同胞成為基督的追隨者；使教會成為基督恩典的管道，人人作耶穌的門徒、基督的使者！</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -190,9 +190,13 @@
         <div class="col-lg-4">
           <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/holy_bible.png" alt="Generic placeholder image">
           <h2>最新主日信息</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <h4>主日信息 (一)</h4>
+          <p>講員: 劉同蘇<p>
+          <p>經文 羅馬書 1:1-17</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
+    </div>
+  </div>
 
 
