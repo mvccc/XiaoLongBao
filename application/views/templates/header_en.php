@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <div class="navbar navbar-inverse navbar-static-top mvccc-nav" role="navigation">
+    <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,10 +33,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">MVCCC</a>
+          <a class="navbar-brand mvccc-brand" href="#">MVCCC</a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right mvccc-nav">
             <li class="active"><a href="<?php echo site_url(); ?>/pages/index/en">Home</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Church<b class="caret"></b></a>
@@ -44,17 +44,12 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/introduction/en">Introduction</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement/en">Faith Statement</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/bylaw/en">Constitution</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/pastors/en">Pastors</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/pastors/en">Our Staff</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Calendar and Events</a></li>
                 <li><a href="#">Departments</a></li>
                 <li><a href="#">Church History</a></li>
                 <li><a href="#">Contact Us</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">News</a></li>
-                <li><a href="#">Upcoming Events</a></li>
               </ul>
             </li>
             <li class="dropdown">

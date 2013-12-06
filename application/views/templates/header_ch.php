@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <div class="navbar navbar-inverse navbar-static-top mvccc-nav " role="navigation">
+    <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,35 +33,28 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">山景城中國基督教會</a>
+          <a class="navbar-brand mvccc-brand" href="<?php echo site_url(); ?>/pages/index">山景城中國基督教會</a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="<?php echo site_url(); ?>/pages/index">教會首頁</a></li>
+          <ul class="nav navbar-nav navbar-right mvccc-nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo site_url(); ?>/pages/church/introduction">教會簡介</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/bylaw">教會會章</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/pastors">牧者介紹</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/pastors">教牧同工</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷事件</a></li>
                 <li><a href="#">事工部門</a></li>
-                <li><a href="#">教會歷史</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/church/history">教會歷史</a></li>
                 <li><a href="#">地址電話</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">神家近況<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">最新消息</a></li>
-                <li><a href="#">近期活動</a></li>
               </ul>
             </li>
             <li><a href="<?php echo site_url(); ?>/pages/worship">主日崇拜</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="<?php echo site_url(); ?>/pages/fellowship/sister">團契生活</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/fellowships">團契生活</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">主日學</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/activities/choir">詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
@@ -98,5 +91,6 @@
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
+
 
     <div class="container">

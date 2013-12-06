@@ -69,11 +69,30 @@ class Pages extends CI_Controller {
 	}
 
 	/**
-	 * Loads pages in church worship menu
+	* Loads calendar page.	
+	*/
+	public function calendar($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/churchInfo/calendar.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		# $this->load->model('event_model', 'event');
+		# $data['events'] = $this->event->get_events();
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/churchInfo/calendar');
+		$this->load->view('templates/footer');		
+	}
+
+	/**
+	 * Loads pages in church worship menu.
 	 */
 	public function worship($lang = 'ch')
 	{
-		if ( ! file_exists('application/views/'.$lang.'/worship.php'))
+		if ( ! file_exists('application/views/'.$lang.'/worship/worship.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -83,16 +102,39 @@ class Pages extends CI_Controller {
 		$data['messages'] = $this->message->get_messages();
 
 		$this->loadHeader($lang);
-		$this->load->view($lang.'/worship', $data);
+		$this->load->view($lang.'/worship/worship', $data);
 		$this->load->view('templates/footer');
 	}
 
 	/**
-	  * Loads fellowship pages.
+	  * Loads page for adding Sunday message.
 	  */
-	public function fellowship($name = 'sister', $lang = 'ch')
+	public function add_sunday_message($lang = 'ch')
 	{
-		if ( ! file_exists('application/views/'.$lang.'/activities/fellowship.php'))
+		$logged_in = $this->session->userdata('logged_in');
+		if (!isset($logged_in) || $logged_in === FALSE)
+		{
+			// TODO: show authentication error.
+			show_404();
+		}
+
+		if ( ! file_exists('application/views/'.$lang.'/worship/addSundayMessage.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/worship/addSundayMessage');
+		$this->load->view('templates/footer');
+	}
+
+	/**
+	  * Loads fellowships page.
+	  */
+	public function fellowships($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/activities/fellowships.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -100,7 +142,25 @@ class Pages extends CI_Controller {
 		$this->load->model('fellowship_model', 'fellowship');
 
 		$data['fellowships'] = $this->fellowship->get_fellowships();
-		$data['name'] = $this->fellowship->get_fellowship($name);
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/activities/fellowships', $data);
+		$this->load->view('templates/footer');
+	}
+
+	/**
+	  * Loads fellowship pages.
+	  */
+	public function fellowship($fellowshipKey = 'pine', $lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/activities/fellowship.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->load->model('fellowship_model', 'fellowship');
+		$data['fellowship'] = $this->fellowship->get_fellowship($fellowshipKey);
 
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/activities/fellowship', $data);
@@ -128,14 +188,33 @@ class Pages extends CI_Controller {
 	  */
 	public function prayer($lang = 'ch')
 	{
-		if ( ! file_exists('application/views/'.$lang.'/prayer.php'))
+		if ( ! file_exists('application/views/'.$lang.'/request/prayer.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 
 		$this->loadHeader($lang);
-		$this->load->view($lang.'/prayer');
+		$this->load->view($lang.'/request/prayer');
+		$this->load->view('templates/footer');
+	}
+
+	/**
+	  *	Loads prayer history page.
+	  */
+	public function prayerhistory($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/request/requesthistory.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->load->model('request_model', 'request');
+		$data['requests'] = $this->request->get_requests($lang);
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/request/requesthistory', $data);
 		$this->load->view('templates/footer');
 	}
 

@@ -1,26 +1,26 @@
 {
 	"0"	: {
 		"name"		: "TongSu Liu",
-		"position"	: "Reverend",
+		"position"	: "Rev.",
 		"title" 	: "Senior Pastor",
 		"status"	: "current",
-		"img"		: "pastorliu.jpg",
-		"email"		: "",
+		"img"		: "pastorliu.png",
+		"email"		: "tsmvccc@gmail.com",
 		"desc"		: "Born in Nanjing, China, Rev. Liu was Western Legal Philosophy scholar at Chinese Academy of Social Science before studying European U.S. law at Yale Law School. It was there in 1992 that Rev. Liu received Jesus Christ as his Lord and Savior, and pursued formal theological training at Yale Divinity School. Having planted and ministered at serveral Chinese churches in Connecticut, New York, and California, Pastor Liu joined MVCCC in 2009, serving as Senior Pastor."
 	},
 	"1"	: {
 		"name"		: "JunLi Hou",
-		"position"	: "Reverend",
-		"title" 	: "Chinese Congregation Pastor",
+		"position"	: "Rev.",
+		"title" 	: "Associate pastor in Chinese Congregation",
 		"status"	: "current",
-		"img"		: "",
-		"email"		: "",
-		"desc"		: ""
+		"img"		: "pastorhou.png",
+		"email"		: "pastorjunli@gmail.com",
+		"desc"		: "Born in Beijing China, Rev. Junli Hou was an attorney at Chinese National Bar Association before studying M.Div program at Yale Divinity School. She graduated with M.Div. degree in 1995 and was ordained at same year. She often preaches in different evangelical conference and revival conference around united states and worldwide. Having planted and ministered several churches with her husband, Rev. Tongsu Liu, in CT, NY, SF and Los Angeles, pastor Junli joined MVCCC this May (2013) serving as the pastor of Chinese Congregation."
 	},
 	"2"	: {
 		"name"		: "YouWan Kang",
-		"position"	: "Pastor",
-		"title" 	: "English Ministry Pastor",
+		"position"	: "Rev.",
+		"title" 	: "Associate pastor in English Congregation",
 		"status"	: "current",
 		"img"		: "ministerkang.jpg",
 		"email"		: "youwan@gmail.com",
@@ -28,8 +28,8 @@
 	},
 	"3"	: {
 		"name"		: "Pat Yao",
-		"position"	: "Minister",
-		"title" 	: "Youth Minister",
+		"position"	: "Mr.",
+		"title" 	: "Assistant psstor in Youth Ministry",
 		"status"	: "current",
 		"img"		: "ministeryao.jpg",
 		"email"		: "pyaoliang@gmail.com",
