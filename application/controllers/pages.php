@@ -92,7 +92,7 @@ class Pages extends CI_Controller {
 	 */
 	public function worship($lang = 'ch')
 	{
-		if ( ! file_exists('application/views/'.$lang.'/worship.php'))
+		if ( ! file_exists('application/views/'.$lang.'/worship/worship.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
@@ -102,7 +102,7 @@ class Pages extends CI_Controller {
 		$data['messages'] = $this->message->get_messages();
 
 		$this->loadHeader($lang);
-		$this->load->view($lang.'/worship', $data);
+		$this->load->view($lang.'/worship/worship', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -118,14 +118,14 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
-		if ( ! file_exists('application/views/'.$lang.'/addSundayMessage.php'))
+		if ( ! file_exists('application/views/'.$lang.'/worship/addSundayMessage.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 
 		$this->loadHeader($lang);
-		$this->load->view($lang.'/addSundayMessage');
+		$this->load->view($lang.'/worship/addSundayMessage');
 		$this->load->view('templates/footer');
 	}
 
