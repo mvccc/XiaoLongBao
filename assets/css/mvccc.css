@@ -94,6 +94,14 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
     max-height: 200px;
     width:200px;  
 }
+.mvccc-arrow-banner
+{
+    position:absolute;
+    top:0px;
+    left:0px;
+    max-height: 200px;
+    width:200px; 
+}
 
 /* Button */
 .mvccc-btn-blue { background: #151B54; border-color: #151B54;}
@@ -137,6 +145,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .mvccc-navbar .navbar-toggle:hover { background-color: #463265; border-color: #463265; }
 .mvccc-navbar .nav > li.dropdown.open.active > a:hover, 
 .mvccc-navbar .nav > li.dropdown.open > a { background: #151B54; /* midnight blue */ }
+
 .mvccc-nav { margin-top: 50px; }
 
 /* MVCCC Panel */

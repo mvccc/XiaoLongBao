@@ -36,7 +36,9 @@
                     <span class="icon-next"></span>
                 </a>
             </div><!-- carousel -->
+            <!--
             <img class="mvccc-note" src="<?php echo base_url()?>/assets/img/notes.png"/>
+        -->
         </div><!-- col -->
     </div><!-- row -->
     <br>
@@ -45,6 +47,9 @@
     <div class="row">
         <div class="col-lg-12">
             <hr class="mvccc-hr">
+            <!--
+            <img class="mvccc-arrow-banner" src="<?php echo base_url()?>/assets/img/arrow.png"/>
+            -->
             <p class="text-center mvccc-h4">
                 <span style="font-family:GuYin">中文堂敬拜時間 禮拜日 上午 </span><span style="color: #254117">11:00</span>
             </p>
