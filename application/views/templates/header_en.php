@@ -78,21 +78,21 @@
                 <li><a href="#">Links</a></li>
                 <li><a href="#">Photos</a></li>
                 <li><a href="#">Videos</a></li>
+                <?php
+                  $logged_in = $this->session->userdata('logged_in');
+                  if(isset($logged_in) && $logged_in == TRUE)
+                  {
+                    $url = site_url() . '/auth/doLogout/en';
+                    printf("<li><a href=\"%s\">Logout</a></li>", $url);
+                  }
+                  else
+                  {
+                    $url = site_url() . '/auth/login/loginpage/en';
+                    printf("<li><a href=\"%s\">Login</a></li>", $url);
+                  }
+                ?>
               </ul>
             </li>
-            <?php
-              $logged_in = $this->session->userdata('logged_in');
-              if(isset($logged_in) && $logged_in == TRUE)
-              {
-                $url = site_url() . '/auth/doLogout/en';
-                printf("<li><a href=\"%s\">Member Logout</a></li>", $url);
-              }
-              else
-              {
-                $url = site_url() . '/auth/login/loginpage/en';
-                printf("<li><a href=\"%s\">Member Login</a></li>", $url);
-              }
-            ?>
 
             <li><a href="<?php echo site_url(); ?>/pages/index">中文網站</a></li>
           </ul>

@@ -69,22 +69,21 @@
                 <li><a href="#">重要鏈接</a></li>
                 <li><a href="#">照片集錦</a></li>
                 <li><a href="#">錄音錄像</a></li>
+                <?php
+                  $logged_in = $this->session->userdata('logged_in');
+                  if(isset($logged_in) && $logged_in == TRUE)
+                  {
+                    $url = site_url() . '/auth/doLogout/ch';
+                    printf("<li><a href=\"%s\">同工注銷</a></li>", $url);
+                  }
+                  else
+                  {
+                    $url = site_url() . '/auth/login';
+                    printf("<li><a href=\"%s\">同工登錄</a></li>", $url);
+                  }
+                ?>
               </ul>
             </li>
-
-            <?php
-              $logged_in = $this->session->userdata('logged_in');
-              if(isset($logged_in) && $logged_in == TRUE)
-              {
-                $url = site_url() . '/auth/doLogout/ch';
-                printf("<li><a href=\"%s\">會員注銷</a></li>", $url);
-              }
-              else
-              {
-                $url = site_url() . '/auth/login';
-                printf("<li><a href=\"%s\">會員登錄</a></li>", $url);
-              }
-            ?>
 
             <li><a href="<?php echo site_url(); ?>/pages/index/en">English</a></li>
           </ul>
