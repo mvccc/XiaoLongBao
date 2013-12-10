@@ -35,6 +35,7 @@
           </button>
           <a class="navbar-brand mvccc-brand" href="<?php echo site_url(); ?>/pages/index">山景城中國基督教會</a>
         </div>
+
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right mvccc-nav">
             <li class="dropdown">
