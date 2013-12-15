@@ -88,6 +88,22 @@ class Pages extends CI_Controller {
 	}
 
 	/**
+	 * Loads contact page.
+	 */
+	public function contact($lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/churchInfo/contact.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/churchInfo/contact');
+		$this->load->view('templates/footer');
+	}
+			
+	/**
 	 * Loads pages in church worship menu.
 	 */
 	public function worship($lang = 'ch')

@@ -48,7 +48,7 @@
                 <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷事件</a></li>
                 <li><a href="#">事工部門</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/history">教會歷史</a></li>
-                <li><a href="#">地址電話</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/church/contact">聯係我們</a></li>
               </ul>
             </li>
             <li><a href="<?php echo site_url(); ?>/pages/worship">主日崇拜</a></li>
