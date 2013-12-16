@@ -75,7 +75,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Links</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/resources/links/en">Links</a></li>
                 <li><a href="#">Photos</a></li>
                 <li><a href="#">Videos</a></li>
                 <?php

@@ -373,6 +373,11 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
     border-left: thick solid #dddddd;
 }
 
+/* Resrouces */
+.mvccc-resource-thumbnail:link { text-decoration: none; }
+.mvccc-resource-thumbnail:hover { background-color: #151B54; } /* #303030 */
+.mvccc-resource-thumbnail:hover h3,  .mvccc-resource-thumbnail:hover p { color: #ffffff; }
+
 /* Sign In & Sign Up Form */
 .form-signin 
 {

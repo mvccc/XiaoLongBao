@@ -236,5 +236,22 @@ class Pages extends CI_Controller {
 		$this->load->view($lang.'/missions', $data);
 		$this->load->view('templates/footer');
 	}
+
+	/**
+	  * Loads resources pages
+	  */
+	public function resources($page='links', $lang = 'ch')
+	{
+		if ( ! file_exists('application/views/'.$lang.'/resources/'.$page.'.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/resources/'.$page);
+		$this->load->view('templates/footer');
+	}
+
 }
 ?>
