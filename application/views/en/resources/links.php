@@ -1,7 +1,7 @@
 <div class="row well">
     <div class="col-lg-12">
         <div class="page-header">   
-            <h2>Links</h2>
+            <h1>Links</h1>
         </div>
 
         <h3>Bible Study</h3>
@@ -10,7 +10,7 @@
                 <tr>
                     <td style="width: 20%"><a href="http://www.biblegateway.com/" target="_blank">biblegateway</a></td>
                     <td style="width: 30%"><a href="http://www.biblegateway.com/" target="_blank">http://www.biblegateway.com</a></td>
-                    <td>英文聖經查詢</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td style="width: 20%"><a href="http://www.e-sword.net/" target="_blank">e-Sword</a></td>
@@ -94,11 +94,64 @@
                 </tr>
                 <tr>
                     <td style="width: 20%"><a href="http://netministries.org/" target="_blank">Net Ministries</a></td>
-                    <td style="width: 30%"><a href="http://netministries.org/" target="_blank">http://netministries.org/</a></td>
+                    <td style="width: 30%"><a href="http://netministries.org/" target="_blank">http://netministries.org</a></td>
                     <td>If we truly must "go into all the world" then the light of Christ needs to shine through the Internet. 
                         Internet is the emerging communications medium of the 21st century. 
                         It enables computers around the world to send and receive text, pictures, audio, and even video information. 
                         Anyone, from an individual to the largest company can utilize this resource. </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://www.yfc.net/" target="_blank">Youth For Christ</a></td>
+                    <td style="width: 30%"><a href="http://www.yfc.net/" target="_blank">http://www.yfc.net</a></td>
+                    <td>YFC reaches young people everywhere, working together with the local church and other likeminded partners to raise up 
+                        lifelong followers of Jesus who lead by their godliness in lifestyle, devotion to the Word of God and prayer, 
+                        passion for sharing the love of Christ and commitment to social involvement.</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://www.cru.org/" target="_blank">Campus Crusade</a></td>
+                    <td style="width: 30%"><a href="http://www.cru.org/" target="_blank">http://www.cru.org/</a></td>
+                    <td>Win, build, and send Christ-centered multiplying disciples who launch spiritual movements</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://upperroom.org/Pockets" target="_blank">Pockets Magazine</a></td>
+                    <td style="width: 30%"><a href="http://upperroom.org/Pockets" target="_blank">http://upperroom.org/Pockets</a></td>
+                    <td>Designed for 8- to 12-year-olds, Pockets magazine offers wholesome devotional readings that teach about God’s love 
+                        and presence in life. The content includes fiction, scripture stories, puzzles and games, poems, recipes, colorful pictures, 
+                        activities, and scripture readings. Freelance submissions of stories, poems, recipes, puzzles and games, 
+                        and activities are welcome. The magazine is published monthly (except in February).</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://www.familylife.com/" target="_blank">Family Life</a></td>
+                    <td style="width: 30%"><a href="http://www.familylife.com/" target="_blank">http://www.familylife.com</a></td>
+                    <td>Stand firm for families matching challenge.</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://proverbs31.org/" target="_blank">proverbs31</a></td>
+                    <td style="width: 30%"><a href="http://proverbs31.org/" target="_blank">http://proverbs31.org</a></td>
+                    <td>Proverbs 31 Ministries is a non-denominational, non-profit Christian ministry that seeks to lead women into a 
+                        personal relationship with Christ. With Proverbs 31:10-31 as a guide, Proverbs 31 Ministries reaches women in 
+                        the middle of their busy days through free devotions, daily radio message, speaking events, conferences, resources, 
+                        online Bible studies, and training in the call to write, speak and lead others. We are real women offering real-life 
+                        solutions to those striving to maintain life’s balance, in spite of today’s hectic pace and cultural pull away from godly 
+                        principles. Wherever a woman may be on her spiritual journey, Proverbs 31 Ministries exists to be a trusted friend who 
+                        understands the challenges she faces, walks by her side, encouraging her as she walks toward to the heart of God.</td>
+                </tr> 
+                <tr>
+                    <td style="width: 20%"><a href="http://www.maninthemirror.org/" target="_blank">Man in the Mirror</a></td>
+                    <td style="width: 30%"><a href="http://www.maninthemirror.org/" target="_blank">http://www.maninthemirror.org</a></td>
+                    <td>Even in churches today, too many men are absent and uninvolved. Man in the Mirror believes that Christ has called His 
+                        church to reach men and help them lead powerful, transformed lives.</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://www.maninthemirror.org/" target="_blank">Man in the Mirror</a></td>
+                    <td style="width: 30%"><a href="http://www.maninthemirror.org/" target="_blank">http://www.maninthemirror.org</a></td>
+                    <td>Even in churches today, too many men are absent and uninvolved. Man in the Mirror believes that Christ has called His 
+                        church to reach men and help them lead powerful, transformed lives.</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://www.dove.org/" target="_blank">Dove</a></td>
+                    <td style="width: 30%"><a href="http://www.dove.org/" target="_blank">http://www.dove.org</a></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>

@@ -1,7 +1,7 @@
 <div class="row well">
 	<div class="col-lg-12">
 		<div class="page-header">
-			<h2>教會歷史</h2>
+			<h1>教會歷史</h1>
 		</div>
 		<div class="history-listing">
 			<div class="history-left-listing">

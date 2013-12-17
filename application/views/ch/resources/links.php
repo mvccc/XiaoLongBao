@@ -1,7 +1,7 @@
 <div class="row well">
     <div class="col-lg-12">
         <div class="page-header">   
-            <h2>重要鏈接</h2>
+            <h1>重要鏈接</h1>
         </div>
 
         <h3>牧師博客</h3>

@@ -1,7 +1,7 @@
 <div class="row well">
     <div class="col-lg-12">
         <div class="page-header">   
-            <h2>教會簡介</h2>
+            <h1>教會簡介</h1>
         </div>
         <dl class="dl-horizontal">
             <dt>我們的教會</dt>
