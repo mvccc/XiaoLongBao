@@ -20,7 +20,7 @@ body
 @font-face { font-family: CKanHK; src: url('../fonts/CKanHK-Xbold.otf'); }
 
 /* General */
-h2 { color: #151B54; font-family: "Weibei TC";}
+h1, h2 { color: #151B54; font-family: "Weibei TC";}
 h3 { color: #151B54; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin: 1em 0;  padding: 0; }
 .mvccc-hr { display: block; height: 1px; border: 0; border-top: 1px solid #eeeeee; margin: 1em 0; padding: 0; }
@@ -372,6 +372,11 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .verticalLine {
     border-left: thick solid #dddddd;
 }
+
+/* Resrouces */
+.mvccc-resource-thumbnail:link { text-decoration: none; }
+.mvccc-resource-thumbnail:hover { background-color: #151B54; } /* #303030 */
+.mvccc-resource-thumbnail:hover h3,  .mvccc-resource-thumbnail:hover p { color: #ffffff; }
 
 /* Sign In & Sign Up Form */
 .form-signin 

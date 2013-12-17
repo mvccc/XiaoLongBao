@@ -42,7 +42,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo site_url(); ?>/pages/church/introduction">教會簡介</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/church/bylaw">教會會章</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement">信仰告白</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/pastors">教牧同工</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷事件</a></li>
@@ -67,25 +67,24 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">重要鏈接</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/resources/links">重要鏈接</a></li>
                 <li><a href="#">照片集錦</a></li>
                 <li><a href="#">錄音錄像</a></li>
+                <?php
+                  $logged_in = $this->session->userdata('logged_in');
+                  if(isset($logged_in) && $logged_in == TRUE)
+                  {
+                    $url = site_url() . '/auth/doLogout/ch';
+                    printf("<li><a href=\"%s\">同工注銷</a></li>", $url);
+                  }
+                  else
+                  {
+                    $url = site_url() . '/auth/login';
+                    printf("<li><a href=\"%s\">同工登錄</a></li>", $url);
+                  }
+                ?>
               </ul>
             </li>
-
-            <?php
-              $logged_in = $this->session->userdata('logged_in');
-              if(isset($logged_in) && $logged_in == TRUE)
-              {
-                $url = site_url() . '/auth/doLogout/ch';
-                printf("<li><a href=\"%s\">會員注銷</a></li>", $url);
-              }
-              else
-              {
-                $url = site_url() . '/auth/login';
-                printf("<li><a href=\"%s\">會員登錄</a></li>", $url);
-              }
-            ?>
 
             <li><a href="<?php echo site_url(); ?>/pages/index/en">English</a></li>
           </ul>
