@@ -25,6 +25,29 @@
   </head>
 
   <body>
+
+    <div class="top">
+        <div class="container">         
+            <ul class="loginbar pull-right">  
+                <?php
+                  $logged_in = $this->session->userdata('logged_in');
+                  if(isset($logged_in) && $logged_in == TRUE)
+                  {
+                    $url = site_url() . '/auth/doLogout/ch';
+                    printf("<li><a href=\"%s\">注銷</a></li>", $url);
+                  }
+                  else
+                  {
+                    $url = site_url() . '/auth/login';
+                    printf("<li><a href=\"%s\">登錄</a></li>", $url);
+                  }
+                ?>  
+                <li class="devider"></li>   
+                <li><a href="<?php echo site_url(); ?>/pages/index/en">English</a></li>   
+            </ul>
+        </div>      
+    </div>
+
     <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -70,23 +93,8 @@
                 <li><a href="<?php echo site_url(); ?>/pages/resources/links">重要鏈接</a></li>
                 <li><a href="#">照片集錦</a></li>
                 <li><a href="#">錄音錄像</a></li>
-                <?php
-                  $logged_in = $this->session->userdata('logged_in');
-                  if(isset($logged_in) && $logged_in == TRUE)
-                  {
-                    $url = site_url() . '/auth/doLogout/ch';
-                    printf("<li><a href=\"%s\">同工注銷</a></li>", $url);
-                  }
-                  else
-                  {
-                    $url = site_url() . '/auth/login';
-                    printf("<li><a href=\"%s\">同工登錄</a></li>", $url);
-                  }
-                ?>
               </ul>
             </li>
-
-            <li><a href="<?php echo site_url(); ?>/pages/index/en">English</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->

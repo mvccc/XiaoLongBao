@@ -114,11 +114,38 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 }
 
 /* MVCCC Menu */
+/* Top Menu */
+.top { padding-top:8px; background: #151B54; /* midnight blue */ }
+.top ul.loginbar { margin:0; margin-right: 15px; padding:0; position:relative; z-index:9999; }
+.top ul.loginbar > li { display:inline; list-style:none; padding-bottom:15px; }
+.top ul.loginbar > li > a 
+{
+  color:#7C8082;
+  font-family:'Open Sans', sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  text-decoration: none;
+}
+.top ul.loginbar > li > a:hover { color:#FFFFFF; }
+
+.top ul.loginbar li.devider {
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  font-family:Tahoma;
+  font-size:8px;
+  margin:0 9px 0 5px;
+  padding:0;
+  position:relative;
+  top:-1px;
+}
+
+/* Main Menu */
 .mvccc-brand
 {
   color: #151B54;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  /* margin-top: 25px; */
+  margin-bottom: 10px;
   font-size: 2.5em;
   font-weight: bold;
   font-family: "Kaiti TC";
@@ -143,7 +170,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .mvccc-navbar .nav > li.dropdown.open.active > a:hover, 
 .mvccc-navbar .nav > li.dropdown.open > a { background: #151B54; /* midnight blue */ }
 
-.mvccc-nav { margin-top: 50px; }
+.mvccc-nav { margin-top: 5px; }
 
 /* MVCCC Panel */
 .mvccc-panel-heading>a
