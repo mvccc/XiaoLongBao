@@ -170,7 +170,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .mvccc-navbar .nav > li.dropdown.open.active > a:hover, 
 .mvccc-navbar .nav > li.dropdown.open > a { background: #151B54; /* midnight blue */ }
 
-.mvccc-nav { margin-top: 5px; }
+.mvccc-nav { margin-top: 10px; }
 
 /* MVCCC Panel */
 .mvccc-panel-heading>a
