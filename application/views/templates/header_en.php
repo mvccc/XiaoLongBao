@@ -68,7 +68,6 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement/en">Faith Statement</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/pastors/en">Our Staff</a></li>
                 <li><a href="#">Schedule</a></li>
-                <li><a href="#">Calendar and Events</a></li>
                 <li><a href="#">Departments</a></li>
                 <li><a href="#">Church History</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -93,8 +92,8 @@
                 <li><a href="#">AWANA</a></li>
               </ul>
             </li>
+            <li><a href="#">Events</a></li>
             <li><a href="#">Prayer Requests</a></li>
-            <li><a href="<?php echo site_url(); ?>/pages/missions/en">Missionary</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -103,6 +102,18 @@
                 <li><a href="#">Videos</a></li>
               </ul>
             </li>
+            <?php
+              $logged_in = $this->session->userdata('logged_in');
+              if(isset($logged_in) && $logged_in == TRUE)
+              {
+                printf('<li class="dropdown">');
+                printf('<a href="#" class="dropdown-toggle" data-toggle="dropdown">Member<b class="caret"></b></a>');
+                printf('<ul class="dropdown-menu">');
+                printf('<li><a href="%s">Missionary</a></li>', site_url()."/pages/missions/en");
+                printf('</ul>');
+                printf('</li>');
+              } 
+            ?>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->

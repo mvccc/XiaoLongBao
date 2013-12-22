@@ -61,6 +61,7 @@
 
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right mvccc-nav">
+            <li><a href="<?php echo site_url(); ?>/pages/index">教會首頁</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -68,7 +69,6 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement">信仰告白</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/pastors">教牧同工</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷事件</a></li>
                 <li><a href="#">事工部門</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/history">教會歷史</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/contact">聯係我們</a></li>
@@ -85,8 +85,7 @@
                 <li><a href="#">AWANA</a></li>
               </ul>
             </li>
-            <li><a href="<?php echo site_url(); ?>/pages/prayer">代禱贊美</a></li>
-            <li><a href="<?php echo site_url(); ?>/pages/missions">差傳事工</a></li>
+            <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷活動</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -97,6 +96,19 @@
                 <li><a href="#">錄音錄像</a></li>
               </ul>
             </li>
+            <?php
+              $logged_in = $this->session->userdata('logged_in');
+              if(isset($logged_in) && $logged_in == TRUE)
+              {
+                printf('<li class="dropdown">');
+                printf('<a href="#" class="dropdown-toggle" data-toggle="dropdown">同工服務<b class="caret"></b></a>');
+                printf('<ul class="dropdown-menu">');
+                printf('<li><a href="%s">代禱贊美</a></li>', site_url()."/pages/prayer");
+                printf('<li><a href="%s">差傳事工</a></li>', site_url()."/pages/missions");
+                printf('</ul>');
+                printf('</li>');
+              } 
+            ?>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
