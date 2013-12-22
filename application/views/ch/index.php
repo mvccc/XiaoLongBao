@@ -60,27 +60,73 @@
     <br>
 
     <!-- Block Items-->
+    <div class="row mvccc-block-item">      
+        <div class="headline3">
+        牧者的話
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-3">
+            <img class="img-circle mvccc-home-img pull-right" src="<?php echo base_url()?>/assets/img/pastorliu6.png" alt="Pastor Liu"/>
+        </div>
+        <div class="col-lg-8">
+            <div class="word-block">
+                <p>盼望教會能夠成為神在硅谷地區設立的金燈臺，使更多的同胞成為基督的追隨者；使教會成為基督恩典的管道，人人作耶穌的門徒、基督的使者！</p>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <br>
+
     <div class="row mvccc-block-item">
+        <div class="headline3">
+            教會資源
+        </div>
+        <br>
+        <br>
         <div class="col-lg-4">
-            <img class="img-circle mvccc-home-img" src="<?php echo base_url()?>/assets/img/pastorliu6.png" alt="Pastor Liu"/>
-            <h2>牧者的話</h2>
-            <p>盼望教會能夠成為神在硅谷地區設立的金燈臺，使更多的同胞成為基督的追隨者；使教會成為基督恩典的管道，人人作耶穌的門徒、基督的使者！</p>
-            <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+            <div class="">
+                <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/calendar/Calendar-icon.png" alt="Recent Events"/>   
+                <h3>最新消息</h3>      
+                <p>歡迎參加山景城中國基督教會近期活動. 請關注我們的近期消息.</p>
+                <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
+            </div>
+        </div>
         <div class="col-lg-4">
-            <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/calendar/Calendar-icon.png" alt="Recent Events"/>
-            <h2>最新消息</h2>
-            <p>歡迎參加山景城中國基督教會近期活動. 請關注我們的近期消息.</p>
-            <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/holy_bible.png" alt="Sunday Messages"/>
-            <h2>最新主日信息</h2>
+            <div class="">
+                <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/Awana.png" alt="awana"/>
+                <h3>AWANA</h3>
+                <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
+            </div>
+        </div>
+    </div><!-- row -->
+    <div class="row mvccc-block-item">
+            <div class="headline3">
+                最新主日信息
+            </div>
+            <br>
+            <br>
+            <div class="col-lg-4">
+                <div class="thumbnail">
+                    <iframe src="//player.vimeo.com/video/81478531" width="100%" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="thumbnail">
+                    <iframe src="//player.vimeo.com/video/81567675" width="100%" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="thumbnail">
+                    <iframe src="//player.vimeo.com/video/82405507" width="100%" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!--
             <h4>主日信息 (一)</h4>
             <p>講員: 劉同蘇</p>
             <p>經文 羅馬書 1:1-17</p>
-            <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
-        </div><!-- col-lg-4 -->
-    </div><!-- row -->
-
+            -->
+    </div>
 </div>
