@@ -1,4 +1,4 @@
-<div class="well well-half">
+<div class="well">
 
     <!-- Home Page Slides -->
     <div class="row">
@@ -129,4 +129,5 @@
             <p>經文 羅馬書 1:1-17</p>
             -->
     </div>
+    <!-- <div class="stitched"></div> -->
 </div>

@@ -28,7 +28,21 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .mvccc-hr { display: block; height: 1px; border: 0; border-top: 1px solid #eeeeee; margin: 1em 0; padding: 0; }
 
 /* Well */
-.well { background-color: #ffffff; }
+.well { 
+   padding: 20px;
+   margin: 10px;
+   background: #ff0030;
+   /* color: #fff; */
+   /* font-size: 21px; */
+   /* font-weight: bold; */
+   line-height: 1.3em;
+   border: 2px dashed #fff;
+   /* border-radius: 10px; */
+   box-shadow: 0 0 0 4px #c0c0c0, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   /* text-shadow: -1px -1px #aa3030; */
+   /* font-weight: normal; */
+  background-color: #ffffff; 
+}
 .well-half { background-color: rgba(255,255,255,0.8); }
 
 .headline2 {
@@ -57,21 +71,23 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 
 /* Headline 3 - Ribbons Style */
 .headline3 {
-  color: #151B54; /* midnight blue */
+  color: #FFFFFF;
   font-family: "Weibei TC";
   font-size: 2.0em;
   position: relative;
-  margin-left: -25px; /* 15px padding + 7px border ribbon shadow*/
-  margin-right: -25px;
-  padding: 5px 15px;
-  background: #e5e5e5;
-  background: linear-gradient(#f5f5f5, #e5e5e5);
-  box-shadow: 0 -1px 0 rgba(255,255,255,.8) inset;
-  text-shadow: 0 1px 0 #fff;
+  margin-left: -32px; /* 15px padding + 7px border ribbon shadow*/
+  /* margin-right: -32px; */
+  padding: 10px 15px;
+  background: #151B54; /* #e5e5e5; */
+  /* background: linear-gradient(#f5f5f5, #e5e5e5); */
+  box-shadow: 10px 10px 6px #B2B2B2; /* 0 -1px 0 rgba(255,255,255,.8) inset; */
+  /* text-shadow: 0 1px 0 #fff; */
+  width: 200px;
 }
 
-.headline3:before,
-.headline3:after {
+/*.headline3:before,*/
+.headline3:after 
+{
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -89,6 +105,21 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
   bottom: -6px;
 }
 
+.stitched {
+   padding: 20px;
+   margin: 10px;
+   background: #ff0030;
+   color: #fff;
+   font-size: 21px;
+   font-weight: bold;
+   line-height: 1.3em;
+   border: 2px dashed #fff;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px #ff0030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   text-shadow: -1px -1px #aa3030;
+   font-weight: normal;
+}
+
 /* Home page pastor */
 .pastor-img img{
   display: inline;
@@ -99,7 +130,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
     border-radius: 5px;
     box-shadow: 0 0 6px #B2B2B2;
     display: inline-block;
-    padding: 10px 18px;
+    padding: 20px 18px;
     position: relative;
     vertical-align: top;
 }
@@ -120,6 +151,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
         -webkit-transform: rotate( 29deg ) skew( -35deg );
     width:  20px;
 }
+.word-block p { font-size: 1.2em; font-family: "Kaiti TC"; }
 
 /* Home page detail item */
 .mvccc-block-item { padding-left: 15px; padding-right: 15px; } 
