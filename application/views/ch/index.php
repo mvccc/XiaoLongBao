@@ -60,6 +60,8 @@
     <br>
 
     <!-- Block Items-->
+    <div class="row">
+    <div class="col-lg-8">
     <div class="row mvccc-block-item">      
         <div class="headline3">
         牧者的話
@@ -87,20 +89,50 @@
         <br>
         <div class="col-lg-4">
             <div class="">
-                <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/calendar/Calendar-icon.png" alt="Recent Events"/>   
-                <h3>最新消息</h3>      
+                <!-- <img class="mvccc-resource-img" src="<?php echo base_url()?>/assets/img/calendar/Calendar-icon.png" alt="Recent Events"/>  --> 
+                <h3>日歷活動</h3>      
                 <p>歡迎參加山景城中國基督教會近期活動. 請關注我們的近期消息.</p>
                 <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="">
-                <img class="mvccc-home-img" src="<?php echo base_url()?>/assets/img/Awana.png" alt="awana"/>
+                <!-- <img class="mvccc-resource-img" src="<?php echo base_url()?>/assets/img/Awana.png" alt="awana"/> -->
                 <h3>AWANA</h3>
+                <p>幫助兒童學習聖經, 認識主耶穌. 提供各種課程和活動.</p><br>
+                <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="">
+                <!-- <img class="mvccc-resource-img" src="<?php echo base_url()?>/assets/img/Awana.png" alt="awana"/> -->
+                <h3>照片集錦</h3>
+                <p>教會活動照片, 與我們一起分享喜樂!</p><br>
                 <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
         </div>
     </div><!-- row -->
+    </div>
+
+    <div class="col-lg-4">
+        <div class="stitched">
+            <h3>最新消息</h3>
+            <hr>
+            <h4>abc</h4>
+            <p>detail detail</p>
+            <hr>
+            <h4>aaa</h4>
+            <p>detail deatil</p>
+            <hr>
+            <h4>bbb</h4>
+            <p>detail detail</p>
+            <hr>
+            <h4>ccc</h4>
+            <p>detail detail</p>
+        </div>
+    </div>
+    </div>
+
     <div class="row mvccc-block-item">
             <div class="headline3">
                 最新主日信息
