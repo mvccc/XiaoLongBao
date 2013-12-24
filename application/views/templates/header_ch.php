@@ -79,10 +79,11 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo site_url(); ?>/pages/fellowships">團契生活</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">主日學</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/activities/choir">詩班</a></li>
-                <li><a href="#">信仰討論</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">成人牧區</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolKids">兒童牧區</a></li>
                 <li><a href="#">AWANA</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/activities/choir">教會詩班</a></li>
+                <li><a href="#">信仰討論</a></li>
               </ul>
             </li>
             <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷活動</a></li>

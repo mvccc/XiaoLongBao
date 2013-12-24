@@ -1,4 +1,7 @@
 <div class="row well well-half">
+    <div class="page-header">   
+        <h1>團契生活</h1>
+    </div>
   <br>
   <?php
     foreach ($fellowships as $key => $fellowship) 
