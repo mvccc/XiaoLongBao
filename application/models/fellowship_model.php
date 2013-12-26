@@ -1,26 +1,6 @@
 <?php
 class Fellowship_model extends CI_Model {
 
-    /* mw: This data should be in database. */
-    private static $fellowships = array(
-                'pine'      => '松柏團契',
-                'sister'    => '姐妹團契',
-                'truth'     => '真理團契',
-                'well'      => '活泉團契',
-                'alleluia'  => '哈利路亞團契',
-                'spring'    => '甘泉團契',
-                'life'      => '新生命團契',
-                'song'      => '雅歌團契',
-                'believe'   => '信望愛團契',
-                'world'     => '新天地團契',
-                'ark'       => '方舟團契',
-                'friend'    => '良友團契',
-                'qingCaoDi' => '青草地團契',
-                'caleb'     => '迦勒團契',
-                'joshua'    => '青年(約書亞)團契',
-                'discuss'   => '信仰探討班',
-                );
-
     function __construct()
     {
         // Call the Model constructor
@@ -28,15 +8,21 @@ class Fellowship_model extends CI_Model {
     }
     
     /* Get all fellowships */
-    function get_fellowships()
+    function get_fellowships($lang)
     {
-        return self::$fellowships;
+        $fellowships = $this->readData($lang);
+        return $fellowships;
     }
 
-    /* Get fellowship by name */
-    function get_fellowship($name)
+    /* Get fellowship by key */
+    function get_fellowship($key, $lang)
     {
-        return self::$fellowships[$name];
+        $fellowships = $this->readData($lang);
+        if (array_key_exists($key, $fellowships))
+        {
+            return $fellowships[$key];
+        }
+        return False;
     }
 
     function add_fellowship()
@@ -47,6 +33,19 @@ class Fellowship_model extends CI_Model {
     function update_fellowship()
     {
         // TODO
+    }
+
+    /* Read data from file */
+    private function readData($lang)
+    {
+        $fellowships = array();
+        $this->load->helper('file');
+        $rawData = read_file('./assets/data/'.$lang.'/fellowship.json');
+        if ($rawData)
+        {
+            $fellowships = json_decode($rawData, true);
+        }
+        return $fellowships;
     }
 
 }

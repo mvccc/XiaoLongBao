@@ -25,6 +25,29 @@
   </head>
 
   <body>
+
+    <div class="top">
+        <div class="container">         
+            <ul class="loginbar pull-right">  
+                <?php
+                  $logged_in = $this->session->userdata('logged_in');
+                  if(isset($logged_in) && $logged_in == TRUE)
+                  {
+                    $url = site_url() . '/auth/doLogout/ch';
+                    printf("<li><a href=\"%s\">注銷</a></li>", $url);
+                  }
+                  else
+                  {
+                    $url = site_url() . '/auth/login';
+                    printf("<li><a href=\"%s\">登錄</a></li>", $url);
+                  }
+                ?>  
+                <li class="devider"></li>   
+                <li><a href="<?php echo site_url(); ?>/pages/index/en">English</a></li>   
+            </ul>
+        </div>      
+    </div>
+
     <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -38,6 +61,7 @@
 
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right mvccc-nav">
+            <li><a href="<?php echo site_url(); ?>/pages/index">教會首頁</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會介紹<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -45,7 +69,6 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement">信仰告白</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/pastors">教牧同工</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/schedule">聚會時間</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷事件</a></li>
                 <li><a href="#">事工部門</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/history">教會歷史</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/church/contact">聯係我們</a></li>
@@ -56,37 +79,37 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo site_url(); ?>/pages/fellowships">團契生活</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">主日學</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/activities/choir">詩班</a></li>
-                <li><a href="#">信仰討論</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">成人牧區</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolKids">兒童牧區</a></li>
                 <li><a href="#">AWANA</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/activities/choir">教會詩班</a></li>
+                <li><a href="#">信仰討論</a></li>
               </ul>
             </li>
-            <li><a href="<?php echo site_url(); ?>/pages/prayer">代禱贊美</a></li>
-            <li><a href="<?php echo site_url(); ?>/pages/missions">差傳事工</a></li>
+            <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷活動</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
               <ul class="dropdown-menu">
+                <li><a href="#">申請表格</a></li>
+                <li><a href="#">捐贈須知</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/resources/links">重要鏈接</a></li>
                 <li><a href="#">照片集錦</a></li>
                 <li><a href="#">錄音錄像</a></li>
-                <?php
-                  $logged_in = $this->session->userdata('logged_in');
-                  if(isset($logged_in) && $logged_in == TRUE)
-                  {
-                    $url = site_url() . '/auth/doLogout/ch';
-                    printf("<li><a href=\"%s\">同工注銷</a></li>", $url);
-                  }
-                  else
-                  {
-                    $url = site_url() . '/auth/login';
-                    printf("<li><a href=\"%s\">同工登錄</a></li>", $url);
-                  }
-                ?>
               </ul>
             </li>
-
-            <li><a href="<?php echo site_url(); ?>/pages/index/en">English</a></li>
+            <?php
+              $logged_in = $this->session->userdata('logged_in');
+              if(isset($logged_in) && $logged_in == TRUE)
+              {
+                printf('<li class="dropdown">');
+                printf('<a href="#" class="dropdown-toggle" data-toggle="dropdown">同工服務<b class="caret"></b></a>');
+                printf('<ul class="dropdown-menu">');
+                printf('<li><a href="%s">代禱贊美</a></li>', site_url()."/pages/prayer");
+                printf('<li><a href="%s">差傳事工</a></li>', site_url()."/pages/missions");
+                printf('</ul>');
+                printf('</li>');
+              } 
+            ?>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->

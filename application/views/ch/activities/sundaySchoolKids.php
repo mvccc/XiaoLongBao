@@ -1,17 +1,8 @@
 <div class="row">
-  <div class="col-lg-3">
-    <br><br><br>
-    <div class="side-menu">
-        <ul>
-          <li><a href="<?php echo base_url(); ?>index.php/pages/activities/sundaySchoolAdults">成人主日學</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/pages/activities/sundaySchoolKids">兒童主日學</a></li>
-        </ul>
+  <div class="col-lg-12 well">
+    <div class="page-header">   
+      <h1>兒童敬拜與主日學</h1>
     </div>
-  </div>
-
-  <div class="col-lg-9 well">
-    <h2>兒童敬拜與主日學</h2>
-    <hr>
     <p>
       山景城中國基督教會設有兒童主日學﹐適合兩歲到十二歲兒童參加﹐並有育嬰室﹐照顧兩歲以下之嬰幼兒。
     </p>

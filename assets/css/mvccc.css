@@ -1,3 +1,4 @@
+
 body
 {
   background: url(../img/bg002.jpg) no-repeat center center fixed;
@@ -16,6 +17,7 @@ body
 }
 */
 
+
 /* Font */
 @font-face { font-family: CKanHK; src: url('../fonts/CKanHK-Xbold.otf'); }
 
@@ -26,7 +28,21 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .mvccc-hr { display: block; height: 1px; border: 0; border-top: 1px solid #eeeeee; margin: 1em 0; padding: 0; }
 
 /* Well */
-.well { background-color: #ffffff; }
+.well { 
+   padding: 20px;
+   margin: 10px;
+   background: #ff0030;
+   /* color: #fff; */
+   /* font-size: 21px; */
+   /* font-weight: bold; */
+   line-height: 1.3em;
+   border: 2px dashed #fff;
+   /* border-radius: 10px; */
+   box-shadow: 0 0 0 4px #c0c0c0, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   /* text-shadow: -1px -1px #aa3030; */
+   /* font-weight: normal; */
+  background-color: #ffffff; 
+}
 .well-half { background-color: rgba(255,255,255,0.8); }
 
 .headline2 {
@@ -53,6 +69,91 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
   left: 26px;
 }
 
+/* Headline 3 - Ribbons Style */
+.headline3 {
+  color: #FFFFFF;
+  font-family: "Weibei TC";
+  font-size: 2.0em;
+  position: relative;
+  margin-left: -32px; /* 15px padding + 7px border ribbon shadow*/
+  /* margin-right: -32px; */
+  padding: 10px 15px;
+  background: #151B54; /* #e5e5e5; */
+  /* background: linear-gradient(#f5f5f5, #e5e5e5); */
+  box-shadow: 10px 10px 6px #B2B2B2; /* 0 -1px 0 rgba(255,255,255,.8) inset; */
+  /* text-shadow: 0 1px 0 #fff; */
+  width: 200px;
+}
+
+/*.headline3:before,*/
+.headline3:after 
+{
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  content:'';
+  border-top: 6px solid #555;
+  border-left: 6px solid transparent;
+}
+
+.headline3:before {
+  border-top: 6px solid #555;
+  border-right: 6px solid transparent;
+  border-left: none;
+  left: auto;
+  right: 0;
+  bottom: -6px;
+}
+
+.stitched {
+   padding: 20px;
+   margin: 10px;
+   background: #99cc99; /*#ff0030;*/
+   color: #151B54; /* #fff; */
+   font-size: 21px;
+   font-weight: bold;
+   line-height: 1.3em;
+   border: 2px dashed #fff;
+   border-radius: 10px;
+   box-shadow: 0 0 0 4px #99cc99, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   /* text-shadow: -1px -1px #fff ; */ /*#aa3030;*/
+   font-weight: normal;
+}
+.stitched h3 { color:#151B54 ;}
+.stitched hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin: 1em 0;  padding: 0; background-color: #fff; }
+
+/* Home page pastor */
+.pastor-img img{
+  display: inline;
+}
+.word-block{
+    margin-top: 40px;
+    background-color: #fff; /*#F2F2F2;*/
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 20px 18px;
+    position: relative;
+    vertical-align: top;
+}
+
+.word-block::after {
+    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    left: -9px; 
+    background-color: #fff; /* #F2F2F2; */
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+        -moz-transform:    rotate( 29deg ) skew( -35deg );
+        -ms-transform:     rotate( 29deg ) skew( -35deg );
+        -o-transform:      rotate( 29deg ) skew( -35deg );
+        -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+.word-block p { font-size: 1.2em; font-family: "Kaiti TC"; }
 
 /* Home page detail item */
 .mvccc-block-item { padding-left: 15px; padding-right: 15px; } 
@@ -81,15 +182,14 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .mvccc-home-img
 {
     max-height: 140px;
+    height: 140px;
     width:140px;
 }
-.mvccc-note
+.mvccc-resource-img
 {
-    position:absolute;
-    top:300px;
-    left:900px;
-    max-height: 200px;
-    width:200px;  
+  width:180px;
+  max-height: 80px;
+  height: 80px;
 }
 .mvccc-arrow-banner
 {
@@ -114,11 +214,38 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 }
 
 /* MVCCC Menu */
+/* Top Menu */
+.top { padding-top:8px; background: #151B54; /* midnight blue */ }
+.top ul.loginbar { margin:0; margin-right: 15px; padding:0; position:relative; z-index:9999; }
+.top ul.loginbar > li { display:inline; list-style:none; padding-bottom:15px; }
+.top ul.loginbar > li > a 
+{
+  color:#7C8082;
+  font-family:'Open Sans', sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  text-decoration: none;
+}
+.top ul.loginbar > li > a:hover { color:#FFFFFF; }
+
+.top ul.loginbar li.devider {
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  font-family:Tahoma;
+  font-size:8px;
+  margin:0 9px 0 5px;
+  padding:0;
+  position:relative;
+  top:-1px;
+}
+
+/* Main Menu */
 .mvccc-brand
 {
   color: #151B54;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  /* margin-top: 25px; */
+  margin-bottom: 10px;
   font-size: 2.5em;
   font-weight: bold;
   font-family: "Kaiti TC";
@@ -143,7 +270,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .mvccc-navbar .nav > li.dropdown.open.active > a:hover, 
 .mvccc-navbar .nav > li.dropdown.open > a { background: #151B54; /* midnight blue */ }
 
-.mvccc-nav { margin-top: 50px; }
+.mvccc-nav { margin-top: 10px; }
 
 /* MVCCC Panel */
 .mvccc-panel-heading>a
@@ -167,41 +294,6 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
   background-color: #f5f5f5
 }
 
-/* Side menu style */
-.side-menu ul li
-{
-  list-style-type: none;
-  border-bottom: 1px solid #333;
-}
-
-/* TOC style */
-.toc ul
-{
-  list-style-type:none;
-}
-.toc, .side-menu
-{
-  list-style-type:none;
-  margin:0;
-  padding:0;
-  font-family: Arial;
-  font-size: 20px;
-  text-decoration:none;
-}
-.toc li a, .side-menu li a
-{
-  transition:.5s;
-}
-.toc li a:link, .toc li a:visited, .side-menu li a:link, .side-menu li a:visited
-{
-  color: grey;
-  text-decoration:none;
-}
-.toc li a:hover, .toc li a:active, .side-menu li a:hover, .side-menu li a:active
-{
-  color: black;
-  text-decoration:none;
-}
 
 /* Calendar & Events List on Home Page */
 .listing 
@@ -375,7 +467,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 
 /* Resrouces */
 .mvccc-resource-thumbnail:link { text-decoration: none; }
-.mvccc-resource-thumbnail:hover { background-color: #151B54; } /* #303030 */
+.mvccc-resource-thumbnail:hover { background-color: #303030; } /* #303030 */
 .mvccc-resource-thumbnail:hover h3,  .mvccc-resource-thumbnail:hover p { color: #ffffff; }
 
 /* Sign In & Sign Up Form */

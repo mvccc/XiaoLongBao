@@ -25,6 +25,29 @@
   </head>
 
   <body>
+
+    <div class="top">
+        <div class="container">         
+            <ul class="loginbar pull-right">  
+                <?php
+                  $logged_in = $this->session->userdata('logged_in');
+                  if(isset($logged_in) && $logged_in == TRUE)
+                  {
+                    $url = site_url() . '/auth/doLogout/en';
+                    printf("<li><a href=\"%s\">Logout</a></li>", $url);
+                  }
+                  else
+                  {
+                    $url = site_url() . '/auth/login/loginpage/en';
+                    printf("<li><a href=\"%s\">Login</a></li>", $url);
+                  }
+                ?>  
+                <li class="devider"></li>   
+                <li><a href="<?php echo site_url(); ?>/pages/index/ch">中文網站</a></li>   
+            </ul>
+        </div>      
+    </div>
+
     <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -45,7 +68,6 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/faith-statement/en">Faith Statement</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/pastors/en">Our Staff</a></li>
                 <li><a href="#">Schedule</a></li>
-                <li><a href="#">Calendar and Events</a></li>
                 <li><a href="#">Departments</a></li>
                 <li><a href="#">Church History</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -70,31 +92,28 @@
                 <li><a href="#">AWANA</a></li>
               </ul>
             </li>
+            <li><a href="#">Events</a></li>
             <li><a href="#">Prayer Requests</a></li>
-            <li><a href="<?php echo site_url(); ?>/pages/missions/en">Missionary</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="<?php echo site_url(); ?>/pages/resources/links/en">Links</a></li>
                 <li><a href="#">Photos</a></li>
                 <li><a href="#">Videos</a></li>
-                <?php
-                  $logged_in = $this->session->userdata('logged_in');
-                  if(isset($logged_in) && $logged_in == TRUE)
-                  {
-                    $url = site_url() . '/auth/doLogout/en';
-                    printf("<li><a href=\"%s\">Logout</a></li>", $url);
-                  }
-                  else
-                  {
-                    $url = site_url() . '/auth/login/loginpage/en';
-                    printf("<li><a href=\"%s\">Login</a></li>", $url);
-                  }
-                ?>
               </ul>
             </li>
-
-            <li><a href="<?php echo site_url(); ?>/pages/index">中文網站</a></li>
+            <?php
+              $logged_in = $this->session->userdata('logged_in');
+              if(isset($logged_in) && $logged_in == TRUE)
+              {
+                printf('<li class="dropdown">');
+                printf('<a href="#" class="dropdown-toggle" data-toggle="dropdown">Member<b class="caret"></b></a>');
+                printf('<ul class="dropdown-menu">');
+                printf('<li><a href="%s">Missionary</a></li>', site_url()."/pages/missions/en");
+                printf('</ul>');
+                printf('</li>');
+              } 
+            ?>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
