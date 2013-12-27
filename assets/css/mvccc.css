@@ -331,6 +331,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 {
   border-bottom: none; 
 }
+/*
 .date 
 {
   background: url(../img/calendar/nov.png) 0 0 no-repeat; 
@@ -339,6 +340,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
   width: 32px; 
   height: 45px;
 }
+*/
 
 /* Calendar & Events List on Calendar Page */
 .event-header { width: 100%; border-bottom: 1px solid #cccccc; overflow: hidden; padding-bottom: 10px; }

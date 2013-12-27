@@ -71,20 +71,93 @@ class Pages extends CI_Controller {
 	/**
 	* Loads calendar page.	
 	*/
-	public function calendar($lang = 'ch')
+	public function calendar($year='', $month='', $lang = 'ch')
 	{
-		if ( ! file_exists('application/views/'.$lang.'/churchInfo/calendar.php'))
+		if ( ! file_exists('application/views/'.$lang.'/events/calendar.php'))
 		{
 			// Whoops, we don't have a page for that!
 			show_404();
 		}
 
-		# $this->load->model('event_model', 'event');
-		# $data['events'] = $this->event->get_events();
+		// Set the default year and month to the current date.
+		$currentTime = time();
+		if ($year == '')
+			$year  = date("Y", $currentTime);
+
+		if ($month == '')
+			$month = date("m", $currentTime);
+
+		// Load CI calendar library.
+		$this->load->library('calendar');
+		$current = array();
+		$current['year']  = $year;
+		$current['month'] = $this->calendar->get_month_name($month);
+
+		$data['current']  = $current;
+		$data['previous'] = $this->calendar->adjust_date($month - 1, $year);
+		$data['next'] = $this->calendar->adjust_date($month + 1, $year);
+
+		$this->load->model('event_model', 'event');
+		$data['events'] = $this->event->get_events($year, $month);
 
 		$this->loadHeader($lang);
-		$this->load->view($lang.'/churchInfo/calendar');
+		$this->load->view($lang.'/events/calendar', $data);
 		$this->load->view('templates/footer');		
+	}
+
+
+	/**
+	  * Loads page for adding Sunday message.
+	  */
+	public function createEvent($lang = 'ch')
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		if (!isset($logged_in) || $logged_in === FALSE)
+		{
+			// TODO: show authentication error.
+			show_404();
+		}
+
+		if ( ! file_exists('application/views/'.$lang.'/events/createEvent.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$data["today"] = date("m-d-Y", time());
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/events/createEvent', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function doCreateEvent($lang = 'ch')
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		if (!isset($logged_in) || $logged_in === FALSE)
+		{
+			// TODO: show authentication error.
+			show_404();
+		}
+
+		// TODO: Form validation
+		$dateTime = DateTime::createFromFormat('m-d-Y', $this->input->post('date'));
+
+		$data = array();
+
+		$data['year'] 		= $dateTime->format('Y');
+		$data['month']		= $dateTime->format('m');
+		$data['day']		= $dateTime->format('d');
+		$data['time'] 		= $this->input->post('time');
+		$data['title'] 		= $this->input->post('title');
+		$data['content'] 	= $this->input->post('content');
+		$data['category'] 	= $this->input->post('category');
+
+		$this->load->model('event_model', 'event');
+		$data['events'] = $this->event->add_event($data);
+
+		// Redirect to calendar page.
+		$this->calendar();
 	}
 
 	/**
