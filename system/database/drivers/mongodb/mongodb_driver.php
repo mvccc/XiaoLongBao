@@ -51,6 +51,8 @@ class CI_DB_mongodb_driver extends CI_DB {
     var $use_set_names;
 
     var $mongo_database;
+
+    var $mongo_reserved_id = '_id';
     
     /**
      * Non-persistent database connection
@@ -748,6 +750,29 @@ class CI_DB_mongodb_driver extends CI_DB {
             $result[] = $doc;
         }
         return $result;
+    }
+
+    /**
+     * Delete
+     *
+     * Compiles a delete string and runs the query
+     *
+     * @param   mixed   the table(s) to delete from. String or array
+     * @param   mixed   the where clause
+     * @param   mixed   the limit clause
+     * @param   boolean
+     * @return  object
+     */
+    public function delete($table = '', $where = '', $limit = NULL, $reset_data = TRUE)
+    {
+        $collection = $this->mongo_database->selectCollection($table);
+        foreach ($where as $key => $value) {
+            if ($key == '_id')
+            {
+                $where['_id'] = new MongoId($value);
+            }
+        }
+        return $collection->remove($where);    
     }
 
 }

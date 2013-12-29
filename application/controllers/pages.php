@@ -5,6 +5,9 @@
   */
 class Pages extends CI_Controller {
 
+	// Date time format in the US way.
+	var $dateTimeFormat = "m-d-Y";
+
 	private function loadHeader($lang)
 	{
 		$this->load->view('templates/header_'.$lang);
@@ -124,7 +127,8 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
-		$data["today"] = date("m-d-Y", time());
+		$data["today"] = date($this->dateTimeFormat, time());
+		$data["dateTimeFormat"] = $this->dateTimeFormat;
 
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/events/createEvent', $data);
@@ -141,13 +145,14 @@ class Pages extends CI_Controller {
 		}
 
 		// TODO: Form validation
-		$dateTime = DateTime::createFromFormat('m-d-Y', $this->input->post('date'));
+		$dateTime = DateTime::createFromFormat($this->dateTimeFormat, $this->input->post('date'));
 
 		$data = array();
 
 		$data['year'] 		= $dateTime->format('Y');
 		$data['month']		= $dateTime->format('m');
 		$data['day']		= $dateTime->format('d');
+		$data['timestamp']	= $dateTime->getTimestamp();
 		$data['time'] 		= $this->input->post('time');
 		$data['title'] 		= $this->input->post('title');
 		$data['content'] 	= $this->input->post('content');
@@ -158,6 +163,19 @@ class Pages extends CI_Controller {
 
 		// Redirect to calendar page.
 		$this->calendar();
+	}
+
+	public function doDeleteEvent($id)
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		if (!isset($logged_in) || $logged_in === FALSE)
+		{
+			// TODO: show authentication error.
+			show_404();
+		}
+
+		$this->load->model('event_model', 'event');
+		$data['events'] = $this->event->delete_event($id);
 	}
 
 	/**
