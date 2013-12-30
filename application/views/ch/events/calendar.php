@@ -74,8 +74,10 @@
                     printf('<a href="#" class="btn btn-warning" role="button">更改</a>');
                     printf('&nbsp;');
 
-                    # Delete button & modal
+                    # Delete button
                     printf('<button class="btn btn-danger" data-toggle="modal" data-target="#%s">刪除</button>', $event['_id']);
+
+                    # Delete modal
                     printf('<div class="modal fade" id="%s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">', $event['_id']);
                     printf('<div class="modal-dialog">');
                     printf('<div class="modal-content">');
@@ -88,7 +90,7 @@
                     printf('</div>');
                     printf('<div class="modal-footer">');
                     printf('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
-                    printf('<button type="button" class="btn btn-primary delete-button" data-dismiss="modal" target-id="%s" url="%s">刪除</button>', $event['_id'], $deleteEventUrl);
+                    printf('<button type="button" class="btn btn-primary" name="delete-event" data-dismiss="modal" target-id="%s" url="%s">刪除</button>', $event['_id'], $deleteEventUrl);
                     printf('</div>');
                     printf('</div>');
                     printf('</div>');
@@ -101,23 +103,6 @@
         ?>
     </div>
 </div>
-
- <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
-<script>
-$(document).ready(function(){
-  $(".delete-button").click(function(){
-    var id = $(this).attr('target-id');
-    var target = "#event-" + id;
-    var url = $(this).attr('url');
-    // alert(url);
-    $(target).hide();
-    $.post(url, null,
-        function(data,status){
-            // alert("Data: " + data + "\nStatus: " + status);
-        });
-  });
-});
-</script>
 
 <!--
 <div class="event-list">
