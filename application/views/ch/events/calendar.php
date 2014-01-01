@@ -36,6 +36,7 @@
                 if (isset($event['timestamp']))
                 {
                     $dateTime = new DateTime();
+                    $dateTime->setTimeZone(new DateTimeZone("America/Los_Angeles"));
                     $dateTime->setTimestamp($event['timestamp']);
                     $weekDay  = $dateTime->format('D');
                 }
@@ -46,6 +47,9 @@
 
                 # Delete event URL.
                 $deleteEventUrl = site_url() . '/pages/doDeleteEvent/' . $event['_id'];
+
+                # Update event URL.
+                $updateEventUrl = site_url() . '/pages/updateEvent/' . $event['_id'];
 
 
                 printf('<div class="event-list" id="event-%s">', $event['_id']);
@@ -71,7 +75,7 @@
                 {
                     # Update button
                     printf('&nbsp;');
-                    printf('<a href="#" class="btn btn-warning" role="button">更改</a>');
+                    printf('<a href="%s" class="btn btn-warning" role="button">更改</a>', $updateEventUrl);
                     printf('&nbsp;');
 
                     # Delete button

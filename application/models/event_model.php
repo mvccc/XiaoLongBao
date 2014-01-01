@@ -29,9 +29,15 @@ class Event_model extends CI_Model {
         $this->db->delete($this->tableName, array('_id' => $id)); 
     }
 
-    function update_event()
+    function get_event($id)
     {
-        // TODO
+        $events = $this->db->get_where($this->tableName, array('_id' => $id));
+        return $events[0];
+    }
+
+    function update_event($id, $data)
+    {
+        return $this->db->update($this->tableName, $data, array('_id' => $id));
     }
 
 }

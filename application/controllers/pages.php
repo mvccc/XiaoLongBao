@@ -83,6 +83,7 @@ class Pages extends CI_Controller {
 		}
 
 		// Set the default year and month to the current date.
+		date_default_timezone_set('America/Los_Angeles');
 		$currentTime = time();
 		if ($year == '')
 			$year  = date("Y", $currentTime);
@@ -127,6 +128,7 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
+		date_default_timezone_set('America/Los_Angeles');
 		$data["today"] = date($this->dateTimeFormat, time());
 		$data["dateTimeFormat"] = $this->dateTimeFormat;
 
@@ -136,6 +138,55 @@ class Pages extends CI_Controller {
 	}
 
 	public function doCreateEvent($lang = 'ch')
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		if (!isset($logged_in) || $logged_in === FALSE)
+		{
+			// TODO: show authentication error.
+			show_404();
+		}
+
+		// TODO: Form validation
+		date_default_timezone_set('America/Los_Angeles');
+		$dateTime = DateTime::createFromFormat($this->dateTimeFormat, $this->input->post('date'));
+
+		$data = array();
+
+		$data['year'] 		= $dateTime->format('Y');
+		$data['month']		= $dateTime->format('m');
+		$data['day']		= $dateTime->format('d');
+		$data['timestamp']	= $dateTime->getTimestamp();
+		$data['time'] 		= $this->input->post('time');
+		$data['title'] 		= $this->input->post('title');
+		$data['content'] 	= $this->input->post('content');
+		$data['category'] 	= $this->input->post('category');
+
+		$this->load->model('event_model', 'event');
+		$data['events'] = $this->event->add_event($data);
+
+		// Redirect to calendar page.
+		$this->calendar();
+	}
+
+	public function updateEvent($id, $lang='ch')
+	{
+		$logged_in = $this->session->userdata('logged_in');
+		if (!isset($logged_in) || $logged_in === FALSE)
+		{
+			// TODO: show authentication error.
+			show_404();
+		}
+		
+		$this->load->model('event_model', 'event');
+		$data['event'] = $this->event->get_event($id);
+		$data['date'] = date($this->dateTimeFormat, $data['event']['timestamp']);
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/events/updateEvent', $data);
+		$this->load->view('templates/footer');	
+	}
+
+	public function doUpdateEvent($id, $lang='ch')
 	{
 		$logged_in = $this->session->userdata('logged_in');
 		if (!isset($logged_in) || $logged_in === FALSE)
@@ -159,7 +210,7 @@ class Pages extends CI_Controller {
 		$data['category'] 	= $this->input->post('category');
 
 		$this->load->model('event_model', 'event');
-		$data['events'] = $this->event->add_event($data);
+		$data['events'] = $this->event->update_event($id, $data);
 
 		// Redirect to calendar page.
 		$this->calendar();

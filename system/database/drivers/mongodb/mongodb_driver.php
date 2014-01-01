@@ -744,6 +744,12 @@ class CI_DB_mongodb_driver extends CI_DB {
     {
         $result = array();
         $collection = $this->mongo_database->selectCollection($table);
+        foreach ($where as $key => $value) {
+            if ($key == '_id')
+            {
+                $where['_id'] = new MongoId($value);
+            }
+        }
         $cursor = $collection->find($where);
         foreach ($cursor as $doc) 
         {
@@ -773,6 +779,29 @@ class CI_DB_mongodb_driver extends CI_DB {
             }
         }
         return $collection->remove($where);    
+    }
+
+    /**
+     * Update
+     *
+     * Compiles an update string and runs the query
+     *
+     * @param   string  the table to retrieve the results from
+     * @param   array   an associative array of update values
+     * @param   mixed   the where clause
+     * @return  object
+     */
+    public function update($table = '', $set = NULL, $where = NULL, $limit = NULL)
+    {
+        $collection = $this->mongo_database->selectCollection($table);
+        foreach ($where as $key => $value) {
+            if ($key == '_id')
+            {
+                $where['_id'] = new MongoId($value);
+            }
+        }
+        $newData = array('$set' => $set);
+        return $collection->update($where, $newData);
     }
 
 }
