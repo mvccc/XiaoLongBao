@@ -68,7 +68,27 @@
                 printf('</div>');
 
                 printf('<div class="col-lg-3">');
-                printf('<a href="#" class="btn btn-info" role="button">詳細內容</a>');
+                printf('<button class="btn btn-info" data-toggle="modal" data-target="#detail-%s">詳細內容</button>', $event['_id']);
+
+                # Modal for event detail.
+                printf('<div class="modal fade" id="detail-%s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">', $event['_id']);
+                printf('<div class="modal-dialog">');
+                printf('<div class="modal-content">');
+                printf('<div class="modal-header">');
+                printf('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>');
+                printf('<h4 class="modal-title" id="myModalLabel">%s</h4>', $event['title']);
+                printf('</div>');
+                printf('<div class="modal-body">');
+                printf('<small>%s | %s</small>', $weekDay, $event['time']);
+                printf('<p>%s</p>', $event['content']);
+                printf('</div>');
+                printf('<div class="modal-footer">');
+                printf('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
+                printf('</div>');
+                printf('</div>');
+                printf('</div>');
+                printf('</div>');
+
 
                 $logged_in = $this->session->userdata('logged_in');
                 if(isset($logged_in) && $logged_in == TRUE)
@@ -90,7 +110,8 @@
                     printf('<h4 class="modal-title" id="myModalLabel">%s</h4>', $event['title']);
                     printf('</div>');
                     printf('<div class="modal-body">');
-                    printf('...');
+                    printf('<small>%s | %s</small>', $weekDay, $event['time']);
+                    printf('<p>%s</p>', $event['content']);
                     printf('</div>');
                     printf('<div class="modal-footer">');
                     printf('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
@@ -101,7 +122,6 @@
                     printf('</div>');
                 }
                 printf('</div>');
-
                 printf('</div>');
             }
         ?>
