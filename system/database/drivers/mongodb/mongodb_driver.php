@@ -45,7 +45,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      * used for the count_all() and count_all_results() functions.
      */
     var $_count_string = 'SELECT COUNT(*) AS ';
-    var $_random_keyword = ' RAND()'; // database specific random keyword
+    var $_random_keyword = ''; // database specific random keyword
 
     // whether SET NAMES must be used to set the character set
     var $use_set_names;
@@ -620,11 +620,44 @@ class CI_DB_mongodb_driver extends CI_DB {
             }
         }
         $cursor = $collection->find($where);
-        foreach ($cursor as $doc) 
+        if(!empty($this->ar_orderby))
         {
-            $result[] = $doc;
+            $cursor = $cursor->sort($this->ar_orderby);
         }
-        return $result;
+        return iterator_to_array($cursor);
+    }
+
+    /**
+     * Sets the ORDER BY value
+     *
+     * @param   string
+     * @param   string  direction: asc or desc
+     * @return  object
+     */
+    public function order_by($orderby, $direction = '')
+    {
+        if(trim($direction) == '')
+        {
+            return;
+        }
+
+        if (strtoupper(trim($direction)) == 'ASC')
+        {
+            $direction = MongoCollection::ASCENDING;
+        }
+        elseif (strtoupper(trim($direction)) == 'DESC')
+        {
+            $direction = MongoCollection::DESCENDING;
+        }
+
+        $this->ar_orderby[$orderby] = $direction; 
+        if ($this->ar_caching === TRUE)
+        {
+            $this->ar_cache_orderby[$orderby] = $direction;
+            $this->ar_cache_exists[] = 'orderby';
+        }
+
+        return $this;
     }
 
     /**

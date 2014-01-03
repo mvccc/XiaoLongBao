@@ -15,6 +15,7 @@ class Event_model extends CI_Model {
         $data = array();
         $data["year"]    = $year;
         $data["month"]   = $month;
+        $this->db->order_by("timestamp", "DESC");
         $result = $this->db->get_where($this->tableName, $data);
         return $result;
     }
