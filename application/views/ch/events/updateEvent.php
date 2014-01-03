@@ -15,12 +15,14 @@
                 <label class="col-lg-2 control-label">時間</label>
                 <div class="col-lg-10">
                     <input type="text" class="form-control" name="time" value="<?php echo $event['time']?>">
+                    <?php echo form_error('time'); ?>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-2 control-label">標題</label>
                 <div class="col-lg-10">
                     <input type="text" class="form-control" name="title" value="<?php echo $event['title']?>">
+                    <?php echo form_error('title'); ?>
                 </div>
             </div>
             <div class="form-group">
