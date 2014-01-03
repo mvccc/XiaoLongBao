@@ -101,10 +101,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function reconnect()
     {
-        if (mysql_ping($this->conn_id) === FALSE)
-        {
-            $this->conn_id = FALSE;
-        }
+        // @todo - add support if needed
     }
 
     // --------------------------------------------------------------------
@@ -148,7 +145,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _version()
     {
-        return "SELECT version() AS ver";
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -162,6 +160,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _execute($sql)
     {
+        // @todo - add support if needed
         return $sql;
     }
 
@@ -178,6 +177,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _prep_query($sql)
     {
+        // @todo - add support if needed
         return $sql;
     }
 
@@ -191,24 +191,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function trans_begin($test_mode = FALSE)
     {
-        if ( ! $this->trans_enabled)
-        {
-            return TRUE;
-        }
-
-        // When transactions are nested we only begin/commit/rollback the outermost ones
-        if ($this->_trans_depth > 0)
-        {
-            return TRUE;
-        }
-
-        // Reset the transaction failure flag.
-        // If the $test_mode flag is set to TRUE transactions will be rolled back
-        // even if the queries produce a successful result.
-        $this->_trans_failure = ($test_mode === TRUE) ? TRUE : FALSE;
-
-        $this->simple_query('SET AUTOCOMMIT=0');
-        $this->simple_query('START TRANSACTION'); // can also be BEGIN or BEGIN WORK
+        // @todo - add support if needed
         return TRUE;
     }
 
@@ -222,19 +205,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function trans_commit()
     {
-        if ( ! $this->trans_enabled)
-        {
-            return TRUE;
-        }
-
-        // When transactions are nested we only begin/commit/rollback the outermost ones
-        if ($this->_trans_depth > 0)
-        {
-            return TRUE;
-        }
-
-        $this->simple_query('COMMIT');
-        $this->simple_query('SET AUTOCOMMIT=1');
+        // @todo - add support if needed
         return TRUE;
     }
 
@@ -248,19 +219,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function trans_rollback()
     {
-        if ( ! $this->trans_enabled)
-        {
-            return TRUE;
-        }
-
-        // When transactions are nested we only begin/commit/rollback the outermost ones
-        if ($this->_trans_depth > 0)
-        {
-            return TRUE;
-        }
-
-        $this->simple_query('ROLLBACK');
-        $this->simple_query('SET AUTOCOMMIT=1');
+        // @todo - add support if needed
         return TRUE;
     }
 
@@ -276,15 +235,7 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function escape_str($str, $like = FALSE)
     {
-        // escape LIKE condition wildcards
-        // TODO:
-        /*
-        if ($like === TRUE)
-        {
-            $str = str_replace(array('%', '_'), array('\\%', '\\_'), $str);
-        }
-        */
-
+        // @todo - add support if needed
         return $str;
     }
 
@@ -298,7 +249,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function affected_rows()
     {
-        return @mysql_affected_rows($this->conn_id);
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -311,7 +263,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function insert_id()
     {
-        return @mysql_insert_id($this->conn_id);
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -328,21 +281,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function count_all($table = '')
     {
-        if ($table == '')
-        {
-            return 0;
-        }
-
-        $query = $this->query($this->_count_string . $this->_protect_identifiers('numrows') . " FROM " . $this->_protect_identifiers($table, TRUE, NULL, FALSE));
-
-        if ($query->num_rows() == 0)
-        {
-            return 0;
-        }
-
-        $row = $query->row();
-        $this->_reset_select();
-        return (int) $row->numrows;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -358,14 +298,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _list_tables($prefix_limit = FALSE)
     {
-        $sql = "SHOW TABLES FROM ".$this->_escape_char.$this->database.$this->_escape_char;
-
-        if ($prefix_limit !== FALSE AND $this->dbprefix != '')
-        {
-            $sql .= " LIKE '".$this->escape_like_str($this->dbprefix)."%'";
-        }
-
-        return $sql;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -381,7 +315,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _list_columns($table = '')
     {
-        return "SHOW COLUMNS FROM ".$this->_protect_identifiers($table, TRUE, NULL, FALSE);
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -397,7 +332,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _field_data($table)
     {
-        return "DESCRIBE ".$table;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -410,7 +346,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _error_message()
     {
-        return mysql_error($this->conn_id);
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -423,7 +360,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _error_number()
     {
-        return mysql_errno($this->conn_id);
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -439,7 +377,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _escape_identifiers($item)
     {
-        return $item;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -456,12 +395,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _from_tables($tables)
     {
-        if ( ! is_array($tables))
-        {
-            $tables = array($tables);
-        }
-
-        return '('.implode(', ', $tables).')';
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -498,7 +433,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _replace($table, $keys, $values)
     {
-        return "REPLACE INTO ".$table." (".implode(', ', $keys).") VALUES (".implode(', ', $values).")";
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -516,7 +452,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _insert_batch($table, $keys, $values)
     {
-        return "INSERT INTO ".$table." (".implode(', ', $keys).") VALUES ".implode(', ', $values);
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -537,22 +474,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _update($table, $values, $where, $orderby = array(), $limit = FALSE)
     {
-        foreach ($values as $key => $val)
-        {
-            $valstr[] = $key . ' = ' . $val;
-        }
-
-        $limit = ( ! $limit) ? '' : ' LIMIT '.$limit;
-
-        $orderby = (count($orderby) >= 1)?' ORDER BY '.implode(", ", $orderby):'';
-
-        $sql = "UPDATE ".$table." SET ".implode(', ', $valstr);
-
-        $sql .= ($where != '' AND count($where) >=1) ? " WHERE ".implode(" ", $where) : '';
-
-        $sql .= $orderby.$limit;
-
-        return $sql;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -571,41 +494,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _update_batch($table, $values, $index, $where = NULL)
     {
-        $ids = array();
-        $where = ($where != '' AND count($where) >=1) ? implode(" ", $where).' AND ' : '';
-
-        foreach ($values as $key => $val)
-        {
-            $ids[] = $val[$index];
-
-            foreach (array_keys($val) as $field)
-            {
-                if ($field != $index)
-                {
-                    $final[$field][] =  'WHEN '.$index.' = '.$val[$index].' THEN '.$val[$field];
-                }
-            }
-        }
-
-        $sql = "UPDATE ".$table." SET ";
-        $cases = '';
-
-        foreach ($final as $k => $v)
-        {
-            $cases .= $k.' = CASE '."\n";
-            foreach ($v as $row)
-            {
-                $cases .= $row."\n";
-            }
-
-            $cases .= 'ELSE '.$k.' END, ';
-        }
-
-        $sql .= substr($cases, 0, -2);
-
-        $sql .= ' WHERE '.$where.$index.' IN ('.implode(',', $ids).')';
-
-        return $sql;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -624,7 +514,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _truncate($table)
     {
-        return "TRUNCATE ".$table;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -642,23 +533,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _delete($table, $where = array(), $like = array(), $limit = FALSE)
     {
-        $conditions = '';
-
-        if (count($where) > 0 OR count($like) > 0)
-        {
-            $conditions = "\nWHERE ";
-            $conditions .= implode("\n", $this->ar_where);
-
-            if (count($where) > 0 && count($like) > 0)
-            {
-                $conditions .= " AND ";
-            }
-            $conditions .= implode("\n", $like);
-        }
-
-        $limit = ( ! $limit) ? '' : ' LIMIT '.$limit;
-
-        return "DELETE FROM ".$table.$conditions.$limit;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -676,16 +552,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _limit($sql, $limit, $offset)
     {
-        if ($offset == 0)
-        {
-            $offset = '';
-        }
-        else
-        {
-            $offset .= ", ";
-        }
-
-        return $sql."LIMIT ".$offset.$limit;
+        // @todo - add support if needed
+        return TRUE;
     }
 
     // --------------------------------------------------------------------
@@ -699,7 +567,8 @@ class CI_DB_mongodb_driver extends CI_DB {
      */
     function _close($conn_id)
     {
-        @mysql_close($conn_id);
+        $client = $this->conn_id;
+        $client->close();
     }
 
     // --------------------------------------------------------------------
