@@ -33,7 +33,8 @@ class Event_model extends CI_Model {
     function get_event($id)
     {
         $events = $this->db->get_where($this->tableName, array('_id' => $id));
-        return $events[0];
+        reset($events);
+        return current($events);
     }
 
     function update_event($id, $data)

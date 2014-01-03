@@ -9,6 +9,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/tinymce/tinymce.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/mvccc.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/holder.js"></script>
