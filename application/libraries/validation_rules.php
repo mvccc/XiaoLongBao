@@ -5,14 +5,12 @@ class Validation_rules {
            array(
                  'field'   => 'time', 
                  'label'   => 'time', 
-                 'rules'   => 'required'
+                 'rules'   => 'required|max_length[20]'
               ),
            array(
                  'field'   => 'title', 
                  'label'   => 'title', 
-                 'rules'   => 'required'
+                 'rules'   => 'required|max_length[20]'
               )
         );
-
-    
 }
