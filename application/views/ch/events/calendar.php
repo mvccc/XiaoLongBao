@@ -1,6 +1,6 @@
 <div class="row well">
     <div class="col-lg-12">
-        <div class="row event-header">
+        <div class="event-header">
             <div class="col-lg-6">
                 <ul class="pager event-header-left pull-left">
                     <li><a href="<?php printf("%s/pages/calendar/%s/%s", site_url(), $previous['year'], $previous['month']);?>">Previous</a></li>
