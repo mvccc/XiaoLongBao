@@ -83,7 +83,7 @@
                 printf('<p>%s</p>', $event['content']);
                 printf('</div>');
                 printf('<div class="modal-footer">');
-                printf('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
+                printf('<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>');
                 printf('</div>');
                 printf('</div>');
                 printf('</div>');
@@ -114,8 +114,8 @@
                     printf('<p>%s</p>', $event['content']);
                     printf('</div>');
                     printf('<div class="modal-footer">');
-                    printf('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
-                    printf('<button type="button" class="btn btn-primary" name="delete-event" data-dismiss="modal" target-id="%s" url="%s">刪除</button>', $event['_id'], $deleteEventUrl);
+                    printf('<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>');
+                    printf('<button type="button" class="btn btn-danger" name="delete-event" data-dismiss="modal" target-id="%s" url="%s">刪除</button>', $event['_id'], $deleteEventUrl);
                     printf('</div>');
                     printf('</div>');
                     printf('</div>');

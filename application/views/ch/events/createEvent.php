@@ -42,7 +42,11 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <button type="submit" class="btn btn-default">添加</button>
+                    <button type="submit" class="btn btn-info">添加</button>
+                    <?php
+                        $url = site_url() . '/pages/calendar/';
+                        printf('<a href="%s" class="btn btn-default" role="button">取消</a>', $url);
+                    ?>
                 </div>
             </div>
         </form>

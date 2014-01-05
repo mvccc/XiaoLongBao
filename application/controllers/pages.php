@@ -176,7 +176,7 @@ class Pages extends CI_Controller {
 			$data['events'] = $this->event->add_event($data);
 
 			// Redirect to calendar page.
-			$this->calendar();
+			$this->calendar($data['year'], $data['month']);
 		}
 	}
 
