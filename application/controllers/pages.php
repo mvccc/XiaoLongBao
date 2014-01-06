@@ -191,6 +191,8 @@ class Pages extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->model('event_model', 'event');
 		$data['event'] = $this->event->get_event($id);
+
+		date_default_timezone_set('America/Los_Angeles');
 		$data['date'] = date($this->dateTimeFormat, $data['event']['timestamp']);
 
 		$this->loadHeader($lang);
@@ -217,6 +219,7 @@ class Pages extends CI_Controller {
 		}
 		else
 		{
+			date_default_timezone_set('America/Los_Angeles');
 			$dateTime = DateTime::createFromFormat($this->dateTimeFormat, $this->input->post('date'));
 
 			$data = array();

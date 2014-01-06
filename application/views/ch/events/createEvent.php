@@ -14,14 +14,14 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">時間</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="time" placeholder="">
+                    <input type="text" class="form-control" name="time" value="<?php echo set_value('time'); ?>" >
                     <?php echo form_error('time'); ?>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-2 control-label">標題</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="title" placeholder="標題">
+                    <input type="text" class="form-control" name="title" placeholder="標題" value="<?php echo set_value('title'); ?>">
                     <?php echo form_error('title'); ?>
                 </div>
             </div>
