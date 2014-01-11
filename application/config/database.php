@@ -54,8 +54,8 @@ $db['default']['password'] = '';
 $db['default']['database'] = 'mvccc';
 
 #$db['default']['dbdriver'] = 'mysql';
-#$db['default']['dbdriver'] = 'mongodb';
-$db['default']['dbdriver'] = 'filebased';
+$db['default']['dbdriver'] = 'mongodb';
+#$db['default']['dbdriver'] = 'filebased';
 
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

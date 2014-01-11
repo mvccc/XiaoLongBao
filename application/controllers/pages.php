@@ -109,6 +109,92 @@ class Pages extends CI_Controller {
 		$this->load->view('templates/footer');		
 	}
 
+	public function calendarCell($year='', $month='', $lang = 'ch')
+	{
+		// Set the default year and month to the current date.
+		date_default_timezone_set('America/Los_Angeles');
+		$currentTime = time();
+		if ($year == '')
+			$year  = date("Y", $currentTime);
+
+		if ($month == '')
+			$month = date("m", $currentTime);
+
+		$prefs = array (
+               'start_day'    => 'sunday',
+               'month_type'   => 'long',
+               'day_type'     => 'short',
+               'show_next_prev'  => TRUE,
+               'next_prev_url'   => site_url() . '/pages/calendarCell'
+             );
+
+		# 		   <a href="{content}">{day}</a></div>;
+		$prefs['template'] = '
+
+		   {table_open}<table class="calendar">{/table_open}
+
+		   {heading_row_start}<tr>{/heading_row_start}
+
+		   {heading_previous_cell}<th class="text-left"><a href="{previous_url}">&lt;&lt;</a></th>{/heading_previous_cell}
+		   {heading_title_cell}<th class="text-center heading-title-cell" colspan="{colspan}">{heading}</th>{/heading_title_cell}
+		   {heading_next_cell}<th class="text-right"><a href="{next_url}">&gt;&gt;</a></th>{/heading_next_cell}
+
+		   {heading_row_end}</tr>{/heading_row_end}
+
+		   {week_row_start}<tr>{/week_row_start}
+		   {week_day_cell}<td>{week_day}</td>{/week_day_cell}
+		   {week_row_end}</tr>{/week_row_end}
+
+		   {cal_row_start}<tr class="dateRow">{/cal_row_start}
+		   {cal_cell_start}<td>{/cal_cell_start}
+
+		   {cal_cell_content}
+		   <div class="calDay"> {day} </div>
+		   {content}
+		   {/cal_cell_content}
+
+		   {cal_cell_content_today}
+		   <div class="highlight">
+		     <div class="calDay"> {day} </div>
+		     <div class="calContent"> {content} </div>
+		   </div>
+		   {/cal_cell_content_today}
+
+		   {cal_cell_no_content}
+			<div class="calDay"> {day} </div>
+		   {/cal_cell_no_content}
+
+		   {cal_event}
+		     <div class="calContent"> {content} </div>
+		   {/cal_event}
+
+		   {cal_cell_no_content_today}<div class="calDay highlight">{day}</div>{/cal_cell_no_content_today}
+
+		   {cal_cell_blank}&nbsp;{/cal_cell_blank}
+
+		   {cal_cell_end}</td>{/cal_cell_end}
+		   {cal_row_end}</tr>{/cal_row_end}
+
+		   {table_close}</table>{/table_close}
+		';
+
+		$data = array(
+					   1  => 'foo',
+		               # 3  => 'http://example.com/news/article/2006/03/',
+		               7  => array('aaa', 'bbb'),
+		               13 => '联合团契暂停',
+		               26 => 'ddd'
+		             );
+
+		// Load CI calendar library.
+		$this->load->library('calendar', $prefs);
+		$data['calendar'] = $this->calendar->generate($year, $month, $data);
+
+		$this->loadHeader($lang);
+		$this->load->view($lang.'/events/calendar2', $data);
+		$this->load->view('templates/footer');	
+	}
+
 
 	/**
 	  * Loads page for adding Sunday message.
