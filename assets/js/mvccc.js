@@ -33,3 +33,15 @@
         });
     });
 }(jQuery);
+
+// Calendar create event popup
+/*
++function($){
+    $(document).ready(function(){
+        $(".calendarDay").click(function(){
+            number = $(this).find(".calDay").html();
+            $(this).popover({ title: 'Look! A bird!', placement: 'left'});
+        });
+    });
+}(jQuery)
+*/

@@ -146,7 +146,7 @@ class Pages extends CI_Controller {
 		   {week_row_end}</tr>{/week_row_end}
 
 		   {cal_row_start}<tr class="dateRow">{/cal_row_start}
-		   {cal_cell_start}<td>{/cal_cell_start}
+		   {cal_cell_start}<td class="calendarDay">{/cal_cell_start}
 
 		   {cal_cell_content}
 		   <div class="calDay"> {day} </div>
@@ -154,10 +154,8 @@ class Pages extends CI_Controller {
 		   {/cal_cell_content}
 
 		   {cal_cell_content_today}
-		   <div class="highlight">
-		     <div class="calDay"> {day} </div>
+		     <div class="calDay highlight"> {day} </div>
 		     <div class="calContent"> {content} </div>
-		   </div>
 		   {/cal_cell_content_today}
 
 		   {cal_cell_no_content}
@@ -178,13 +176,18 @@ class Pages extends CI_Controller {
 		   {table_close}</table>{/table_close}
 		';
 
-		$data = array(
-					   1  => 'foo',
-		               # 3  => 'http://example.com/news/article/2006/03/',
-		               7  => array('aaa', 'bbb'),
-		               13 => '联合团契暂停',
-		               26 => 'ddd'
-		             );
+		$this->load->model('event_model', 'event');
+		$events = $this->event->get_events($year, $month);
+		$data = array();
+		foreach ($events as $key => $event) {
+			$eventsPerDay = array();
+			if (isset($data[$event['day']]))
+			{
+				$eventsPerDay = $data[intval($event['day'])];
+			}
+			$eventsPerDay[] = $event['title'];
+			$data[intval($event['day'])] = $eventsPerDay;
+		}
 
 		// Load CI calendar library.
 		$this->load->library('calendar', $prefs);
