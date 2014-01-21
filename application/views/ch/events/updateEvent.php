@@ -1,7 +1,7 @@
 <div class="row well">
     <br><br>
     <div class="col-lg-8 col-lg-offset-2">
-        <form class="form-horizontal" role="form" method="post" accept-charset="utf-8" action="<?php echo site_url().'/pages/doUpdateEvent/'. $event['_id']?>">
+        <form class="form-horizontal" role="form" method="post" accept-charset="utf-8" action="<?php echo site_url().'/events/doUpdateEvent/'. $event['id']?>">
             <div class="form-group">
                 <label class="col-lg-2 control-label">日期</label>
                 <div class="col-lg-10">
@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">時間</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="time" value="<?php echo $event['time']?>">
+                    <input type="text" class="form-control" name="time" value="<?php echo $event['start_time']?>">
                     <?php echo form_error('time'); ?>
                 </div>
             </div>
@@ -28,9 +28,20 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">類別</label>
                 <div class="col-lg-10">
-                    <select class="form-control" name="category" value="<?php echo $event['category']?>">
-                        <option>活動</option>
-                        <option>消息 </option>
+                    <select class="form-control" name="category">
+                        <?php
+                        $category = $event['category'];
+                        if ($category == '活動')
+                        {
+                            printf('<option selected>活動</option>');
+                            printf('<option>消息</option>'); 
+                        }
+                        else
+                        {
+                            printf('<option>活動</option>');
+                            printf('<option selected>消息</option>');                             
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -44,7 +55,7 @@
                 <div class="col-lg-offset-2 col-lg-10">
                     <button type="submit" class="btn btn-warning">更改</button>
                     <?php
-                        $url = site_url() . '/pages/calendar/' . $event['year'] . '/' . $event['month'];
+                        $url = site_url() . '/events/eventList/' . $year . '/' . $month;
                         printf('<a href="%s" class="btn btn-default" role="button">取消</a>', $url);
                     ?>
                 </div>

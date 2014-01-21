@@ -1,7 +1,7 @@
 <div class="row well">
     <br><br>
     <div class="col-lg-8 col-lg-offset-2">
-        <form class="form-horizontal" role="form" method="post" accept-charset="utf-8" action="<?php echo site_url().'/pages/doCreateEvent/'?>">
+        <form class="form-horizontal" role="form" method="post" accept-charset="utf-8" action="<?php echo site_url().'/events/doCreateEvent/'?>">
             <div class="form-group">
                 <label class="col-lg-2 control-label">日期</label>
                 <div class="col-lg-10">
@@ -44,7 +44,7 @@
                 <div class="col-lg-offset-2 col-lg-10">
                     <button type="submit" class="btn btn-info">添加</button>
                     <?php
-                        $url = site_url() . '/pages/calendar/';
+                        $url = site_url() . '/events/eventList/';
                         printf('<a href="%s" class="btn btn-default" role="button">取消</a>', $url);
                     ?>
                 </div>

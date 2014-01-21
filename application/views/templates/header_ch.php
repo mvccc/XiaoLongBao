@@ -87,7 +87,7 @@
                 <li><a href="#">信仰討論</a></li>
               </ul>
             </li>
-            <li><a href="<?php echo site_url(); ?>/pages/calendar">日歷活動</a></li>
+            <li><a href="<?php echo site_url(); ?>/events/eventList">日歷活動</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
               <ul class="dropdown-menu">

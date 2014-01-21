@@ -1,7 +1,11 @@
 <?php
 class Event_model extends CI_Model {
 
-    var $tableName  = 'events';
+    var $dateTimeFormat = "m-d-Y";
+    var $tableName  = 'event';
+    var $colName    = 'date';
+    // $mysqldate = date( 'Y-m-d H:i:s', $phpdate );
+    // $phpdate = strtotime( $mysqldate );
 
     function __construct()
     {
@@ -12,12 +16,12 @@ class Event_model extends CI_Model {
 
     function get_events($year='', $month='')
     {
-        $data = array();
-        $data["year"]    = $year;
-        $data["month"]   = $month;
-        $this->db->order_by("timestamp", "ASC");
-        $result = $this->db->get_where($this->tableName, $data);
-        return $result;
+        $this->db->from($this->tableName);        
+        $this->db->where('YEAR(date) =', $year);
+        $this->db->where('MONTH(date) =', $month); 
+        $this->db->order_by("date", "ASC");
+        $result = $this->db->get();
+        return $result->result_array();
     }
 
     function add_event($data)
@@ -27,19 +31,19 @@ class Event_model extends CI_Model {
 
     function delete_event($id)
     {
-        $this->db->delete($this->tableName, array('_id' => $id)); 
+        $this->db->delete($this->tableName, array('id' => $id)); 
     }
 
     function get_event($id)
     {
-        $events = $this->db->get_where($this->tableName, array('_id' => $id));
-        reset($events);
-        return current($events);
+        $event = $this->db->get_where($this->tableName, array('id' => $id));
+        # TODO: check no event found.
+        return $event->result_array()[0];
     }
 
     function update_event($id, $data)
     {
-        return $this->db->update($this->tableName, $data, array('_id' => $id));
+        return $this->db->update($this->tableName, $data, array('id' => $id));
     }
 
 }
