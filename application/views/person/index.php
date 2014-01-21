@@ -8,3 +8,5 @@ foreach ($persons as $person)
 }
 ?>
 </table>
+<br/>
+<a href="<?php echo site_url(); ?>/person/create"><button>Create a person</button></a>

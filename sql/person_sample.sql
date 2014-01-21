@@ -1,7 +1,9 @@
+drop table Persons;
+
 create table Persons
 (
   PId int not null auto_increment,
-  PName varchar(255) not null,
+  PName varchar(255) not null unique,
   primary key (PId)
 );
 
