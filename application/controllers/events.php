@@ -21,7 +21,7 @@ class Events extends Pages {
     */
     public function eventList($year='', $month='', $lang = 'ch')
     {
-        if ( ! file_exists('application/views/'.$lang.'/events/events.php'))
+        if ( ! file_exists('application/views/events/eventList.php'))
         {
             // Whoops, we don't have a page for that!
             show_404();
@@ -50,7 +50,7 @@ class Events extends Pages {
         $data['events'] = $this->event->get_events($year, $month);
 
         $this->loadHeader($lang);
-        $this->load->view($lang.'/events/events', $data);
+        $this->load->view('events/eventList', $data);
         $this->load->view('templates/footer');      
     }
 
@@ -66,7 +66,7 @@ class Events extends Pages {
             show_404();
         }
 
-        if ( ! file_exists('application/views/'.$lang.'/events/createEvent.php'))
+        if ( ! file_exists('application/views/events/createEvent.php'))
         {
             // Whoops, we don't have a page for that!
             show_404();
@@ -79,7 +79,7 @@ class Events extends Pages {
         $data["dateTimeFormat"] = $this->dateTimeFormat;
 
         $this->loadHeader($lang);
-        $this->load->view($lang.'/events/createEvent', $data);
+        $this->load->view('events/createEvent', $data);
         $this->load->view('templates/footer');
     }
 
@@ -150,7 +150,7 @@ class Events extends Pages {
         $data['month']  = $dateTime->format('m');
 
         $this->loadHeader($lang);
-        $this->load->view($lang.'/events/updateEvent', $data);
+        $this->load->view('events/updateEvent', $data);
         $this->load->view('templates/footer');  
     }
 
@@ -307,7 +307,7 @@ class Events extends Pages {
         $data['calendar'] = $this->calendar->generate($year, $month, $data);
 
         $this->loadHeader($lang);
-        $this->load->view($lang.'/events/calendar', $data);
+        $this->load->view('events/calendar', $data);
         $this->load->view('templates/footer');  
     }
 }
