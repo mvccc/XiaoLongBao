@@ -3,16 +3,16 @@
         <div class="event-header">
             <div class="col-lg-6">
                 <ul class="pager event-header-left pull-left">
-                    <li><a href="<?php printf("%s/events/eventList/%s/%s", site_url(), $previous['year'], $previous['month']);?>">Previous</a></li>
-                    <li><a href="<?php echo site_url();?>/events/eventList">今天</a></li>
-                    <li><a href="<?php echo site_url();?>/events/calendar">日歷</a></li>
-                    <li><a href="<?php printf("%s/events/eventList/%s/%s", site_url(), $next['year'], $next['month']);?>">Next</a></li>
+                    <li><a href="<?php printf("%s/events/eventList/%s/%s/%s", site_url(), $lang, $previous['year'], $previous['month']);?>"><?php echo $this->lang->line('button_previous')?></a></li>
+                    <li><a href="<?php printf("%s/events/eventList/%s", site_url(), $lang); ?>"><?php echo $this->lang->line('button_today')?></a></li>
+                    <li><a href="<?php printf("%s/events/calendar/%s", site_url(), $lang); ?>"><?php echo $this->lang->line('button_calendar')?></a></li>
+                    <li><a href="<?php printf("%s/events/eventList/%s/%s/%s", site_url(), $lang, $next['year'], $next['month']);?>"><?php echo $this->lang->line('button_next')?></a></li>
                     <?php
                         $logged_in = $this->session->userdata('logged_in');
                         if(isset($logged_in) && $logged_in == TRUE)
                         {
-                            $url = site_url() . "/events/createEvent";
-                            printf('<li><a href="%s">創建</a></li>', $url);
+                            $url = site_url() . "/events/createEvent/" . $lang;
+                            printf('<li><a href="%s">%s</a></li>', $url, $this->lang->line('button_create'));
                         } 
                     ?>
                 </ul>

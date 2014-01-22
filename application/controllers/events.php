@@ -19,13 +19,15 @@ class Events extends Pages {
     /**
     * Loads event page.  
     */
-    public function eventList($year='', $month='', $lang = 'ch')
+    public function eventList($lang = 'ch', $year='', $month='')
     {
         if ( ! file_exists('application/views/events/eventList.php'))
         {
             // Whoops, we don't have a page for that!
             show_404();
         }
+
+        $this->loadResouces($lang);
 
         // Set the default year and month to the current date.
         date_default_timezone_set('America/Los_Angeles');
@@ -47,7 +49,8 @@ class Events extends Pages {
         $data['next'] = $this->calendar->adjust_date($month + 1, $year);
 
         $this->load->model('event_model', 'event');
-        $data['events'] = $this->event->get_events($year, $month);
+        $data['events'] = $this->event->get_events($year, $month, $lang);
+        $data['lang'] = $lang;
 
         $this->loadHeader($lang);
         $this->load->view('events/eventList', $data);
@@ -71,6 +74,8 @@ class Events extends Pages {
             // Whoops, we don't have a page for that!
             show_404();
         }
+
+        $this->loadResouces($lang);
 
         $this->load->library('form_validation');
 
@@ -119,12 +124,13 @@ class Events extends Pages {
             $data['title']      = $this->input->post('title');
             $data['content']    = $this->input->post('content');
             $data['category']   = $this->input->post('category');
+            $data['lang']       = $lang;
 
             $this->load->model('event_model', 'event');
             $data['events'] = $this->event->add_event($data);
 
             // Redirect to calendar page.
-            $this->eventList($year, $month);
+            $this->eventList($lang, $year, $month);
         }
     }
 
@@ -139,6 +145,8 @@ class Events extends Pages {
             // TODO: show authentication error.
             show_404();
         }
+
+        $this->loadResouces($lang);
         $this->load->library('form_validation');
         $this->load->model('event_model', 'event');
         $data['event'] = $this->event->get_event($id);
@@ -194,7 +202,7 @@ class Events extends Pages {
             $data['events'] = $this->event->update_event($id, $data);
 
             // Redirect to calendar page.
-            $this->eventList($year, $month);
+            $this->eventList($lang, $year, $month);
         }
     }
 
@@ -217,7 +225,7 @@ class Events extends Pages {
     /*
      * Loads calendar page.
      */
-    public function calendar($year='', $month='', $lang = 'ch')
+    public function calendar($lang = 'ch', $year='', $month='')
     {
         // Set the default year and month to the current date.
         date_default_timezone_set('America/Los_Angeles');
@@ -285,7 +293,7 @@ class Events extends Pages {
         ';
 
         $this->load->model('event_model', 'event');
-        $events = $this->event->get_events($year, $month);
+        $events = $this->event->get_events($year, $month, $lang);
         $data = array();
         foreach ($events as $key => $event) {
 
@@ -309,6 +317,21 @@ class Events extends Pages {
         $this->loadHeader($lang);
         $this->load->view('events/calendar', $data);
         $this->load->view('templates/footer');  
+    }
+
+    /**
+      * Load resources bundle files.
+      */
+    private function loadResouces($lang = 'ch')
+    {
+        if ($lang == 'ch')
+        {
+            $this->lang->load('event', 'chinese');
+        }
+        else
+        {
+            $this->lang->load('event', 'english');
+        }
     }
 }
 ?>

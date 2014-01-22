@@ -14,11 +14,12 @@ class Event_model extends CI_Model {
         $this->load->database();
     }
 
-    function get_events($year='', $month='')
+    function get_events($year='', $month='', $lang)
     {
         $this->db->from($this->tableName);        
         $this->db->where('YEAR(date) =', $year);
         $this->db->where('MONTH(date) =', $month); 
+        $this->db->where('lang', $lang);
         $this->db->order_by("date", "ASC");
         $result = $this->db->get();
         return $result->result_array();

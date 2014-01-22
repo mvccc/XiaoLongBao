@@ -92,7 +92,7 @@
                 <li><a href="#">AWANA</a></li>
               </ul>
             </li>
-            <li><a href="#">Events</a></li>
+            <li><a href="<?php echo site_url(); ?>/events/eventList/en">Events</a></li>
             <li><a href="#">Prayer Requests</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
