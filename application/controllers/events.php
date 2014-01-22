@@ -82,6 +82,7 @@ class Events extends Pages {
         date_default_timezone_set('America/Los_Angeles');
         $data["today"] = date($this->dateTimeFormat, time());
         $data["dateTimeFormat"] = $this->dateTimeFormat;
+        $data["lang"] = $lang;
 
         $this->loadHeader($lang);
         $this->load->view('events/createEvent', $data);
@@ -156,6 +157,7 @@ class Events extends Pages {
         $data['date']   = $dateTime->format($this->dateTimeFormat);
         $data['year']   = $dateTime->format('Y');
         $data['month']  = $dateTime->format('m');
+        $data['lang']   = $lang;
 
         $this->loadHeader($lang);
         $this->load->view('events/updateEvent', $data);

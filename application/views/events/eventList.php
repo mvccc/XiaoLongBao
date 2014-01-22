@@ -44,10 +44,10 @@
                 $_day  = $dateTime->format('d');
 
                 # Delete event URL.
-                $deleteEventUrl = site_url() . '/events/doDeleteEvent/' . $event['id'];
+                $deleteEventUrl = site_url() . '/events/doDeleteEvent/' . $event['id'] . '/' . $lang;
 
                 # Update event URL.
-                $updateEventUrl = site_url() . '/events/updateEvent/' . $event['id'];
+                $updateEventUrl = site_url() . '/events/updateEvent/' . $event['id'] . '/' . $lang;
 
 
                 printf('<div class="event-list" id="event-%s">', $event['id']);
@@ -66,7 +66,7 @@
                 printf('</div>');
 
                 printf('<div class="col-lg-3">');
-                printf('<button class="btn btn-info" data-toggle="modal" data-target="#detail-%s">詳細內容</button>', $event['id']);
+                printf('<button class="btn btn-info" data-toggle="modal" data-target="#detail-%s">%s</button>', $event['id'], $this->lang->line('button_detail'));
 
                 # Modal for event detail.
                 printf('<div class="modal fade" id="detail-%s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">', $event['id']);
@@ -81,7 +81,7 @@
                 printf('<p>%s</p>', $event['content']);
                 printf('</div>');
                 printf('<div class="modal-footer">');
-                printf('<button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>');
+                printf('<button type="button" class="btn btn-default" data-dismiss="modal">%s</button>', $this->lang->line('button_close'));
                 printf('</div>');
                 printf('</div>');
                 printf('</div>');
@@ -93,11 +93,11 @@
                 {
                     # Update button
                     printf('&nbsp;');
-                    printf('<a href="%s" class="btn btn-warning" role="button">更改</a>', $updateEventUrl);
+                    printf('<a href="%s" class="btn btn-warning" role="button">%s</a>', $updateEventUrl, $this->lang->line('button_update'));
                     printf('&nbsp;');
 
                     # Delete button
-                    printf('<button class="btn btn-danger" data-toggle="modal" data-target="#%s">刪除</button>', $event['id']);
+                    printf('<button class="btn btn-danger" data-toggle="modal" data-target="#%s">%s</button>', $event['id'], $this->lang->line('button_delete'));
 
                     # Delete modal
                     printf('<div class="modal fade" id="%s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">', $event['id']);
@@ -112,8 +112,8 @@
                     printf('<p>%s</p>', $event['content']);
                     printf('</div>');
                     printf('<div class="modal-footer">');
-                    printf('<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>');
-                    printf('<button type="button" class="btn btn-danger" name="delete-event" data-dismiss="modal" target-id="%s" url="%s">刪除</button>', $event['id'], $deleteEventUrl);
+                    printf('<button type="button" class="btn btn-default" data-dismiss="modal">%s</button>', $this->lang->line('button_cancel'));
+                    printf('<button type="button" class="btn btn-danger" name="delete-event" data-dismiss="modal" target-id="%s" url="%s">%s</button>', $event['id'], $deleteEventUrl, $this->lang->line('button_delete'));
                     printf('</div>');
                     printf('</div>');
                     printf('</div>');
