@@ -27,7 +27,7 @@
             {
                 $category = $event['category'];
                 $categoryLabel = "label-info";
-                if ($category == '活動')
+                if ($category == 'event')
                 {
                    $categoryLabel = "label-danger";
                 }
@@ -62,7 +62,7 @@
                 printf('<div class="col-lg-6 event-title">');
                 printf('<h4><a href="#">%s</a></h4>', $event['title']);
                 printf('<small>%s | %s</small>', $weekDay, $event['start_time']);
-                printf('<span class="label %s">%s</span>',$categoryLabel, $category);
+                printf('<span class="label %s">%s</span>',$categoryLabel, $this->lang->line($category));
                 printf('</div>');
 
                 printf('<div class="col-lg-3">');

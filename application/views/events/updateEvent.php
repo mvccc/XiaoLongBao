@@ -30,17 +30,17 @@
                 <div class="col-lg-10">
                     <select class="form-control" name="category">
                         <?php
-                        $category = $event['category'];
-                        if ($category == '活動')
+                        $category    = $event['category'];
+                        $selectEvent = 'selected';
+                        $selectNews  = '';
+
+                        if ($category == 'news')
                         {
-                            printf('<option selected>活動</option>');
-                            printf('<option>消息</option>'); 
+                            $selectEvent = '';
+                            $selectNews  = 'selected';
                         }
-                        else
-                        {
-                            printf('<option>活動</option>');
-                            printf('<option selected>消息</option>');                             
-                        }
+                        printf('<option %s value="event">%s</option>', $selectEvent, $this->lang->line('event'));
+                        printf('<option %s value="news">%s</option>',  $selectNews,  $this->lang->line('news') );
                         ?>
                     </select>
                 </div>

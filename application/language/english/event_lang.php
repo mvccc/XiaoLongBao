@@ -16,4 +16,7 @@ $lang['label_start_time']       = "Time";
 $lang['label_title']            = "Title";
 $lang['label_category']         = "Category";
 $lang['label_detail']           = "Detail";
+
+$lang['news']                   = "news";
+$lang['event']                  = "event";
 ?>

@@ -29,8 +29,8 @@
                 <label class="col-lg-2 control-label"><?php echo $this->lang->line('label_category')?></label>
                 <div class="col-lg-10">
                     <select class="form-control" name="category">
-                        <option>活動</option>
-                        <option>消息 </option>
+                        <option value="event"><?php echo $this->lang->line('event')?></option>
+                        <option value="news"><?php echo $this->lang->line('news')?></option>
                     </select>
                 </div>
             </div>

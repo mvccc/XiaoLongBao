@@ -16,4 +16,7 @@ $lang['label_start_time']       = "時間";
 $lang['label_title']            = "標題";
 $lang['label_category']         = "類別";
 $lang['label_detail']           = "內容";
+
+$lang['news']                   = "消息";
+$lang['event']                  = "活動";
 ?>
