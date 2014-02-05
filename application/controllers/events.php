@@ -264,13 +264,11 @@ class Events extends Pages {
         $events = $this->event->get_events($year, $month, $lang);
         $data = array();
         foreach ($events as $key => $event) {
-
-            date_default_timezone_set('America/Los_Angeles');
             $dateTime = DateTime::createFromFormat($this->mysqlTimeFormat, $event['date']);
 
             $eventsPerDay = array();
             $day = $dateTime->format('d');
-            if (isset($data[$day]))
+            if (isset($data[intval($day)]))
             {
                 $eventsPerDay = $data[intval($day)];
             }
