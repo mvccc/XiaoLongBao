@@ -103,7 +103,6 @@ class Events extends Pages {
             $month      = $dateTime->format('m');
             $day        = $dateTime->format('d');
             $data['date'] = $dateTime->format('Y-m-d');
-            $data['timestamp']  = $dateTime->getTimestamp();
             $data['start_time'] = $this->input->post('time');
             $data['title']      = $this->input->post('title');
             $data['content']    = $this->input->post('content');
@@ -159,7 +158,6 @@ class Events extends Pages {
             $year               = $dateTime->format('Y');
             $month              = $dateTime->format('m');
             $data['date']       = $dateTime->format('Y-m-d');
-            $data['timestamp']  = $dateTime->getTimestamp();
             $data['start_time'] = $this->input->post('time');
             $data['title']      = $this->input->post('title');
             $data['content']    = $this->input->post('content');
