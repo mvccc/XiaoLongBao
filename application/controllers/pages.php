@@ -5,7 +5,7 @@
   */
 class Pages extends CI_Controller {
 
-	private function loadHeader($lang)
+	public function loadHeader($lang)
 	{
 		$this->load->view('templates/header_'.$lang);
 	}
@@ -66,25 +66,6 @@ class Pages extends CI_Controller {
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/churchInfo/pastors', $data);
 		$this->load->view('templates/footer');
-	}
-
-	/**
-	* Loads calendar page.	
-	*/
-	public function calendar($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/'.$lang.'/churchInfo/calendar.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		# $this->load->model('event_model', 'event');
-		# $data['events'] = $this->event->get_events();
-
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/churchInfo/calendar');
-		$this->load->view('templates/footer');		
 	}
 
 	/**

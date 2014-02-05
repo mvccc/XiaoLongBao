@@ -331,6 +331,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 {
   border-bottom: none; 
 }
+/*
 .date 
 {
   background: url(../img/calendar/nov.png) 0 0 no-repeat; 
@@ -339,6 +340,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
   width: 32px; 
   height: 45px;
 }
+*/
 
 /* Calendar & Events List on Calendar Page */
 .event-header { width: 100%; border-bottom: 1px solid #cccccc; overflow: hidden; padding-bottom: 10px; }
@@ -351,6 +353,12 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .event-mon { font-size: 1em; color: #aaa; text-transform: uppercase; font-family: Helvetica, Arial, sans-serif; font-weight: bold; margin: 5px 0 0 2px; letter-spacing: .4em; line-height: 1em;}
 
 .event-title>h4>a { color: #151B54; /* midnight blue */ }
+
+.calendar { margin: auto; border-collapse: collapse; }
+.dateRow td{width: 160px; height: 160px; border: 1px solid; border-color:#bbb; padding: 4px; vertical-align: top;}
+.calContent { border: 1px solid; background-color: #eeeeee; margin-top: 1px;}
+.heading-title-cell { margin: auto;}
+.highlight{ color: red;}
 
 /* History */
 #history{

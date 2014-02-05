@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url(); ?>assets/css/mvccc.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/datepicker.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -92,7 +93,7 @@
                 <li><a href="#">AWANA</a></li>
               </ul>
             </li>
-            <li><a href="#">Events</a></li>
+            <li><a href="<?php echo site_url(); ?>/events/eventList/en">Events</a></li>
             <li><a href="#">Prayer Requests</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>

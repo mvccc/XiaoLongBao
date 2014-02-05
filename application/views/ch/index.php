@@ -1,4 +1,4 @@
-<div class="well">
+<div class="well well-half">
 
     <!-- Home Page Slides -->
     <div class="row">
