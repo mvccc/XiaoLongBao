@@ -14,6 +14,7 @@ class Events extends Pages {
         // Call the Controller constructor
         parent::__construct();
         $this->load->library('session');
+        $this->load->helper('url');
     }
 
     /**
@@ -58,7 +59,7 @@ class Events extends Pages {
     }
 
     /*
-     * Loads event creation page.
+     * Creates an event.
      */
     public function createEvent($lang = 'ch')
     {
@@ -69,49 +70,31 @@ class Events extends Pages {
             show_404();
         }
 
-        if ( ! file_exists('application/views/events/createEvent.php'))
-        {
-            // Whoops, we don't have a page for that!
-            show_404();
-        }
-
-        $this->loadResouces($lang);
-
-        $this->load->library('form_validation');
-
         date_default_timezone_set('America/Los_Angeles');
-        $data["today"] = date($this->dateTimeFormat, time());
-        $data["dateTimeFormat"] = $this->dateTimeFormat;
-        $data["lang"] = $lang;
-
-        $this->loadHeader($lang);
-        $this->load->view('events/createEvent', $data);
-        $this->load->view('templates/footer');
-    }
-
-    /*
-     * Creates an event.
-     */
-    public function doCreateEvent($lang = 'ch')
-    {
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
-        {
-            // TODO: show authentication error.
-            show_404();
-        }
-
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
         $this->form_validation->set_rules($rules::$eventRules);
         if ($this->form_validation->run() == FALSE)
         {
-            $this->createEvent();
+            // Loads event creation page.
+            if ( ! file_exists('application/views/events/createEvent.php'))
+            {
+                // Whoops, we don't have a page for that!
+                show_404();
+            }
+            $this->loadResouces($lang);
+            $data["today"] = date($this->dateTimeFormat, time());
+            $data["dateTimeFormat"] = $this->dateTimeFormat;
+            $data["lang"] = $lang;
+
+            $this->loadHeader($lang);
+            $this->load->view('events/createEvent', $data);
+            $this->load->view('templates/footer');
         }
         else
         {
-            date_default_timezone_set('America/Los_Angeles');
+            // Create an event.
             $dateTime = DateTime::createFromFormat($this->dateTimeFormat, $this->input->post('date'));
 
             $data = array();
@@ -130,13 +113,14 @@ class Events extends Pages {
             $this->load->model('event_model', 'event');
             $data['events'] = $this->event->add_event($data);
 
-            // Redirect to calendar page.
-            $this->eventList($lang, $year, $month);
+            // Redirect to event page.
+            $url = sprintf("/events/eventList/%s/%s/%s/", $lang, $year, $month);
+            redirect($url, 'location', 302);
         }
     }
 
     /*
-     * Loads event update page.
+     * Updates an event.
      */
     public function updateEvent($id, $lang='ch')
     {
@@ -147,50 +131,31 @@ class Events extends Pages {
             show_404();
         }
 
-        $this->loadResouces($lang);
-        $this->load->library('form_validation');
-        $this->load->model('event_model', 'event');
-        $data['event'] = $this->event->get_event($id);
-
         date_default_timezone_set('America/Los_Angeles');
-        $dateTime = DateTime::createFromFormat($this->mysqlTimeFormat, $data['event']['date']);
-        $data['date']   = $dateTime->format($this->dateTimeFormat);
-        $data['year']   = $dateTime->format('Y');
-        $data['month']  = $dateTime->format('m');
-        $data['lang']   = $lang;
-
-        $this->loadHeader($lang);
-        $this->load->view('events/updateEvent', $data);
-        $this->load->view('templates/footer');  
-    }
-
-    /*
-     * Updates an event.
-     */
-    public function doUpdateEvent($id, $lang='ch')
-    {
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
-        {
-            // TODO: show authentication error.
-            show_404();
-        }
-
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
         $this->form_validation->set_rules($rules::$eventRules);
         if ($this->form_validation->run() == FALSE)
         {
-            $this->updateEvent($id);
+            $this->loadResouces($lang);
+            $this->load->model('event_model', 'event');
+            $data['event'] = $this->event->get_event($id);
+
+            $dateTime = DateTime::createFromFormat($this->mysqlTimeFormat, $data['event']['date']);
+            $data['date']   = $dateTime->format($this->dateTimeFormat);
+            $data['year']   = $dateTime->format('Y');
+            $data['month']  = $dateTime->format('m');
+            $data['lang']   = $lang;
+
+            $this->loadHeader($lang);
+            $this->load->view('events/updateEvent', $data);
+            $this->load->view('templates/footer'); 
         }
         else
         {
-            date_default_timezone_set('America/Los_Angeles');
             $dateTime = DateTime::createFromFormat($this->dateTimeFormat, $this->input->post('date'));
-
             $data = array();
-
             $year               = $dateTime->format('Y');
             $month              = $dateTime->format('m');
             $data['date']       = $dateTime->format('Y-m-d');
@@ -203,8 +168,9 @@ class Events extends Pages {
             $this->load->model('event_model', 'event');
             $data['events'] = $this->event->update_event($id, $data);
 
-            // Redirect to calendar page.
-            $this->eventList($lang, $year, $month);
+            // Redirect to event page.
+            $url = sprintf("/events/eventList/%s/%s/%s/", $lang, $year, $month);
+            redirect($url, 'location', 302);
         }
     }
 

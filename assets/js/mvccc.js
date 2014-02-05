@@ -8,6 +8,7 @@
             // alert(url);
             $(target).slideUp();
             $.post(url, null,function(data,status){
+                // TODO: 
                 // alert("Data: " + data + "\nStatus: " + status);
             });
         });
@@ -24,7 +25,7 @@
     });
 }(jQuery);
 
-// Data picker
+// Date picker
 +function($){
     $(document).ready(function(){
         $(".input-group.date").datepicker({
