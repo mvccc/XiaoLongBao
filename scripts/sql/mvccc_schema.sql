@@ -25,10 +25,23 @@ USE `mvdb1`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+--
+--
+CREATE TABLE IF NOT EXISTS `Persons`
+(
+  PId int NOT NULL AUTO_INCREMENT,
+  PName varchar(255) NOT NULL UNIQUE,
+  PRIMARY KEY (PId)
+);
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `events`
 --
 
-CREATE TABLE IF NOT EXISTS `event` (
+CREATE TABLE IF NOT EXISTS `events` (
   `id` mediumint(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   `date` date DEFAULT NULL,
@@ -59,10 +72,10 @@ CREATE TABLE IF NOT EXISTS `event_tag` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tag`
+-- Table structure for table `tags`
 --
 
-CREATE TABLE IF NOT EXISTS `tag` (
+CREATE TABLE IF NOT EXISTS `tags` (
   `id` mediumint(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(10) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -76,8 +89,8 @@ CREATE TABLE IF NOT EXISTS `tag` (
 -- Constraints for table `event_tag`
 --
 ALTER TABLE `event_tag`
-  ADD CONSTRAINT `FK_TAG` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_EVENT` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_TAG` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_EVENT` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

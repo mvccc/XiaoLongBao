@@ -29,9 +29,17 @@ USE `mvdb1`
 -- Dumping data for table `tag`
 --
 
-INSERT INTO `tag` (`id`, `name`) VALUES
+INSERT INTO `tags` (`id`, `name`) VALUES
 (1, '活動'),
 (2, '消息');
+
+--
+-- Dumping data for table `Persons`
+--
+
+INSERT INTO `Persons` (`PName`) VALUES ('Amy');
+INSERT INTO `Persons` (`PName`) VALUES ('Bob');
+INSERT INTO `Persons` (`PName`) VALUES ('Cun');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
