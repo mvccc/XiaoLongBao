@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `persons`
 (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL UNIQUE,
-  PRIMARY KEY (PId)
+  PRIMARY KEY (id)
 );
 
 -- --------------------------------------------------------

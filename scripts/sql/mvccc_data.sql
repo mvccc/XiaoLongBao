@@ -37,9 +37,9 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 -- Dumping data for table `Persons`
 --
 
-INSERT INTO `Persons` (`PName`) VALUES ('Amy');
-INSERT INTO `Persons` (`PName`) VALUES ('Bob');
-INSERT INTO `Persons` (`PName`) VALUES ('Cun');
+INSERT INTO `persons` (`name`) VALUES ('Amy');
+INSERT INTO `persons` (`name`) VALUES ('Bob');
+INSERT INTO `persons` (`name`) VALUES ('Cun');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
