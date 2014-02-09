@@ -19,6 +19,11 @@
 		    		<a class="col-md-5" href="mailto:tsmvccc@gmail.com">tsmvccc@gmail.com</a><div class="col-md-7">(650) 964-1591  ext. 1</div>
 		    	</div>
 		    	<br>
+		    	<div class ="row">
+		    		<div class="col-md-5">中文牧師: 候君麗</div><div class="col-md-7">Pastor: Junli Hou</div>
+		    		<a class="col-md-5" href="mailto:pastorjunli@gmail.com">pastorjunli@gmail.com</a><div class="col-md-7">(650) 588-6977</div>
+		    	</div>
+		    	<br>
 		    	<div class="row">
 		    		<div class="col-md-5">英文牧師: 康有完</div><div class="col-md-7">Pastor: Youwan Kang</div>
 		    		<a class="col-md-5" href="mailto:youwan@mvccc.org">youwan@mvccc.org</a><div class="col-md-7">(650) 964-1591  ext. 3</div>
