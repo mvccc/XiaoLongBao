@@ -8,12 +8,12 @@ class Person_model extends CI_Model {
 	
 	public function get_persons($name = FALSE)
 	{
-	  $this->db->order_by('PId', "asc");
+	  $this->db->order_by('id', "asc");
 
 	  if ($name === FALSE)
 	  {
 	    // refer CI's Model and DB methods
-	    $query = $this->db->get('Persons');
+	    $query = $this->db->get('persons');
 /*	    
 	    var_dump($query->result());
 	    echo "<br>";
@@ -27,14 +27,14 @@ class Person_model extends CI_Model {
 	    return $query->result_array();
 	  }
 	  
-	  $query = $this->db->get_where('Persons', array('PName' => $name));
+	  $query = $this->db->get_where('persons', array('name' => $name));
 	  return $query->result_array();
 	}
 	
 	public function add_person()
 	{
-	  $data = array('PName' => $this->input->post('pname'));
-	  return $this->db->insert('Persons', $data);
+	  $data = array('name' => $this->input->post('pname'));
+	  return $this->db->insert('persons', $data);
 	}
 	
 }

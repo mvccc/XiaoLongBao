@@ -27,10 +27,10 @@ USE `mvdb1`;
 --
 --
 --
-CREATE TABLE IF NOT EXISTS `Persons`
+CREATE TABLE IF NOT EXISTS `persons`
 (
-  PId int NOT NULL AUTO_INCREMENT,
-  PName varchar(255) NOT NULL UNIQUE,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL UNIQUE,
   PRIMARY KEY (PId)
 );
 
