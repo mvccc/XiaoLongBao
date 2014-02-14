@@ -2,7 +2,7 @@
 class Event_model extends CI_Model {
 
     var $dateTimeFormat = "m-d-Y";
-    var $tableName  = 'event';
+    var $tableName  = 'events';
     var $colName    = 'date';
     // $mysqldate = date( 'Y-m-d H:i:s', $phpdate );
     // $phpdate = strtotime( $mysqldate );
