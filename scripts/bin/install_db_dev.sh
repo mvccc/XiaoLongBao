@@ -19,6 +19,26 @@ log(){
 
 log "Installing MVCCC database schema..."
 
+# read from db config file if it exists
+if [ -z $1 ]
+then
+    filename=../../dev_config/database.cfg
+else
+	filename=$1
+fi
+echo $filename
+echo
+if [ -f $filename ]
+then
+	echo -n "Reading db configuration from database config file .."
+	echo
+	source $filename
+	log "config host: $defaultHost"
+	log "config port: $defaultPort"
+	log "config user: $defaultUsername"
+	log "config path: $defaultMysqlPath"
+fi
+
 # Read MySQL server host
 echo -n "MySQL server host [$defaultHost]:"
 read host
