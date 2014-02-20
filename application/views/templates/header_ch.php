@@ -91,7 +91,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">資源中心<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">申請表格</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/resources/forms">申請表格</a></li>
                 <li><a href="#">捐贈須知</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/resources/links">重要鏈接</a></li>
                 <li><a href="#">照片集錦</a></li>
