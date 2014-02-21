@@ -17,52 +17,47 @@
         <h2>Various AWANA Related Forms</h2>
         <hr>
         <table class="table table-striped table-hover">
-            <thead><tr><th>Form</th><th>Download</th><th>Detail</th></tr></thead>
+            <thead><tr><th>Form</th><th>Download</th></tr></thead>
             <tbody>
                 <tr>
-                    <td style="width: 30%">Registration Form and MEDICAL and LIABILITIES RELEASE FORM</td>
+                    <td>Registration Form and MEDICAL and LIABILITIES RELEASE FORM</td>
                     <td>
                         <a href="<?php echo base_url(); ?>assets/doc/Awana_Reg_Form.pdf">
                             <img width="50px" height="50px" src="<?php echo base_url(); ?>/assets/img/pdficon.gif">
                         </a>
                     </td>
-                    <td style="width: 50%"></td>
                 </tr>
                 <tr>
-                    <td style="width: 30%">LIT (Leader In Training) Agreement</td>
+                    <td>LIT (Leader In Training) Agreement</td>
                     <td>
                         <a href="<?php echo base_url(); ?>assets/doc/Awana_LIT_Agreement.pdf">
                             <img width="50px" height="50px" src="<?php echo base_url(); ?>/assets/img/pdficon.gif">
                         </a>
                     </td>
-                    <td style="width: 50%"></td>
                 </tr>
                 <tr>
-                    <td style="width: 30%">LIT (Leader In Training) Application</td>
+                    <td>LIT (Leader In Training) Application</td>
                     <td>
                         <a href="<?php echo base_url(); ?>assets/doc/Awana_LIT_Application.pdf">
                             <img width="50px" height="50px" src="<?php echo base_url(); ?>/assets/img/pdficon.gif">
                         </a>
                     </td>
-                    <td style="width: 50%"></td>
                 </tr>
                 <tr>
-                    <td style="width: 30%">Redeemable for One (1) AWANA Share</td>
+                    <td>Redeemable for One (1) AWANA Share</td>
                     <td>
                         <a href="<?php echo base_url(); ?>assets/doc/Awana_Redeemable.doc">
                             <img width="50px" height="50px" src="<?php echo base_url(); ?>/assets/img/wordicon.png">
                         </a>
                     </td>
-                    <td style="width: 50%"></td>
                 </tr>
                 <tr>
-                    <td style="width: 30%">AWANA Handbook</td>
+                    <td>AWANA Handbook</td>
                     <td>
                         <a href="<?php echo base_url(); ?>assets/doc/Awana_Handbook.pdf">
                             <img width="50px" height="50px" src="<?php echo base_url(); ?>/assets/img/pdficon.gif">
                         </a>
                     </td>
-                    <td style="width: 50%"></td>
                 </tr>
             </tbody>
         </table>
