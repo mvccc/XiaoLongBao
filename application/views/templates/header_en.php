@@ -90,7 +90,7 @@
                 <!--<li><a href="#">信仰討論</a></li>
                 <li><a href="#">禱告會</a></li>
                 <li><a href="#">預查</a></li> -->
-                <li><a href="#">AWANA</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/awana/introduction/en">AWANA</a></li>
               </ul>
             </li>
             <li><a href="<?php echo site_url(); ?>/events/eventList/en">Events</a></li>
