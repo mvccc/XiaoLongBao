@@ -82,7 +82,7 @@
                 <li><a href="<?php echo site_url(); ?>/pages/fellowships">團契生活</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolAdults">成人牧區</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/activities/sundaySchoolKids">兒童牧區</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/awana">AWANA</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/awana/introduction">AWANA</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/activities/choir">教會詩班</a></li>
                 <li><a href="#">信仰討論</a></li>
               </ul>
