@@ -256,5 +256,21 @@ class Pages extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	/**
+	  * Loads awana pages
+	  */
+	public function awana($page='introduction', $lang = 'ch')
+	{
+		if ( ! file_exists('application/views/awana/'.$page.'.php'))
+		{
+			// Whoops, we don't have a page for that!
+			show_404();
+		}
+
+		$data['lang'] = $lang;
+		$this->loadHeader($lang);
+		$this->load->view('/awana/'.$page, $data);
+		$this->load->view('templates/footer');
+	}
 }
 ?>
