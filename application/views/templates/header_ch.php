@@ -94,7 +94,7 @@
                 <li><a href="<?php echo site_url(); ?>/pages/resources/forms">申請表格</a></li>
                 <li><a href="#">捐贈須知</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/resources/links">重要鏈接</a></li>
-                <li><a href="#">照片集錦</a></li>
+                <li><a href="<?php echo site_url(); ?>/pages/gallery">照片集錦</a></li>
                 <li><a href="#">錄音錄像</a></li>
               </ul>
             </li>
