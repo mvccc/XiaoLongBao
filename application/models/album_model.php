@@ -13,7 +13,7 @@ class Album_model extends CI_Model {
     function get_albums()
     {
         $this->db->from($this->tableName);        
-        # $this->db->order_by("date", "ASC");
+        $this->db->order_by("date", "ASC");
         $result = $this->db->get();
         return $result->result_array();
     }

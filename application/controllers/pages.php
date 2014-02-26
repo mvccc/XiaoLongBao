@@ -295,7 +295,7 @@ class Pages extends CI_Controller {
 	/**
 	 * Loads album page
 	 */
-	public function album($albumId = 0, $lang='ch')
+	public function album($albumId = 1, $lang='ch')
 	{
 		if ( ! file_exists('application/views/' . $lang . '/resources/album.php'))
 		{
