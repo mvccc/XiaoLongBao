@@ -520,3 +520,6 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.gallery-item { width: 25%; }
+.gallery-item.w2 { width: 50%; }
