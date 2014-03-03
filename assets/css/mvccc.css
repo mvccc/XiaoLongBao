@@ -108,14 +108,14 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .stitched {
    padding: 20px;
    margin: 10px;
-   background: #99cc99; /*#ff0030;*/
+   background: #dddddd; /* #99cc99; */ 
    color: #151B54; /* #fff; */
    font-size: 21px;
    font-weight: bold;
    line-height: 1.3em;
    border: 2px dashed #fff;
    border-radius: 10px;
-   box-shadow: 0 0 0 4px #99cc99, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+   box-shadow: 0 0 0 4px #dddddd, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
    /* text-shadow: -1px -1px #fff ; */ /*#aa3030;*/
    font-weight: normal;
 }
