@@ -25,7 +25,7 @@ USE `mvdb1`;
 -- --------------------------------------------------------
 
 --
---
+-- Sample table for `persons`
 --
 CREATE TABLE IF NOT EXISTS `persons`
 (
@@ -33,6 +33,25 @@ CREATE TABLE IF NOT EXISTS `persons`
   `name` varchar(255) NOT NULL UNIQUE,
   PRIMARY KEY (id)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table for 'users'
+-- role could be 'S': super user(for internal use), 'M': church member, 'U': updater, TBD.
+--
+CREATE TABLE IF NOT EXISTS users
+(
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(64) NOT NULL,
+  salt VARCHAR(3) NOT NULL,
+  role CHAR(1) NOT NULL DEFAULT 'M',
+  first_name VARCHAR(64),
+  last_name VARCHAR(64),
+  PRIMARY KEY (id)
+);
+
 
 -- --------------------------------------------------------
 
