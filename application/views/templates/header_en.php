@@ -27,29 +27,31 @@
 
   <body>
 
-    <div class="top">
-        <div class="container">         
-            <ul class="loginbar pull-right">  
-                <?php
-                  $logged_in = $this->session->userdata('logged_in');
-                  if(isset($logged_in) && $logged_in == TRUE)
-                  {
-                    $url = site_url() . '/auth/doLogout/en';
-                    printf("<li><a href=\"%s\">Logout</a></li>", $url);
-                  }
-                  else
-                  {
-                    $url = site_url() . '/auth/login/loginpage/en';
-                    printf("<li><a href=\"%s\">Login</a></li>", $url);
-                  }
-                ?>  
-                <li class="devider"></li>   
-                <li><a href="<?php echo site_url(); ?>/pages/index/ch">中文網站</a></li>   
-            </ul>
-        </div>      
+  <div class="top">
+    <div class="container">
+      <ul class="loginbar pull-right">
+        <?php
+        $logged_in = $this->session->userdata('logged_in');
+        if(isset($logged_in) && $logged_in == TRUE)
+        {
+          $user = $this->session->userdata('firstname');
+          $url = site_url() . '/auth/doLogout/en';
+          printf("<li><a href=\"%s\">%s Logout</a></li>", $url, $user);
+        }
+        else
+        {
+          $url = site_url() . '/auth/login/en';
+          printf("<li><a href=\"%s\">Login</a></li>", $url);
+        }
+        ?>
+        <li class="devider"></li>
+        <li><a href="<?php echo site_url(); ?>/pages/index/ch">中文網站</a>
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
+  <div class="navbar navbar-inverse navbar-static-top mvccc-navbar" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

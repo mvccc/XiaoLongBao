@@ -41,6 +41,10 @@ INSERT INTO `persons` (`name`) VALUES ('Amy');
 INSERT INTO `persons` (`name`) VALUES ('Bob');
 INSERT INTO `persons` (`name`) VALUES ('Cun');
 
+-- data for table users
+INSERT INTO users (username, password, salt, role, first_name) 
+values ('admin', 'f51d6b032807c5c85b393cf8a175493afc3facbfec2522ccac91a1bd196431ff', 'efc', 'S', 'admin');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
