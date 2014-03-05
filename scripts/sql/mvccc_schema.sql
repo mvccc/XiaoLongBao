@@ -76,6 +76,22 @@ CREATE TABLE IF NOT EXISTS `events` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `albums`
+--
+
+CREATE TABLE IF NOT EXISTS `albums` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `title` varchar(256) COLLATE utf8_bin DEFAULT NULL,
+  `description` varchar(512) COLLATE utf8_bin DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `cover_img_name` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `event_tag`
 --
 

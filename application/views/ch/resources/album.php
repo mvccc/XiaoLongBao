@@ -1,25 +1,26 @@
 <div class="row well">
     <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li><a href="<?php echo site_url().'/pages/gallery'?>">照片集錦</a></li>
+            <li class="active"><a href="#"><?php echo $album['title'] ?></a></li>
+        </ol>
         <div class="page-header">
-            <h1>AWANA</h1>
+            <h1><?php echo $album['title']; ?></h1>
         </div>
 
         <?php
-            # Load Awana Menu.
-            $data['lang'] = $lang;
-            $this->load->view('/awana/awana_menu', $data);
 
             print("<br>");
             printf('<div id="container">');
             // Absolute path to the AWANA Album.
-            $albumDir = FCPATH . 'gallery/awana/';
+            $albumDir = FCPATH . 'gallery/' . $album['name'];
 
             $files = scandir($albumDir);
             foreach ($files as $key => $value)
             {
                 if ($key > 1)
                 {
-                    $imgPath = base_url() . 'gallery/awana/' . $value;
+                    $imgPath = base_url() . 'gallery/' . $album['name'] . '/' . $value;
                     printf('<div class="gallery-item">');
                     printf('<a class="fancybox" rel="group" href="%s">', $imgPath);
                     printf('<img class="img-thumbnail" src="%s" alt="" />', $imgPath);
