@@ -13,11 +13,11 @@
             print("<br>");
             printf('<div id="container">');
             // Absolute path to the AWANA Album.
-            $album_dir = FCPATH . 'gallery/' . $album['name'];
+            $albumDir = FCPATH . 'gallery/' . $album['name'];
 
-            if (file_exists($album_dir) && is_dir($album_dir))
+            if (file_exists($albumDir) && is_dir($albumDir))
             {
-                $files = scandir($album_dir);
+                $files = scandir($albumDir);
                 foreach ($files as $key => $value)
                 {
                     if ($key > 1)
@@ -32,6 +32,8 @@
                 }
             }
             printf("</div>");
+
+            clearstatcache();
         ?>
     </div>
 </div>
