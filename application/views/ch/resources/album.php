@@ -13,19 +13,22 @@
             print("<br>");
             printf('<div id="container">');
             // Absolute path to the AWANA Album.
-            $albumDir = FCPATH . 'gallery/' . $album['name'];
+            $album_dir = FCPATH . 'gallery/' . $album['name'];
 
-            $files = scandir($albumDir);
-            foreach ($files as $key => $value)
+            if (file_exists($album_dir) && is_dir($album_dir))
             {
-                if ($key > 1)
+                $files = scandir($album_dir);
+                foreach ($files as $key => $value)
                 {
-                    $imgPath = base_url() . 'gallery/' . $album['name'] . '/' . $value;
-                    printf('<div class="gallery-item">');
-                    printf('<a class="fancybox" rel="group" href="%s">', $imgPath);
-                    printf('<img class="img-thumbnail" src="%s" alt="" />', $imgPath);
-                    printf('</a>');
-                    printf('</div>');
+                    if ($key > 1)
+                    {
+                        $imgPath = base_url() . 'gallery/' . $album['name'] . '/' . $value;
+                        printf('<div class="gallery-item">');
+                        printf('<a class="fancybox" rel="group" href="%s">', $imgPath);
+                        printf('<img class="img-thumbnail" src="%s" alt="" />', $imgPath);
+                        printf('</a>');
+                        printf('</div>');
+                    }
                 }
             }
             printf("</div>");
