@@ -9,13 +9,22 @@
             print("<br>");
             foreach ($albums as $key => $album)
             {
-                $img_path = "gallery/" . $album['name'] . '/' . $album['cover_img_name'];
-                $coverImg = base_url() . $img_path;
                 $data_src = "";
 
-                # Display a dump image while the image file doesn't exist.
-                if ( ! file_exists($img_path))
+                if ( ! is_null($album['cover_img_name']))
                 {
+                    $img_path = "gallery/" . $album['name'] . '/' . $album['cover_img_name'];
+                    $coverImg = base_url() . $img_path;
+                
+                    # Display a dump image while the image file doesn't exist.
+                    if ( ! file_exists($img_path))
+                    {
+                        $data_src = "holder.js/250x250/auto/gray:#ffffff/text:Missing Photo";
+                    }
+                }
+                else
+                {
+                    # Display a dump image while the cover image doesn't set.
                     $data_src = "holder.js/250x250/auto/gray:#ffffff/text:Missing Photo";
                 }
                 
