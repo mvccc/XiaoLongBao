@@ -35,25 +35,6 @@
     });
 }(jQuery);
 
-// FancyBox
-+function($){
-    $(document).ready(function() {
-        $(".fancybox").fancybox();
-    });
-}(jQuery);
-
-//
-+function($){
-    $(document).ready(function() {
-        var $container = $('#container');
-        // initialize
-        $container.masonry({
-            columnWidth: 0,
-            itemSelector: '.gallery-item'
-        });
-    });
-}(jQuery)
-
 // Calendar create event popup
 /*
 +function($){
