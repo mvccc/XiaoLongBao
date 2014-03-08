@@ -165,9 +165,13 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
+		$this->load->library('javascript_plugins');
+		$plugins = $this->javascript_plugins;
+		$data['js_plugins'] = $plugins->generate(array($plugins::Holder));
+
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/activities/fellowship', $data);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/footer', $data);
 	}
 
 	/**
@@ -290,7 +294,7 @@ class Pages extends CI_Controller {
 
 		$this->load->library('javascript_plugins');
 		$plugins = $this->javascript_plugins;
-		$data['js_plugins'] = $plugins->generate(array($plugins::FancyBox));
+		$data['js_plugins'] = $plugins->generate(array($plugins::Holder));
 
 		$this->load->model('album_model', 'album');
 		$data['albums'] = $this->album->get_albums($lang);

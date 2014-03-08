@@ -20,9 +20,9 @@ class Javascript_plugins {
             'source/helpers/jquery.fancybox-thumbs.js?v=1.0.7'
             ),
         'css'  => array(
-            'source/jquery.fancybox.css?v=2.1.5' => 'screen',
-            'source/helpers/jquery.fancybox-buttons.css?v=1.0.5' => 'screen',
-            'source/helpers/jquery.fancybox-thumbs.css?v=1.0.7' => 'screen'
+            'source/jquery.fancybox.css?v=2.1.5' => array('media' => 'screen'),
+            'source/helpers/jquery.fancybox-buttons.css?v=1.0.5' => array('media' => 'screen'),
+            'source/helpers/jquery.fancybox-thumbs.css?v=1.0.7' => array('media' => 'screen')
           ),
         'init_script' => 'init.js'
         );
@@ -44,15 +44,14 @@ class Javascript_plugins {
     private $datePicker = array(
         'name' => 'datePicker',
         'src'  => array('bootstrap-datepicker.js'),
-        'css'  => array(),
+        'css'  => array('datepicker.css' => array()),
         'init_script' => 'init.js'       
         );
 
     private $holder = array(
         'name' => 'holder',
         'src'  => array('holder.js'),
-        'css'  => array(),
-        'init_script' => 'init.js'       
+        'css'  => array(),     
         );
 
     # Generate the lib path and css path of JavaScript plugins.
@@ -73,6 +72,21 @@ class Javascript_plugins {
             $out .= sprintf('<!-- JavaScript Plugin: %s -->', $pluginName);
             $out .= "\n";
 
+            # Generate JavaScirpt plugin CSS file links.
+            foreach ($pluginInfo['css'] as $css => $properties) 
+            {
+                $cssFullPath = $pluginPath . '/' . $css;
+                $out .= self::$four_spaces;
+                $out .= sprintf('<link rel="stylesheet" href="%s" type="text/css"', $cssFullPath);
+
+                # Generate properties for the CSS link tag.
+                foreach ($properties as $key => $value) {
+                    $out .= sprintf(' %s="%s"', $key, $value);
+                }
+                $out .= '/>';
+                $out .= "\n";
+            }
+
             # Generate JavaScript source paths.
             foreach ($pluginInfo['src'] as $key => $src) 
             {
@@ -82,20 +96,14 @@ class Javascript_plugins {
                 $out .= "\n";
             }
 
-            # Generate JavaScirpt plugin CSS file links.
-            foreach ($pluginInfo['css'] as $css => $media) 
+            # Generate JavaScript initial file source path.
+            if (isset($pluginInfo['init_script']))
             {
-                $cssFullPath = $pluginPath . '/' . $css;
+                $iniFilePath = $pluginPath . '/' . $pluginInfo['init_script'];
                 $out .= self::$four_spaces;
-                $out .= sprintf('<link rel="stylesheet" href="%s" type="text/css" media="%s" />', $cssFullPath, $media);
+                $out .= sprintf('<script type="text/javascript" src="%s"></script>', $iniFilePath);
                 $out .= "\n";
             }
-
-            # Generate JavaScript initial file source path.
-            $iniFilePath = $pluginPath . '/' . $pluginInfo['init_script'];
-            $out .= self::$four_spaces;
-            $out .= sprintf('<script type="text/javascript" src="%s"></script>', $iniFilePath);
-            $out .= "\n";
         }
         return $out;
     }

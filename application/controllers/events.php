@@ -88,9 +88,13 @@ class Events extends Pages {
             $data["dateTimeFormat"] = $this->dateTimeFormat;
             $data["lang"] = $lang;
 
+            $this->load->library('javascript_plugins');
+            $plugins = $this->javascript_plugins;
+            $data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
+
             $this->loadHeader($lang);
             $this->load->view('events/createEvent', $data);
-            $this->load->view('templates/footer');
+            $this->load->view('templates/footer', $data);
         }
         else
         {
@@ -147,9 +151,13 @@ class Events extends Pages {
             $data['month']  = $dateTime->format('m');
             $data['lang']   = $lang;
 
+            $this->load->library('javascript_plugins');
+            $plugins = $this->javascript_plugins;
+            $data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
+
             $this->loadHeader($lang);
             $this->load->view('events/updateEvent', $data);
-            $this->load->view('templates/footer'); 
+            $this->load->view('templates/footer', $data); 
         }
         else
         {

@@ -15,26 +15,6 @@
     });
 }(jQuery);
 
-
-// TinyMCE
-+function($){
-    $(document).ready(function(){
-        tinymce.init({
-            selector: "textarea"
-        });
-    });
-}(jQuery);
-
-// Date picker
-+function($){
-    $(document).ready(function(){
-        $(".input-group.date").datepicker({
-            autoclose: true, 
-            todayHighlight: true
-        });
-    });
-}(jQuery);
-
 // Calendar create event popup
 /*
 +function($){
