@@ -49,7 +49,8 @@ INSERT INTO `albums` (`id`, `name`, `title`, `description`, `date`, `cover_img_n
 (1, 'awana', 'awana', NULL, '2014-02-25', '1_b.jpg'),
 (2, 'ChineseNewYear2014', '春節聯歡晚會 2014', NULL, '2014-02-26', '2_b.jpg'),
 (3, 'Summer2013', '夏令會 2013', NULL, '2014-02-27', '3_b.jpg'),
-(4, 'ChineseNewYear2013', '春節聯歡晚會 2013', NULL, '2014-02-28', '4_b.jpg');
+(4, 'ChineseNewYear2013', '春節聯歡晚會 2013', NULL, '2014-02-28', '4_b.jpg'),
+(5, 'MissingAlbum', 'Missing Album', NULL, '2014-03-06', 'missing.jpg');
 
 
 -- data for table users
