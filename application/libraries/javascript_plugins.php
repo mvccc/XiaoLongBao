@@ -10,6 +10,7 @@ class Javascript_plugins {
 
     private static $four_spaces = "    ";
 
+    # List of JavaScript plugin payloads.
     private $fancyBox = array(
         'name' => 'fancyBox',
         'src'  => array(
