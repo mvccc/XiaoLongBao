@@ -197,8 +197,11 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
+		$this->load->model('prayer_model', 'prayer');
+		$data['items'] = $this->prayer->get_latestPrayerItems();
+		
 		$this->loadHeader($lang);
-		$this->load->view($lang.'/request/prayer');
+		$this->load->view($lang.'/request/prayer', $data);
 		$this->load->view('templates/footer');
 	}
 
