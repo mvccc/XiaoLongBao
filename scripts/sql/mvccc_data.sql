@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `mvdb1`
 --
-USE `mvdb1`
+USE `mvdb1`;
 
 --
 -- Dumping data for table `event`
@@ -57,6 +57,31 @@ INSERT INTO `albums` (`id`, `name`, `title`, `description`, `date`, `cover_img_n
 INSERT INTO users (username, password, salt, role, first_name) 
 values ('admin', 'f51d6b032807c5c85b393cf8a175493afc3facbfec2522ccac91a1bd196431ff', 'efc', 'S', 'admin');
 
+INSERT INTO `prayer_sections` (`name`) VALUES ('差傳事工');
+INSERT INTO `prayer_sections` (`name`) VALUES ('教會本週事奉');
+INSERT INTO `prayer_sections` (`name`) VALUES ('教會同工與會友');
+
+INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項A1');
+INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項A2');
+INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項B1');
+INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項B2');
+INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項B3');
+INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項C1');
+INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項C2');
+
+INSERT INTO `prayer` (`date`, `section_id`, `ordinal`, `item_id`) VALUES
+('2014-03-05', 1, 1, 1),
+('2014-03-05', 1, 2, 2),
+('2014-03-05', 2, 1, 3),
+('2014-03-05', 2, 2, 4),
+('2014-03-05', 3, 1, 5),
+('2014-03-12', 1, 1, 1),
+('2014-03-12', 1, 2, 2),
+('2014-03-12', 3, 2, 5),
+('2014-03-12', 2, 2, 4),
+('2014-03-12', 2, 1, 3),
+('2014-03-12', 3, 1, 6),
+('2014-03-12', 2, 3, 7);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

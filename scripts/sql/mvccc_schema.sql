@@ -127,6 +127,48 @@ ALTER TABLE `event_tag`
   ADD CONSTRAINT `FK_TAG` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_EVENT` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prayer_sections`
+--
+
+CREATE TABLE IF NOT EXISTS `prayer_sections` (
+  `id` mediumint(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prayer_items`
+--
+
+CREATE TABLE IF NOT EXISTS `prayer_items` (
+  `id` mediumint(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prayer`
+--
+
+CREATE TABLE IF NOT EXISTS `prayer` (
+  `date` date NOT NULL,
+  `section_id` mediumint(11) NOT NULL,
+  `ordinal` smallint(4) NOT NULL,
+  `item_id` mediumint(11) NOT NULL,
+  PRIMARY KEY (`date`, `section_id`, `item_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+ALTER TABLE `prayer`
+  ADD CONSTRAINT `FK_PRAYER_SECTION` FOREIGN KEY (`section_id`) REFERENCES `prayer_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PRAYER_ITEM` FOREIGN KEY (`item_id`) REFERENCES `prayer_items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
