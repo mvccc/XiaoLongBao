@@ -55,6 +55,26 @@ CREATE TABLE IF NOT EXISTS users
 
 -- --------------------------------------------------------
 
+--
+-- Table for videos/sunday messages
+--
+CREATE TABLE IF NOT EXISTS videos
+(
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(200) NOT NULL,
+  speaker VARCHAR(64) NOT NULL,
+  scripture VARCHAR(65535),
+  file_name VARCHAR(64) NOT NULL,
+  audio_name VARCHAR(64),
+  date DATE NOT NULL,
+  sunday_message CHAR(2) NOT NULL DEFAULT 'Y',
+  PRIMARY KEY (id)
+);
+
+CREATE INDEX video_by_date ON videos (date);
+
+-- --------------------------------------------------------
+
 
 --
 -- Table structure for table `events`
