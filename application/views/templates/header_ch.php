@@ -17,12 +17,18 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url(); ?>assets/css/mvccc.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/css/datepicker.css" rel="stylesheet">
+    
+    <!-- Flowplayer for displaying flash file -->
+    <script src="<?php echo base_url(); ?>/assets/plugin/flowplayer/flowplayer-3.2.13.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- need this in head for slimscroll.. -->
+    <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
   </head>
 
   <body>
@@ -77,7 +83,7 @@
                 <li><a href="<?php echo site_url(); ?>/pages/church/contact">聯係我們</a></li>
               </ul>
             </li>
-            <li><a href="<?php echo site_url(); ?>/pages/worship">主日崇拜</a></li>
+            <li><a href="<?php echo site_url(); ?>/worship">主日崇拜</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">教會生活<b class="caret"></b></a>
               <ul class="dropdown-menu">
