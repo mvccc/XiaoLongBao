@@ -167,11 +167,11 @@ class Pages extends CI_Controller {
 
 		$this->load->library('javascript_plugins');
 		$plugins = $this->javascript_plugins;
-		$data['js_plugins'] = $plugins->generate(array($plugins::Holder));
+		$footer_data['js_plugins'] = $plugins->generate(array($plugins::Holder));
 
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/activities/fellowship', $data);
-		$this->load->view('templates/footer', $data);
+		$this->load->view('templates/footer', $footer_data);
 	}
 
 	/**
@@ -276,12 +276,12 @@ class Pages extends CI_Controller {
 
 		$this->load->library('javascript_plugins');
 		$plugins = $this->javascript_plugins;
-		$data['js_plugins'] = $plugins->generate(array($plugins::FancyBox, $plugins::Masonry));
+		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FancyBox, $plugins::Masonry));
 
 		$data['lang'] = $lang;
 		$this->loadHeader($lang);
 		$this->load->view('/awana/'.$page, $data);
-		$this->load->view('templates/footer', $data);
+		$this->load->view('templates/footer', $footer_data);
 	}
 
 	/**
@@ -297,14 +297,14 @@ class Pages extends CI_Controller {
 
 		$this->load->library('javascript_plugins');
 		$plugins = $this->javascript_plugins;
-		$data['js_plugins'] = $plugins->generate(array($plugins::Holder));
+		$footer_data['js_plugins'] = $plugins->generate(array($plugins::Holder));
 
 		$this->load->model('album_model', 'album');
 		$data['albums'] = $this->album->get_albums($lang);
 
 		$this->loadHeader($lang);
 		$this->load->view($lang . '/resources/gallery', $data);
-		$this->load->view('templates/footer', $data);		
+		$this->load->view('templates/footer', $footer_data);		
 	}
 
 	/**
@@ -320,14 +320,14 @@ class Pages extends CI_Controller {
 
 		$this->load->library('javascript_plugins');
 		$plugins = $this->javascript_plugins;
-		$data['js_plugins'] = $plugins->generate(array($plugins::FancyBox, $plugins::Masonry));
+		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FancyBox, $plugins::Masonry));
 
 		$this->load->model('album_model', 'album');
 		$data['album'] = $this->album->get_album($albumId);
 
 		$this->loadHeader($lang);
 		$this->load->view($lang . '/resources/album', $data);
-		$this->load->view('templates/footer', $data);		
+		$this->load->view('templates/footer', $footer_data);		
 	}
 }
 ?>

@@ -90,11 +90,11 @@ class Events extends Pages {
 
             $this->load->library('javascript_plugins');
             $plugins = $this->javascript_plugins;
-            $data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
+            $footer_data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
 
             $this->loadHeader($lang);
             $this->load->view('events/createEvent', $data);
-            $this->load->view('templates/footer', $data);
+            $this->load->view('templates/footer', $footer_data);
         }
         else
         {
@@ -153,11 +153,11 @@ class Events extends Pages {
 
             $this->load->library('javascript_plugins');
             $plugins = $this->javascript_plugins;
-            $data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
+            $footer_data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
 
             $this->loadHeader($lang);
             $this->load->view('events/updateEvent', $data);
-            $this->load->view('templates/footer', $data); 
+            $this->load->view('templates/footer', $footer_data); 
         }
         else
         {

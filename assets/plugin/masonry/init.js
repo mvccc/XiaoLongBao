@@ -1,5 +1,9 @@
 +function($){
     $(document).ready(function() {
+        $("img").load(function() {
+            jQuery("#container").masonry();
+        });
+
         var $container = $('#container');
         // initialize
         $container.masonry({
