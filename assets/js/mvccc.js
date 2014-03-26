@@ -15,6 +15,15 @@
     });
 }(jQuery);
 
+// JQuery scroll panel
++function($){
+    $(document).ready(function(){
+        $("#scroll_panel").slimScroll({
+          height: '300px'
+        });
+    });
+}(jQuery)
+
 // Calendar create event popup
 /*
 +function($){

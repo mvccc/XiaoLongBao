@@ -7,6 +7,7 @@ class Javascript_plugins {
     const Tinymce  = 'tinymce';
     const DatePicker = 'datePicker';
     const Holder = 'holder';
+    const FlowPlayer = 'flowplayer';
 
     private static $four_spaces = "    ";
 
@@ -53,6 +54,13 @@ class Javascript_plugins {
         'name' => 'holder',
         'src'  => array('holder.js'),
         'css'  => array(),     
+        );
+
+    private $flowplayer = array(
+        'name' => 'flowplayer',
+        'src' => array('flowplayer-3.2.13.min.js'),
+        'css' => array(),
+        'init_script' => 'init.js'
         );
 
     # Generate the lib path and css path of JavaScript plugins.
