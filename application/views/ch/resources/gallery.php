@@ -10,7 +10,6 @@
             foreach ($albums as $key => $album)
             {
                 $data_src = "";
-                $img_path = "";
                 $coverImg = "";
 
                 if ( ! is_null($album['cover_img_name']))

@@ -53,10 +53,14 @@ class Worship extends CI_Controller
 	  }
 	  
 	  $data['video'] = $this->video->get_video($id);
+
+	  $this->load->library('javascript_plugins');
+	  $plugins = $this->javascript_plugins;
+	  $footer_data['js_plugins'] = $plugins->generate(array($plugins::FlowPlayer));
 	  
 	  $this->load->view('templates/header_ch');
 	  $this->load->view('ch/worship/video', $data);
-	  $this->load->view('templates/footer');
+	  $this->load->view('templates/footer', $footer_data);
 	}
 	
 	public function audio($id = NULL)
@@ -68,10 +72,13 @@ class Worship extends CI_Controller
 	  }
 	   
 	  $data['video'] = $this->video->get_video($id);
+	  $this->load->library('javascript_plugins');
+	  $plugins = $this->javascript_plugins;
+	  $footer_data['js_plugins'] = $plugins->generate(array($plugins::FlowPlayer));
 	   
 	  $this->load->view('templates/header_ch');
 	  $this->load->view('ch/worship/audio', $data);
-	  $this->load->view('templates/footer');
+	  $this->load->view('templates/footer', $footer_data);
 	}
 	
 	public function direct_download($file)

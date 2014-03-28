@@ -15,41 +15,11 @@
     });
 }(jQuery);
 
-
-// TinyMCE
+// JQuery scroll panel
 +function($){
     $(document).ready(function(){
-        tinymce.init({
-            selector: "textarea"
-        });
-    });
-}(jQuery);
-
-// Date picker
-+function($){
-    $(document).ready(function(){
-        $(".input-group.date").datepicker({
-            autoclose: true, 
-            todayHighlight: true
-        });
-    });
-}(jQuery);
-
-// FancyBox
-+function($){
-    $(document).ready(function() {
-        $(".fancybox").fancybox();
-    });
-}(jQuery);
-
-//
-+function($){
-    $(document).ready(function() {
-        var $container = $('#container');
-        // initialize
-        $container.masonry({
-            columnWidth: 0,
-            itemSelector: '.gallery-item'
+        $("#scroll_panel").slimScroll({
+          height: '300px'
         });
     });
 }(jQuery)

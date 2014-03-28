@@ -39,7 +39,7 @@ class Event_model extends CI_Model {
     {
         $event = $this->db->get_where($this->tableName, array('id' => $id));
         # TODO: check no event found.
-        return $event->result_array()[0];
+        return $event->row_array();
     }
 
     function update_event($id, $data)
