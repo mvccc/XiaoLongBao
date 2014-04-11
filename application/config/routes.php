@@ -41,6 +41,9 @@
 $route['default_controller'] = "pages";
 $route['404_override'] = '';
 
+$route['upload'] = 'upload';
+$route['upload/do_upload'] = 'upload/do_upload';
+$rount['upload/deleteImage'] = 'upload/deleteImage';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
