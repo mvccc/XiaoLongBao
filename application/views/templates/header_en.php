@@ -30,8 +30,7 @@
     <div class="container">
       <ul class="loginbar pull-right">
         <?php
-        $logged_in = $this->session->userdata('logged_in');
-        if(isset($logged_in) && $logged_in == TRUE)
+        if(Access::isLoggedIn())
         {
           $user = $this->session->userdata('firstname');
           $url = site_url() . '/auth/doLogout/en';

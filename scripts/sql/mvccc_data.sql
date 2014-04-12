@@ -55,7 +55,13 @@ INSERT INTO `albums` (`id`, `name`, `title`, `description`, `date`, `cover_img_n
 
 -- data for table users
 INSERT INTO users (username, password, salt, role, first_name) 
-values ('admin', 'f51d6b032807c5c85b393cf8a175493afc3facbfec2522ccac91a1bd196431ff', 'efc', 'S', 'admin');
+values ('admin', 'f51d6b032807c5c85b393cf8a175493afc3facbfec2522ccac91a1bd196431ff', 'efc', 'A', 'ADMIN');
+INSERT INTO users (username, password, salt, role, first_name) 
+values ('itworker', '9aa2b24fe9dff93f0dc6769eca470f966ab5f46429e312ce1a923f3f87b7d2b7', '359', 'I', 'IT');
+INSERT INTO users (username, password, salt, role, first_name) 
+values ('editor', '19a6277e0dd005bd37ae60cf053a77f7b99e14e447cb2bd99b908e8955fe2fea', '935', 'E', 'EDITOR');
+INSERT INTO users (username, password, salt, role, first_name) 
+values ('common_user', '5a79b1f52f10e8c4aeae241761e887813d2bcd4cc1f26756ee8c1a0056731abe', '22a', 'M', 'MEMBER');
 
 -- sunday videos
 INSERT INTO videos (title, speaker, date, file_name, audio_name) 
