@@ -3,9 +3,8 @@
 		<div class="page-header">
 			<h2>主日信息 
 				<?php
-					$logged_in = $this->session->userdata('logged_in');
 					$url = site_url() . '/pages/add_sunday_message';
-					if(isset($logged_in) && $logged_in === TRUE)
+					if (Access::hasPrivilege(Access::PRI_UPDATE_WORSHIP))
 					{
 						printf('<a href="%s" class="btn btn-info btn-lg pull-right" role="button">添加信息</a>', $url);
 					}
