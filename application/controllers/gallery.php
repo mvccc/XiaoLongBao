@@ -83,7 +83,10 @@ class Gallery extends Pages {
         $this->load->model('album_model', 'album');
         $data['album'] = $this->album->get_album($albumId);
 
-        $footer_data = array();
+        $this->load->library('javascript_plugins');
+        $plugins = $this->javascript_plugins;
+        $footer_data['js_plugins'] = $plugins->generate(array($plugins::FileUpload));
+
         $this->loadHeader($lang);
         $this->load->view('gallery/updateAlbum', $data);
         $this->load->view('templates/footer', $footer_data);

@@ -1,3 +1,13 @@
+<div class="row well">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li><a href="<?php echo site_url().'/gallery/home'?>">照片集錦</a></li>
+            <li><a href="<?php echo site_url().'/gallery/album/'.$album['id']?>"><?php echo $album['title'] ?></a></li>
+            <li class="active"><a href="#">更改相册</a></li>
+        </ol>
+        <div class="page-header">
+            <h1><?php echo $album['title'];?></h1>
+        </div>
         <!-- The file upload form used as target for the file upload widget -->
         <form id="fileupload" action="<?php echo site_url().'/gallery/do_upload/'. $album['name']?>" 
             upload-url="<?php echo site_url().'/gallery/do_upload/'. $album['name']?>" 
@@ -125,3 +135,5 @@
             </tr>
         {% } %}
         </script>
+    </div>
+</div>

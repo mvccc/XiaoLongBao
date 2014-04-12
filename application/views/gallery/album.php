@@ -27,15 +27,17 @@
                 $files = scandir($albumDir);
                 foreach ($files as $key => $value)
                 {
-                    if ($key > 1)
+                    $imgPath = base_url() . 'gallery/' . $album['name'] . '/' . $value;
+                    $imgLocation = FCPATH . 'gallery/' . $album['name'] . '/' . $value;
+                    if (is_dir($imgLocation))
                     {
-                        $imgPath = base_url() . 'gallery/' . $album['name'] . '/' . $value;
-                        printf('<div class="gallery-item">');
-                        printf('<a class="fancybox" rel="group" href="%s">', $imgPath);
-                        printf('<img class="img-thumbnail" src="%s" alt="" />', $imgPath);
-                        printf('</a>');
-                        printf('</div>');
+                        continue;
                     }
+                    printf('<div class="gallery-item">');
+                    printf('<a class="fancybox" rel="group" href="%s">', $imgPath);
+                    printf('<img class="img-thumbnail" src="%s" alt="" />', $imgPath);
+                    printf('</a>');
+                    printf('</div>');
                 }
             }
             printf("</div>");
