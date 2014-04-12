@@ -233,7 +233,7 @@ class Gallery extends Pages {
         if ($this->form_validation->run() == FALSE)
         {
             // Loads event creation page.
-            if ( ! file_exists('application/views/events/createEvent.php'))
+            if ( ! file_exists('application/views/events/createAlbum.php'))
             {
                 // Whoops, we don't have a page for that!
                 show_404();
@@ -248,7 +248,7 @@ class Gallery extends Pages {
             $footer_data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
 
             $this->loadHeader($lang);
-            $this->load->view('events/createEvent', $data);
+            $this->load->view('gallery/createAlbum', $data);
             $this->load->view('templates/footer', $footer_data);
         }
         else
@@ -268,19 +268,19 @@ class Gallery extends Pages {
             $data['category']   = $this->input->post('category');
             $data['lang']       = $lang;
 
-            $this->load->model('event_model', 'event');
-            $data['events'] = $this->event->add_event($data);
+            # $this->load->model('event_model', 'event');
+            # $data['events'] = $this->event->add_event($data);
 
             // Redirect to event page.
-            $url = sprintf("/events/eventList/%s/%s/%s/", $lang, $year, $month);
+            $url = sprintf("/gallery/home/%s", $lang);
             redirect($url, 'location', 302);
         }
     }
 
     /*
-     * Updates an event.
+     * Delete album.
      */
-    public function updateEvent($id, $lang='ch')
+    public function deleteAlbum($id, $lang='ch')
     {
         $logged_in = $this->session->userdata('logged_in');
         if (!isset($logged_in) || $logged_in === FALSE)
@@ -297,8 +297,8 @@ class Gallery extends Pages {
         if ($this->form_validation->run() == FALSE)
         {
             $this->loadResouces($lang);
-            $this->load->model('event_model', 'event');
-            $data['event'] = $this->event->get_event($id);
+            # $this->load->model('event_model', 'event');
+            # $data['event'] = $this->event->get_event($id);
 
             $dateTime = DateTime::createFromFormat($this->mysqlTimeFormat, $data['event']['date']);
             $data['date']   = $dateTime->format($this->dateTimeFormat);
@@ -311,7 +311,7 @@ class Gallery extends Pages {
             $footer_data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
 
             $this->loadHeader($lang);
-            $this->load->view('events/updateEvent', $data);
+            $this->load->view('gallery/deleteAlbum', $data);
             $this->load->view('templates/footer', $footer_data); 
         }
         else
@@ -326,29 +326,13 @@ class Gallery extends Pages {
             $data['content']    = $this->input->post('content');
             $data['category']   = $this->input->post('category');
 
-            $this->load->model('event_model', 'event');
-            $data['events'] = $this->event->update_event($id, $data);
+            # $this->load->model('event_model', 'event');
+            # $data['events'] = $this->event->update_event($id, $data);
 
             // Redirect to event page.
-            $url = sprintf("/events/eventList/%s/%s/%s/", $lang, $year, $month);
+            $url = sprintf("/gallery/home/%s/", $lang);
             redirect($url, 'location', 302);
         }
-    }
-
-    /*
-     * Deletes an event.
-     */
-    public function doDeleteEvent($id)
-    {
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
-        {
-            // TODO: show authentication error.
-            show_404();
-        }
-
-        $this->load->model('event_model', 'event');
-        $data['events'] = $this->event->delete_event($id);
     }
 
     /**
