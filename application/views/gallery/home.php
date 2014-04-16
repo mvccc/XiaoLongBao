@@ -4,6 +4,11 @@
             <h1>照片集錦</h1>
         </div>
 
+        <div class="col-lg-12">
+            <a href="<?php echo site_url().'/gallery/createAlbum/' ?>" class="btn btn-primary" role="button">创建相册</a>
+        </div>
+        <hr class="mvccc-hr"/>
+
         <?php
             
             print("<br>");

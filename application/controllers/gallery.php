@@ -6,6 +6,10 @@ include APPPATH.'controllers/pages.php';
  */
 class Gallery extends Pages {
 
+    // Date time format in the US way.
+    var $dateTimeFormat     = "m-d-Y";
+    var $mysqlTimeFormat    = "Y-m-d";
+
     function __construct()
     {
         // Call the Controller constructor
@@ -97,7 +101,6 @@ class Gallery extends Pages {
      */
     public function do_upload($albumName, $lang = 'ch') {
         $upload_path_url = base_url() . '/gallery/' . $albumName . '/';
-        log_message("error", "-----" . $upload_path_url);
 
         $config['upload_path'] = FCPATH . 'gallery/' . $albumName . '/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif';
@@ -193,7 +196,6 @@ class Gallery extends Pages {
     }
 
     public function deleteImage($file, $albumName) {//gets the job done but you might want to add error checking and security
-        log_message("error", "delete");
         $success = unlink(FCPATH . '/gallery/' . $albumName . '/' . $file);
         $success = unlink(FCPATH . '/gallery/' . $albumName . '/thumbs/' . $file);
         //info to see if it is doing what it is supposed to
@@ -214,7 +216,7 @@ class Gallery extends Pages {
 
 
     /*
-     * Creates an album.
+     * Creates an album. TODO
      */
     public function createAlbum($lang = 'ch')
     {
@@ -229,11 +231,11 @@ class Gallery extends Pages {
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
-        $this->form_validation->set_rules($rules::$eventRules);
+        $this->form_validation->set_rules($rules::$albumRules);
         if ($this->form_validation->run() == FALSE)
         {
             // Loads event creation page.
-            if ( ! file_exists('application/views/events/createAlbum.php'))
+            if ( ! file_exists('application/views/gallery/createAlbum.php'))
             {
                 // Whoops, we don't have a page for that!
                 show_404();
@@ -253,7 +255,7 @@ class Gallery extends Pages {
         }
         else
         {
-            // Create an event.
+            // Create an album.
             $dateTime = DateTime::createFromFormat($this->dateTimeFormat, $this->input->post('date'));
 
             $data = array();
@@ -261,15 +263,19 @@ class Gallery extends Pages {
             $year       = $dateTime->format('Y');
             $month      = $dateTime->format('m');
             $day        = $dateTime->format('d');
-            $data['date'] = $dateTime->format('Y-m-d');
-            $data['start_time'] = $this->input->post('time');
-            $data['title']      = $this->input->post('title');
-            $data['content']    = $this->input->post('content');
-            $data['category']   = $this->input->post('category');
-            $data['lang']       = $lang;
+            $data['date']           = $dateTime->format('Y-m-d');
+            $data['title']          = $this->input->post('title');
+            $data['description']    = $this->input->post('content');
+            # $data['lang']           = $lang;
+            $data['name'] = time();
 
-            # $this->load->model('event_model', 'event');
-            # $data['events'] = $this->event->add_event($data);
+            # Create album folder
+            mkdir(FCPATH . '/gallery/' . $data['name']);
+            # Create thumbs folder
+            mkdir(FCPATH . '/gallery/' . $data['name'] . '/thumbs');
+
+            $this->load->model('album_model', 'album');
+            $this->album->add_album($data);
 
             // Redirect to event page.
             $url = sprintf("/gallery/home/%s", $lang);
@@ -278,9 +284,9 @@ class Gallery extends Pages {
     }
 
     /*
-     * Delete album.
+     * Update album. TODO
      */
-    public function deleteAlbum($id, $lang='ch')
+    public function updateAlbumInfo($id, $lang='ch')
     {
         $logged_in = $this->session->userdata('logged_in');
         if (!isset($logged_in) || $logged_in === FALSE)
@@ -335,6 +341,22 @@ class Gallery extends Pages {
         }
     }
 
+    /*
+     * Deletes an album.
+     */
+    public function deleteAlbum($id)
+    {
+        $logged_in = $this->session->userdata('logged_in');
+        if (!isset($logged_in) || $logged_in === FALSE)
+        {
+            // TODO: show authentication error.
+            show_404();
+        }
+
+        $this->load->model('album_model', 'album');
+        $data['events'] = $this->album->delete_album($id);
+    }
+
     /**
       * Load resources bundle files.
       */
@@ -343,10 +365,12 @@ class Gallery extends Pages {
         if ($lang == 'ch')
         {
             $this->lang->load('gallery', 'chinese');
+            $this->lang->load('button', 'chinese');
         }
         else
         {
             $this->lang->load('gallery', 'english');
+            $this->lang->load('button', 'english');
         }
     }
 }
