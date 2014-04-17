@@ -9,7 +9,8 @@
         </div>
 
         <div class="col-lg-12">
-            <a href="<?php echo site_url().'/gallery/updateAlbum/' . $album['id']?>" class="btn btn-primary" role="button">更改相册</a>
+            <a href="<?php echo site_url().'/gallery/updateAlbum/' . $album['id']?>" class="btn btn-primary" role="button">更改照片</a>
+            <a href="<?php echo site_url().'/gallery/updateAlbumInfo/' . $album['id']?>" class="btn btn-warning" role="button">更改信息</a>
             <a href="#" class="btn btn-danger" role="button">删除相册</a>
         </div>
 

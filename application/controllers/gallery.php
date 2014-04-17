@@ -216,7 +216,7 @@ class Gallery extends Pages {
 
 
     /*
-     * Creates an album. TODO
+     * Creates an album.
      */
     public function createAlbum($lang = 'ch')
     {
@@ -299,17 +299,15 @@ class Gallery extends Pages {
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
-        $this->form_validation->set_rules($rules::$eventRules);
+        $this->form_validation->set_rules($rules::$albumRules);
         if ($this->form_validation->run() == FALSE)
         {
             $this->loadResouces($lang);
-            # $this->load->model('event_model', 'event');
-            # $data['event'] = $this->event->get_event($id);
+            $this->load->model('album_model', 'album');
+            $data['album'] = $this->album->get_album($id);
 
-            $dateTime = DateTime::createFromFormat($this->mysqlTimeFormat, $data['event']['date']);
+            $dateTime = DateTime::createFromFormat($this->mysqlTimeFormat, $data['album']['date']);
             $data['date']   = $dateTime->format($this->dateTimeFormat);
-            $data['year']   = $dateTime->format('Y');
-            $data['month']  = $dateTime->format('m');
             $data['lang']   = $lang;
 
             $this->load->library('javascript_plugins');
@@ -317,26 +315,22 @@ class Gallery extends Pages {
             $footer_data['js_plugins'] = $plugins->generate(array($plugins::DatePicker, $plugins::Tinymce));
 
             $this->loadHeader($lang);
-            $this->load->view('gallery/deleteAlbum', $data);
+            $this->load->view('gallery/updateAlbumInfo', $data);
             $this->load->view('templates/footer', $footer_data); 
         }
         else
         {
             $dateTime = DateTime::createFromFormat($this->dateTimeFormat, $this->input->post('date'));
             $data = array();
-            $year               = $dateTime->format('Y');
-            $month              = $dateTime->format('m');
             $data['date']       = $dateTime->format('Y-m-d');
-            $data['start_time'] = $this->input->post('time');
             $data['title']      = $this->input->post('title');
-            $data['content']    = $this->input->post('content');
-            $data['category']   = $this->input->post('category');
+            $data['description']    = $this->input->post('content');
 
-            # $this->load->model('event_model', 'event');
-            # $data['events'] = $this->event->update_event($id, $data);
+            $this->load->model('album_model', 'album');
+            $this->album->update_album($id, $data);
 
             // Redirect to event page.
-            $url = sprintf("/gallery/home/%s/", $lang);
+            $url = sprintf("/gallery/album/%s/%s", $id, $lang);
             redirect($url, 'location', 302);
         }
     }
