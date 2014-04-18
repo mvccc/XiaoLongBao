@@ -13,11 +13,14 @@
         </blockquote>
 
         <div class="page-header">
-            <h2>禱告事項 <small>2013年11月20日</small><a href="<?php echo site_url()?>/pages/prayerhistory" class="btn btn-info btn-lg pull-right" role="button">禱告歷史</a></h2>
+            <h2>禱告事項 <small><?php print date('Y年m月d日', strtotime($scripture['date']));?></small>
+            <a href="<?php echo site_url()?>/prayer/prayerhistory" class="btn btn-info btn-lg pull-right" role="button">禱告歷史</a>
+            <a href="<?php echo site_url()?>/prayer/addprayer" class="btn btn-info btn-lg pull-right btn-addprayer" role="button">添加本週禱告</a></h2>
         </div>
         <div class="alert alert-info">
-            同聲朗讀經文<br/>
-            你求告我, 我就應允你, 並將你所不知道, 又大又難的事, 指示你。    (耶利米書33:3)<br/>
+            	同聲朗讀經文<br/>
+            	<?php print $scripture['text']; ?>
+           		<br/>
         </div>
         
         <?php

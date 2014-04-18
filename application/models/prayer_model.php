@@ -5,6 +5,7 @@ class Prayer_model extends CI_Model {
     var $prayerTable  = 'prayer';
     var $sectionTable  = 'prayer_sections';
     var $itemTable  = 'prayer_items';
+    var $scriptureTable = 'prayer_scriptures';
     var $colName    = 'date';
     // $mysqldate = date( 'Y-m-d H:i:s', $phpdate );
     // $phpdate = strtotime( $mysqldate );
@@ -26,12 +27,13 @@ class Prayer_model extends CI_Model {
     function get_prayerItems($date)
     {
         $this->db->select($this->prayerTable.'.*', FALSE);
+        $this->db->select('prayer_sections.id AS section_id', FALSE);
         $this->db->select('prayer_sections.name AS section_name', FALSE);
         $this->db->select('prayer_items.description AS item_name', FALSE);
         $this->db->where('date', $date);
         $this->db->from($this->prayerTable);
-        $this->db->join($this->sectionTable, 'section_id = prayer_sections.id');
         $this->db->join($this->itemTable, 'item_id = prayer_items.id');
+        $this->db->join($this->sectionTable, 'prayer_items.section_id = prayer_sections.id');
         $this->db->order_by('section_id asc, ordinal asc'); 
         $query = $this->db->get();
         $results = $query->result_array();
@@ -39,7 +41,7 @@ class Prayer_model extends CI_Model {
     }
     
     /**
-     * get_prayerItems
+     * get_latestPrayerItems
      *
      * Return the latest prayer items in database if any.
      *
@@ -55,6 +57,107 @@ class Prayer_model extends CI_Model {
             return $this->get_prayerItems($maxDate);
         }       
         return null;
+    }
+    
+    /**
+     * get_latestScripture
+     *
+     * Return the latest scripture in database if any.
+     *
+     */
+    function get_latestScripture()
+    {
+    	$this->db->select_max('date');
+    	$maxDateQuery = $this->db->get($this->scriptureTable);
+    	if ($maxDateQuery->num_rows() > 0)
+    	{
+    		$maxDateResult = $maxDateQuery->result_array();
+    		$maxDate = $maxDateResult[0]['date'];
+    		$scriptureQuery = $this->db->get_where($this->scriptureTable, array('date' => $maxDate));
+    		return $scriptureQuery->row_array();
+    	}
+    	return null;
+    }
+    
+    /**
+     * get_prayerItem
+     *
+     * Check if the given description already exists as a prayer item, if it does return the row,
+     * otherwise return null.
+     *
+     */
+    function get_prayerItem($description)
+    {
+    	$itemQuery = $this->db->get_where($this->itemTable, array('description' => $description));
+    	if ($itemQuery->num_rows() > 0)
+    	{
+    		return $itemQuery->row_array();
+    	}
+    	else
+    	{
+    		return null;
+    	}
+    }
+    
+    /**
+     * add_prayerItem
+     *
+     * Insert a new prayer item into db with the description and the section it belongs to
+     * and return its id.
+     */
+    function add_prayerItem($description, $sectionId)
+    {
+    	$itemEntry = array(
+    			'description' => $description,
+    			'section_id' => $sectionId
+    			);
+    	$this->db->insert($this->itemTable, $itemEntry);
+    	return $this->db->insert_id();
+    }
+    
+    /**
+     * add_prayer
+     *
+     * Persist a list of items and the sections it belongs to submitted from the form in db 
+     * for the given date.
+     *
+     */
+    function add_prayer($data)
+    {
+    	$date = $data['date'];
+    	$items = $data['items'];
+    	$itemSections = $data['itemSections'];
+    	$scriptEntry = array(
+    			'date' => $date,
+    			'text' => $data['scripture']
+    			);
+    	$this->db->insert($this->scriptureTable, $scriptEntry);
+    	for($i = 0; $i < count($items); ++$i) {
+    		$existingItem = $this->get_prayerItem($items[$i]);
+    		// If a prayer item already exists in db, we only need to insert the date and its
+    		// order in the section for this week.
+    		if($existingItem != null)
+    		{    		
+    			$prayEntry = array(
+    				'date' => $date,
+    				'ordinal' => $i + 1,
+    				'item_id' => $existingItem['id']
+    			);   			
+    		}
+    		// If a prayer item does not exist, we insert it to the db and then persist the order
+    		// and date info
+    		else
+    		{   
+    			$newItemId = $this->add_prayerItem($items[$i], $itemSections[$i]);	
+    			$prayEntry = array(
+    				'date' => $date,
+    				'ordinal' => $i + 1 ,
+    				'item_id' => $newItemId
+    			);   			
+    		}
+    		$this->db->insert($this->prayerTable, $prayEntry);
+    	}
+    	
     }
 }
 ?>

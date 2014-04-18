@@ -35,3 +35,17 @@
     });
 }(jQuery)
 */
++function($){
+    $(document).ready(function(){
+        $(".form-prayer").on("click", ".btn-deleteprayer", function($event){
+            $($event.target).closest("li.li-prayer").remove();
+        });
+        $(".form-prayer").on("click", ".btn-addprayer", function($event){
+            var $currentItem = $($event.target).closest("li.li-prayer");
+            var $newItem = $currentItem.clone();
+            $newItem.find(".textbox-prayer").val("");
+            $currentItem.after($newItem);
+            
+        });
+    });
+}(jQuery)
