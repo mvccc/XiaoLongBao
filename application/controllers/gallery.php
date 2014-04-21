@@ -69,14 +69,11 @@ class Gallery extends Pages {
      */
     public function updateAlbum($albumId = 1, $lang = 'ch')
     {
-        /*
-         $logged_in = $this->session->userdata('logged_in');
-         if (!isset($logged_in) || $logged_in === FALSE)
-         {
+        if (Access::hasPrivilege(Access::PRI_UPDATE_ALBUM))
+        {
             // TODO: show authentication error.
             show_404();
         }
-        */
 
         if ( ! file_exists('application/views/gallery/updateAlbum.php'))
         {
@@ -100,6 +97,13 @@ class Gallery extends Pages {
      * Upload image.
      */
     public function do_upload($albumName, $lang = 'ch') {
+
+        if (Access::hasPrivilege(Access::PRI_UPDATE_ALBUM))
+        {
+            // TODO: show authentication error.
+            show_404();
+        }
+
         $upload_path_url = base_url() . '/gallery/' . $albumName . '/';
 
         $config['upload_path'] = FCPATH . 'gallery/' . $albumName . '/';
@@ -195,7 +199,15 @@ class Gallery extends Pages {
         }
     }
 
-    public function deleteImage($file, $albumName) {//gets the job done but you might want to add error checking and security
+    public function deleteImage($file, $albumName) {
+
+        if (Access::hasPrivilege(Access::PRI_UPDATE_ALBUM))
+        {
+            // TODO: show authentication error.
+            show_404();
+        }
+
+        //gets the job done but you might want to add error checking and security
         $success = unlink(FCPATH . '/gallery/' . $albumName . '/' . $file);
         $success = unlink(FCPATH . '/gallery/' . $albumName . '/thumbs/' . $file);
         //info to see if it is doing what it is supposed to
@@ -220,8 +232,7 @@ class Gallery extends Pages {
      */
     public function createAlbum($lang = 'ch')
     {
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if (Access::hasPrivilege(Access::PRI_UPDATE_ALBUM))
         {
             // TODO: show authentication error.
             show_404();
@@ -284,12 +295,11 @@ class Gallery extends Pages {
     }
 
     /*
-     * Update album. TODO
+     * Update album.
      */
     public function updateAlbumInfo($id, $lang='ch')
     {
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if (Access::hasPrivilege(Access::PRI_UPDATE_ALBUM))
         {
             // TODO: show authentication error.
             show_404();
@@ -340,15 +350,15 @@ class Gallery extends Pages {
      */
     public function deleteAlbum($id)
     {
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+
+        if (Access::hasPrivilege(Access::PRI_UPDATE_ALBUM))
         {
             // TODO: show authentication error.
             show_404();
         }
 
         $this->load->model('album_model', 'album');
-        $data['events'] = $this->album->delete_album($id);
+        $this->album->delete_album($id);
     }
 
     /**
