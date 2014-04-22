@@ -67,16 +67,11 @@ class Prayer_model extends CI_Model {
      */
     function get_latestScripture()
     {
-    	$this->db->select_max('date');
-    	$maxDateQuery = $this->db->get($this->scriptureTable);
-    	if ($maxDateQuery->num_rows() > 0)
-    	{
-    		$maxDateResult = $maxDateQuery->result_array();
-    		$maxDate = $maxDateResult[0]['date'];
-    		$scriptureQuery = $this->db->get_where($this->scriptureTable, array('date' => $maxDate));
-    		return $scriptureQuery->row_array();
-    	}
-    	return null;
+    	$this->db->from($this->scriptureTable);
+    	$this->db->order_by('date', 'desc');
+    	$this->db->limit(1);
+    	$query = $this->db->get();
+    	return $query->row_array();
     }
     
     /**
@@ -137,24 +132,20 @@ class Prayer_model extends CI_Model {
     		// If a prayer item already exists in db, we only need to insert the date and its
     		// order in the section for this week.
     		if($existingItem != null)
-    		{    		
-    			$prayEntry = array(
-    				'date' => $date,
-    				'ordinal' => $i + 1,
-    				'item_id' => $existingItem['id']
-    			);   			
+    		{    	
+    			$itemId = $existingItem['id'];	 			
     		}
     		// If a prayer item does not exist, we insert it to the db and then persist the order
     		// and date info
     		else
     		{   
-    			$newItemId = $this->add_prayerItem($items[$i], $itemSections[$i]);	
-    			$prayEntry = array(
-    				'date' => $date,
-    				'ordinal' => $i + 1 ,
-    				'item_id' => $newItemId
-    			);   			
+    			$itemId = $this->add_prayerItem($items[$i], $itemSections[$i]);		
     		}
+    		$prayEntry = array(
+    				'date' => $date,
+    				'ordinal' => $i + 1,
+    				'item_id' => $itemId
+    		);
     		$this->db->insert($this->prayerTable, $prayEntry);
     	}
     	
