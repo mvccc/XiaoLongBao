@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `persons`
 
 --
 -- Table for 'users'
--- role could be 'S': super user(for internal use), 'M': church member, 'U': updater, TBD.
+-- role could be 'A': admin/su (for internal use), 'I' IT worker, 'E': content editor, 'M': church member.
 --
 CREATE TABLE IF NOT EXISTS users
 (

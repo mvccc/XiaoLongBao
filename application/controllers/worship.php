@@ -10,7 +10,6 @@ class Worship extends CI_Controller
 	{
 		// Call the Controller constructor
 		parent::__construct();
-		$this->load->library('session');
 		$this->load->helper("url");
 		$this->load->model('video_model', 'video');
 		$this->load->library("pagination");

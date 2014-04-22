@@ -64,6 +64,18 @@ class Auth extends CI_Controller
 	}
 	
 	/**
+	 * internal use only!!
+	 */
+	public function hashPassword($pwd)
+	{
+	  $salt = $this->createSalt();
+	  print_r($salt.'<br>');
+	  
+	  $hash = hash('sha256', $salt.hash('sha256', $pwd) );
+	  print_r($hash);
+	}
+	
+	/**
 	  * Do member login.
 	  */
 	public function doLogin($lang = 'ch')
