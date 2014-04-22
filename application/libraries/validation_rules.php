@@ -14,7 +14,7 @@ class Validation_rules {
               )
         );
 
-    public static $albumRules = array(
+    public static $album_rules = array(
            array(
                  'field'   => 'title', 
                  'label'   => 'title', 

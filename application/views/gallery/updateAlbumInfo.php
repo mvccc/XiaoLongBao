@@ -1,7 +1,7 @@
 <div class="row well">
     <br><br>
     <div class="col-lg-8 col-lg-offset-2">
-        <form class="form-horizontal" role="form" method="post" accept-charset="utf-8" action="<?php echo site_url().'/gallery/updateAlbumInfo/'. $album['id'] . '/' . $lang?>">
+        <form class="form-horizontal" role="form" method="post" accept-charset="utf-8" action="<?php echo site_url().'/gallery/update_album_info/'. $album['id'] . '/' . $lang?>">
             <div class="form-group">
                 <label class="col-lg-2 control-label"><?php echo $this->lang->line('album_date')?></label>
                 <div class="col-lg-10">
