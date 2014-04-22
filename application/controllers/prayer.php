@@ -10,7 +10,6 @@ class Prayer extends Pages {
     {
         // Call the Controller constructor
         parent::__construct();
-        $this->load->library('session');
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->model('prayer_model', 'prayerData');
@@ -22,8 +21,7 @@ class Prayer extends Pages {
     public function prayerList($lang = 'ch')
     {
         // TODO: make a helper function for login check
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if (!Access::hasPrivilege(Access::PRI_READ_PRAYER))
         {
             // TODO: show authentication error.
             show_404();
@@ -45,9 +43,7 @@ class Prayer extends Pages {
      */
     public function addprayer($lang = 'ch')
     {
-        $logged_in = $this->session->userdata('logged_in');
-        // TODO: add check for updater 
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if (!Access::hasPrivilege(Access::PRI_UPDATE_PRAYER))
         {
             // TODO: show authentication error.
             show_404();
@@ -56,9 +52,6 @@ class Prayer extends Pages {
         $this->load->library('form_validation');
         $data['lang'] = $lang;
        	$data['items'] = $this->prayerData->get_latestPrayerItems();
-        $this->loadHeader($lang);
-        $this->load->view($lang.'/request/addprayer', $data);
-        $this->load->view('templates/footer');
         $this->form_validation->set_rules('prayItems[]', 'prayItemsArray', 'trim|required');
         $this->form_validation->set_rules('scripture', 'scripture', 'trim|required');
         if ($this->form_validation->run() == FALSE)
@@ -69,7 +62,9 @@ class Prayer extends Pages {
             	// Whoops, we don't have a page for that!
             	show_404();          	
         	}
-        	
+        	$this->loadHeader($lang);
+        	$this->load->view($lang.'/request/addprayer', $data);
+        	$this->load->view('templates/footer');        	
         }
         else
         {

@@ -28,7 +28,7 @@
 				}
 				?>
 			<li class="li-prayer">
-				<textarea class="textbox-prayer" name="prayItems[]"><?php echo set_value('prayItems[]',  $item['item_name'] ); ?></textarea>
+				<textarea class="textbox-prayer" name="prayItems[]"><?php echo $item['item_name'] ?></textarea>
 				<a class="btn btn-danger btn-deleteprayer" href="#">
   					<i class="icon-trash icon-white"></i>
  					刪除
