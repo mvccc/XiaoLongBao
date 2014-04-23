@@ -229,28 +229,28 @@ class Gallery extends Pages {
             //$this->load->view('upload', $error);
 
             //Load the list of existing files in the upload directory
-            $existingFiles = get_dir_file_info($config['upload_path']);
-            $foundFiles = array();
-            $f=0;
-            foreach ($existingFiles as $fileName => $info) 
+            $existing_files = get_dir_file_info($config['upload_path']);
+            $found_files = array();
+            $f_cout=0;
+            foreach ($existing_files as $file_name => $info) 
             {
-              if($fileName!='thumbs')
+              if($file_name !== 'thumbs')
               {//Skip over thumbs directory
                 //set the data for the json array   
-                $foundFiles[$f]['name'] = $fileName;
-                $foundFiles[$f]['size'] = $info['size'];
-                $foundFiles[$f]['url'] = $upload_path_url . $fileName;
-                $foundFiles[$f]['thumbnailUrl'] = $upload_path_url . 'thumbs/' . $fileName;
-                $foundFiles[$f]['deleteUrl'] = site_url() . '/gallery/deleteImage/' . $fileName . '/' . $album_name;
-                $foundFiles[$f]['deleteType'] = 'POST';
-                $foundFiles[$f]['error'] = NULL;
+                $found_files[$f_cout]['name'] = $file_name;
+                $found_files[$f_cout]['size'] = $info['size'];
+                $found_files[$f_cout]['url'] = $upload_path_url . $file_name;
+                $found_files[$f_cout]['thumbnailUrl'] = $upload_path_url . 'thumbs/' . $file_name;
+                $found_files[$f_cout]['deleteUrl'] = site_url() . '/gallery/delete_image/' . $file_name . '/' . $album_name;
+                $found_files[$f_cout]['deleteType'] = 'POST';
+                $found_files[$f_cout]['error'] = NULL;
 
-                $f++;
+                $f_cout++;
               }
             }
             $this->output
             ->set_content_type('application/json')
-            ->set_output(json_encode(array('files' => $foundFiles)));
+            ->set_output(json_encode(array('files' => $found_files)));
         } 
         else 
         {
@@ -296,7 +296,7 @@ class Gallery extends Pages {
             $info->url = $upload_path_url . $data['file_name'];
             // I set this to original file since I did not create thumbs.  change to thumbnail directory if you do = $upload_path_url .'/thumbs' .$data['file_name']
             $info->thumbnailUrl = $upload_path_url . 'thumbs/' . $data['file_name'];
-            $info->deleteUrl = site_url() . '/gallery/deleteImage/' . $data['file_name'] . '/' . $album_name;
+            $info->deleteUrl = site_url() . '/gallery/delete_image/' . $data['file_name'] . '/' . $album_name;
             $info->deleteType = 'POST';
             $info->error = NULL;
 
@@ -304,7 +304,7 @@ class Gallery extends Pages {
             //this is why we put this in the constants to pass only json data
             if (IS_AJAX)
             {
-                echo json_encode(array("files" => $files));
+                echo json_encode(array('files' => $files));
                 //this has to be the only data returned or you will get an error.
                 //if you don't give this a json array it will give you a Empty file upload result error
                 //it you set this without the if(IS_AJAX)...else... you get ERROR:TRUE (my experience anyway)
@@ -326,7 +326,7 @@ class Gallery extends Pages {
      *
      * @return void
      */
-    public function deleteImage($file, $album_name) 
+    public function delete_image($file, $album_name) 
     {
 
         if ( ! Access::hasPrivilege(Access::PRI_UPDATE_ALBUM))
