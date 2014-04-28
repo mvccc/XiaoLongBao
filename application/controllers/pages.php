@@ -192,44 +192,6 @@ class Pages extends CI_Controller {
 	}
 
 	/**
-	  * Loads prayer page.
-	  */
-	public function prayer($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/'.$lang.'/request/prayer.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->model('prayer_model', 'prayer');
-		$data['items'] = $this->prayer->get_latestPrayerItems();
-		
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/request/prayer', $data);
-		$this->load->view('templates/footer');
-	}
-
-	/**
-	  *	Loads prayer history page.
-	  */
-	public function prayerhistory($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/'.$lang.'/request/requesthistory.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->model('request_model', 'request');
-		$data['requests'] = $this->request->get_requests($lang);
-
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/request/requesthistory', $data);
-		$this->load->view('templates/footer');
-	}
-
-	/**
 	  * Loads mission pages
 	  */
 	public function missions($lang = 'ch')
