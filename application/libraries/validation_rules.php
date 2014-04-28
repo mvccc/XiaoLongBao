@@ -13,4 +13,12 @@ class Validation_rules {
                  'rules'   => 'trim|required|max_length[20]'
               )
         );
+
+    public static $album_rules = array(
+           array(
+                 'field'   => 'title', 
+                 'label'   => 'title', 
+                 'rules'   => 'trim|required|max_length[20]'
+              )
+        );
 }

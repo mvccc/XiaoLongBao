@@ -18,12 +18,12 @@ class Album_model extends CI_Model {
         return $result->result_array();
     }
 
-    function add_albums($data)
+    function add_album($data)
     {
         $this->db->insert($this->tableName, $data);
     }
 
-    function delete_albums($id)
+    function delete_album($id)
     {
         $this->db->delete($this->tableName, array('id' => $id)); 
     }

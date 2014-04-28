@@ -8,6 +8,7 @@ class Javascript_plugins {
     const DatePicker = 'datePicker';
     const Holder = 'holder';
     const FlowPlayer = 'flowplayer';
+    const FileUpload = 'fileUpload';
 
     private static $four_spaces = "    ";
 
@@ -63,6 +64,35 @@ class Javascript_plugins {
         'init_script' => 'init.js'
         );
 
+    private $fileUpload = array(
+        'name' => 'fileUpload',
+        'src'  => array(
+            'js/vendor/jquery.ui.widget.js',
+            'js/tmpl.min.js',
+            'js/load-image.min.js',
+            'js/canvas-to-blob.min.js',
+            'js/jquery.blueimp-gallery.min.js',
+            'js/jquery.iframe-transport.js',
+            'js/jquery.fileupload.js',
+            'js/jquery.fileupload-process.js',
+            'js/jquery.fileupload-image.js',
+            'js/jquery.fileupload-audio.js',
+            'js/jquery.fileupload-video.js',
+            'js/jquery.fileupload-validate.js',
+            'js/jquery.fileupload-ui.js'
+            ),
+        'css'  => array(
+            'css/blueimp-gallery.min.css' => array(),
+            'css/jquery.fileupload.css' => array(),
+            'css/jquery.fileupload-ui.css' => array()
+          ),
+        'noscript' => array(
+            'css/jquery.fileupload-noscript.css',
+            'css/jquery.fileupload-ui-noscript.css'
+            ),
+        'init_script' => 'js/main.js'
+        );
+
     # Generate the lib path and css path of JavaScript plugins.
     # Param: $plugins - array of plugin name. E.g array(Javascript_plugins::FancyBox, Javascript_plugins::Masonry)
     public function generate($plugins)
@@ -94,6 +124,18 @@ class Javascript_plugins {
                 }
                 $out .= '/>';
                 $out .= "\n";
+            }
+
+            # Generate CSS nonscript links
+            if (isset($pluginInfo['noscript']))
+            {
+                foreach ($pluginInfo['noscript'] as $key => $src) 
+                {
+                    $cssFullPath = $pluginPath . '/' . $src;
+                    $out .= self::$four_spaces;
+                    $out .= sprintf('<noscript><link rel="stylesheet" href="%s"></noscript>', $cssFullPath);
+                    $out .= "\n";
+                }
             }
 
             # Generate JavaScript source paths.

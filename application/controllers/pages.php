@@ -15,6 +15,7 @@ class Pages extends CI_Controller {
 		// Call the Controller constructor
 		parent::__construct();
 		$this->load->library('session');
+		$this->load->helper(array('form', 'url', 'file'));
 	}
 
 	/**
@@ -244,52 +245,6 @@ class Pages extends CI_Controller {
 		$this->loadHeader($lang);
 		$this->load->view('/awana/'.$page, $data);
 		$this->load->view('templates/footer', $footer_data);
-	}
-
-	/**
-	 * Loads gallery page
-	 */
-	public function gallery($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/' . $lang . '/resources/gallery.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->library('javascript_plugins');
-		$plugins = $this->javascript_plugins;
-		$footer_data['js_plugins'] = $plugins->generate(array($plugins::Holder));
-
-		$this->load->model('album_model', 'album');
-		$data['albums'] = $this->album->get_albums($lang);
-
-		$this->loadHeader($lang);
-		$this->load->view($lang . '/resources/gallery', $data);
-		$this->load->view('templates/footer', $footer_data);		
-	}
-
-	/**
-	 * Loads album page
-	 */
-	public function album($albumId = 1, $lang='ch')
-	{
-		if ( ! file_exists('application/views/' . $lang . '/resources/album.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->library('javascript_plugins');
-		$plugins = $this->javascript_plugins;
-		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FancyBox, $plugins::Masonry));
-
-		$this->load->model('album_model', 'album');
-		$data['album'] = $this->album->get_album($albumId);
-
-		$this->loadHeader($lang);
-		$this->load->view($lang . '/resources/album', $data);
-		$this->load->view('templates/footer', $footer_data);		
 	}
 }
 ?>
