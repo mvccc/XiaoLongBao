@@ -17,11 +17,14 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">講員</label>
                 <div class="col-lg-10">
-                    <select class="form-control">
-                        <option>劉同蘇</option>
-                        <option>侯君麗</option>
-                        <option>其他</option>
-                    </select>
+                    <div id="myCombobox" class="dropdown combobox">
+                        <input class="mvccc_combobox_input" type="text" />
+                        <button type="button" class="btn btn-default mvccc_combobox_button" data-toggle="dropdown"><i class="caret"></i></button>
+                        <ul class="dropdown-menu">
+                            <li data-value="1"><a href="#">劉同蘇牧師</a></li>
+                            <li data-value="2"><a href="#">侯君麗牧師</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="form-group">

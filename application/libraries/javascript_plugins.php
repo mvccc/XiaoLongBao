@@ -9,6 +9,7 @@ class Javascript_plugins {
     const Holder = 'holder';
     const FlowPlayer = 'flowplayer';
     const FileUpload = 'fileUpload';
+    const FuelUx = 'fuelux';
 
     private static $four_spaces = "    ";
 
@@ -91,6 +92,13 @@ class Javascript_plugins {
             'css/jquery.fileupload-ui-noscript.css'
             ),
         'init_script' => 'js/main.js'
+        );
+
+    private $fuelux = array(
+        'name' => 'fuelux',
+        'src' => array(),
+        'css' => array('css/combobox.css' => array()),
+        'init_script' => 'js/init.js'
         );
 
     # Generate the lib path and css path of JavaScript plugins.
