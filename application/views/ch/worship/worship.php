@@ -3,7 +3,7 @@
 		<div class="page-header">
 			<h2>主日信息 
 				<?php
-					$url = site_url() . '/pages/add_sunday_message';
+					$url = site_url() . '/worship/add_sunday_message';
 					if (Access::hasPrivilege(Access::PRI_UPDATE_WORSHIP))
 					{
 						printf('<a href="%s" class="btn btn-info btn-lg pull-right" role="button">添加信息</a>', $url);
@@ -11,15 +11,7 @@
 				?>
 			</h2>
 		</div>
-		<!--ul class="pagination">
-			<li><a href="#">&laquo;</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">&raquo;</a></li>
-		</ul-->
+
 		<table class="table table-striped table-hover">
 			<thead><th>時間</th><th>信息</th><th>講員</th><th>下載</th><th>收聽</th><th>錄像</th></thead>
 			<tbody>

@@ -38,7 +38,7 @@ class Worship extends CI_Controller
 	  $data['videos'] = $this->video->get_sunday_videos($config["per_page"], $page);
 	  $data["links"] = $this->pagination->create_links(); // TODO, make it looks better
 	  
-	  $this->load->view('templates/header_ch');
+	  $this->load->view('templates/header_'.$lang);
 	  $this->load->view($lang.'/worship/worship', $data);
 	  $this->load->view('templates/footer');
 	}
@@ -94,6 +94,28 @@ class Worship extends CI_Controller
 	  header ("Content-Length: ".filesize($file));
 	  readfile($file_url);
 	  exit;
+	}
+
+	/**
+	 * Loads page for adding Sunday message.
+	 */
+	public function add_sunday_message($lang = 'ch')
+	{
+	  if (!Access::hasPrivilege(Access::PRI_UPDATE_WORSHIP))
+	  {
+	    // TODO: show authentication error.
+	    show_404();
+	  }
+	
+	  if ( ! file_exists('application/views/'.$lang.'/worship/addSundayMessage.php'))
+	  {
+	    // Whoops, we don't have a page for that!
+	    show_404();
+	  }
+	
+	  $this->load->view('templates/header_'.$lang);
+	  $this->load->view($lang.'/worship/addSundayMessage');
+	  $this->load->view('templates/footer');
 	}
 
 }
