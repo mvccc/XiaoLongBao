@@ -15,6 +15,7 @@ class Pages extends CI_Controller {
 		// Call the Controller constructor
 		parent::__construct();
 		$this->load->library('session');
+		$this->load->helper(array('form', 'url', 'file'));
 	}
 
 	/**
@@ -121,9 +122,12 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
+		$this->load->library('javascript_plugins');
+		$plugins = $this->javascript_plugins;
+		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FuelUx));
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/worship/addSundayMessage');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/footer', $footer_data);
 	}
 
 	/**
@@ -191,44 +195,6 @@ class Pages extends CI_Controller {
 	}
 
 	/**
-	  * Loads prayer page.
-	  */
-	public function prayer($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/'.$lang.'/request/prayer.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->model('prayer_model', 'prayer');
-		$data['items'] = $this->prayer->get_latestPrayerItems();
-		
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/request/prayer', $data);
-		$this->load->view('templates/footer');
-	}
-
-	/**
-	  *	Loads prayer history page.
-	  */
-	public function prayerhistory($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/'.$lang.'/request/requesthistory.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->model('request_model', 'request');
-		$data['requests'] = $this->request->get_requests($lang);
-
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/request/requesthistory', $data);
-		$this->load->view('templates/footer');
-	}
-
-	/**
 	  * Loads mission pages
 	  */
 	public function missions($lang = 'ch')
@@ -282,52 +248,6 @@ class Pages extends CI_Controller {
 		$this->loadHeader($lang);
 		$this->load->view('/awana/'.$page, $data);
 		$this->load->view('templates/footer', $footer_data);
-	}
-
-	/**
-	 * Loads gallery page
-	 */
-	public function gallery($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/' . $lang . '/resources/gallery.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->library('javascript_plugins');
-		$plugins = $this->javascript_plugins;
-		$footer_data['js_plugins'] = $plugins->generate(array($plugins::Holder));
-
-		$this->load->model('album_model', 'album');
-		$data['albums'] = $this->album->get_albums($lang);
-
-		$this->loadHeader($lang);
-		$this->load->view($lang . '/resources/gallery', $data);
-		$this->load->view('templates/footer', $footer_data);		
-	}
-
-	/**
-	 * Loads album page
-	 */
-	public function album($albumId = 1, $lang='ch')
-	{
-		if ( ! file_exists('application/views/' . $lang . '/resources/album.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->library('javascript_plugins');
-		$plugins = $this->javascript_plugins;
-		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FancyBox, $plugins::Masonry));
-
-		$this->load->model('album_model', 'album');
-		$data['album'] = $this->album->get_album($albumId);
-
-		$this->loadHeader($lang);
-		$this->load->view($lang . '/resources/album', $data);
-		$this->load->view('templates/footer', $footer_data);		
 	}
 }
 ?>

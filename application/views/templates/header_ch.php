@@ -22,6 +22,7 @@
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+
   </head>
 
   <body>
@@ -94,18 +95,17 @@
                 <li><a href="<?php echo site_url(); ?>/pages/resources/forms">申請表格</a></li>
                 <li><a href="#">捐贈須知</a></li>
                 <li><a href="<?php echo site_url(); ?>/pages/resources/links">重要鏈接</a></li>
-                <li><a href="<?php echo site_url(); ?>/pages/gallery">照片集錦</a></li>
+                <li><a href="<?php echo site_url(); ?>/gallery/home">照片集錦</a></li>
                 <li><a href="#">錄音錄像</a></li>
               </ul>
             </li>
             <?php
-              $logged_in = $this->session->userdata('logged_in');
-              if(isset($logged_in) && $logged_in == TRUE)
+              if(Access::hasPrivilege(Access::PRI_READ_PRAYER))
               {
                 printf('<li class="dropdown">');
                 printf('<a href="#" class="dropdown-toggle" data-toggle="dropdown">同工服務<b class="caret"></b></a>');
                 printf('<ul class="dropdown-menu">');
-                printf('<li><a href="%s">代禱贊美</a></li>', site_url()."/pages/prayer");
+                printf('<li><a href="%s">代禱贊美</a></li>', site_url()."/prayer/prayerList");
                 printf('<li><a href="%s">差傳事工</a></li>', site_url()."/pages/missions");
                 printf('</ul>');
                 printf('</li>');

@@ -85,27 +85,31 @@ INSERT INTO `prayer_sections` (`name`) VALUES ('差傳事工');
 INSERT INTO `prayer_sections` (`name`) VALUES ('教會本週事奉');
 INSERT INTO `prayer_sections` (`name`) VALUES ('教會同工與會友');
 
-INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項A1');
-INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項A2');
-INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項B1');
-INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項B2');
-INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項B3');
-INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項C1');
-INSERT INTO `prayer_items` (`description`) VALUES ('禱告事項C2');
+INSERT INTO `prayer_items` (`description`,`section_id`) VALUES ('禱告事項A1', '1');
+INSERT INTO `prayer_items` (`description`,`section_id`) VALUES ('禱告事項A2', '1');
+INSERT INTO `prayer_items` (`description`,`section_id`) VALUES ('禱告事項B1', '2');
+INSERT INTO `prayer_items` (`description`,`section_id`) VALUES ('禱告事項B2', '2');
+INSERT INTO `prayer_items` (`description`,`section_id`) VALUES ('禱告事項B3', '2');
+INSERT INTO `prayer_items` (`description`,`section_id`) VALUES ('禱告事項C1', '3');
+INSERT INTO `prayer_items` (`description`,`section_id`) VALUES ('禱告事項C2','3');
 
-INSERT INTO `prayer` (`date`, `section_id`, `ordinal`, `item_id`) VALUES
-('2014-03-05', 1, 1, 1),
-('2014-03-05', 1, 2, 2),
-('2014-03-05', 2, 1, 3),
-('2014-03-05', 2, 2, 4),
-('2014-03-05', 3, 1, 5),
-('2014-03-12', 1, 1, 1),
-('2014-03-12', 1, 2, 2),
-('2014-03-12', 3, 2, 5),
-('2014-03-12', 2, 2, 4),
-('2014-03-12', 2, 1, 3),
-('2014-03-12', 3, 1, 6),
-('2014-03-12', 2, 3, 7);
+INSERT INTO `prayer` (`date`, `item_id`, `ordinal`) VALUES
+('2014-03-05', 1, 1),
+('2014-03-05', 2, 2),
+('2014-03-05', 3, 1),
+('2014-03-05', 4, 2),
+('2014-03-05', 5, 1),
+('2014-03-12', 1, 1),
+('2014-03-12', 2, 2),
+('2014-03-12', 5, 3),
+('2014-03-12', 4, 2),
+('2014-03-12', 3, 1),
+('2014-03-12', 6, 2),
+('2014-03-12', 7, 1);
+
+INSERT INTO `prayer_scriptures` (`date`, `text`) VALUES
+('2014-03-05', '你求告我, 我就應允你, 並將你所不知道, 又大又難的事, 指示你。    (耶利米書33:3)'),
+('2014-03-12', '你求告我, 我就應允你, 並將你所不知道, 又大又難的事, 指示你。    (耶利米書33:3)');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

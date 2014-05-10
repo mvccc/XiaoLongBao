@@ -523,3 +523,30 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 
 .gallery-item { width: 25%; }
 .gallery-item.w2 { width: 50%; }
+
+/* prayer page styles*/
+.prayscripture
+{
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+.textbox-prayscripture
+{
+  width: 80%;
+}
+.btn-addprayer
+{
+  margin-right: 10px;
+}
+.textbox-prayer
+{
+  width: 80%;
+}
+.btn-deleteprayer
+{
+  margin-left: 10px;
+}
+.li-prayer
+{
+  padding-bottom: 10px;
+}
