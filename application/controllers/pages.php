@@ -122,9 +122,12 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
+		$this->load->library('javascript_plugins');
+		$plugins = $this->javascript_plugins;
+		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FuelUx));
 		$this->loadHeader($lang);
 		$this->load->view($lang.'/worship/addSundayMessage');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/footer', $footer_data);
 	}
 
 	/**
