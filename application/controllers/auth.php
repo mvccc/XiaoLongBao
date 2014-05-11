@@ -82,8 +82,7 @@ class Auth extends CI_Controller
 	{
 	  $this->loadResouces($lang);
 
-		$logged_in = $this->session->userdata('logged_in');
-		if (!isset($logged_in) || $logged_in == FALSE)
+		if (!Access::isLoggedIn())
 		{
 			// TODO: Form validation
 			// TODO: User login

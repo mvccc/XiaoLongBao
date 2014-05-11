@@ -84,51 +84,6 @@ class Pages extends CI_Controller {
 		$this->load->view($lang.'/churchInfo/contact');
 		$this->load->view('templates/footer');
 	}
-			
-	/**
-	 * Loads pages in church worship menu.
-	 */
-	public function worship($lang = 'ch')
-	{
-		if ( ! file_exists('application/views/'.$lang.'/worship/worship.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-		$this->load->model('message_model', 'message');
-
-		$data['messages'] = $this->message->get_messages();
-
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/worship/worship', $data);
-		$this->load->view('templates/footer');
-	}
-
-	/**
-	  * Loads page for adding Sunday message.
-	  */
-	public function add_sunday_message($lang = 'ch')
-	{
-		$logged_in = $this->session->userdata('logged_in');
-		if (!isset($logged_in) || $logged_in === FALSE)
-		{
-			// TODO: show authentication error.
-			show_404();
-		}
-
-		if ( ! file_exists('application/views/'.$lang.'/worship/addSundayMessage.php'))
-		{
-			// Whoops, we don't have a page for that!
-			show_404();
-		}
-
-		$this->load->library('javascript_plugins');
-		$plugins = $this->javascript_plugins;
-		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FuelUx));
-		$this->loadHeader($lang);
-		$this->load->view($lang.'/worship/addSundayMessage');
-		$this->load->view('templates/footer', $footer_data);
-	}
 
 	/**
 	  * Loads fellowships page.
