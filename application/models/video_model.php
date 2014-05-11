@@ -5,6 +5,12 @@ class Video_model extends CI_Model {
 	{
 		$this->load->database();
 	}
+	
+	function add_video($data, $sunday = 'Y')
+	{
+	  $data['sunday_message'] = $sunday;
+	  $this->db->insert('videos', $data);
+	}
 
 	public function get_video_count($sunday = TRUE)
 	{

@@ -3,9 +3,9 @@
 		<div class="page-header">
 			<h2>主日信息 
 				<?php
-					$url = site_url() . '/worship/add_sunday_message';
 					if (Access::hasPrivilege(Access::PRI_UPDATE_WORSHIP))
 					{
+					  $url = site_url() . '/worship/addSundayMessage';
 						printf('<a href="%s" class="btn btn-info btn-lg pull-right" role="button">添加信息</a>', $url);
 					}
 				?>
