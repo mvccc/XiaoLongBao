@@ -64,20 +64,18 @@ INSERT INTO users (username, password, salt, role, first_name)
 values ('common_user', '5a79b1f52f10e8c4aeae241761e887813d2bcd4cc1f26756ee8c1a0056731abe', '22a', 'M', 'MEMBER');
 
 -- sunday videos
-INSERT INTO videos (title, speaker, date, file_name, audio_name) 
-values ('主日信息 (一)', '劉同蘇牧師', '2014-02-01', '2014-02-01.flv', '2014-02-01.mp3');
-INSERT INTO videos (title, speaker, date, file_name, audio_name) 
-values ('主日信息 (二)', '劉同蘇牧師', '2014-02-02', '2014-02-02.flv', '2014-02-02.mp3');
-INSERT INTO videos (title, speaker, date, file_name, audio_name) 
-values ('主日信息 (三)', '劉同蘇牧師', '2014-02-03', '2014-02-03.flv', '2014-02-03.mp3');
-INSERT INTO videos (title, speaker, date, file_name, audio_name) 
-values ('主日信息 (四)', '劉同蘇牧師', '2014-02-04', '2014-02-04.flv', '2014-02-04.mp3');
-INSERT INTO videos (title, speaker, date, file_name, audio_name) 
-values ('主日信息 (五)', '劉同蘇牧師', '2014-02-05', '2014-02-05.flv', '2014-02-05.mp3');
 INSERT INTO videos (title, speaker, date, file_name, audio_name, scripture) 
-values ('給我一種新生活', '劉同蘇牧師', '2014-03-02', '2014-03-02.flv', '2014-03-02.mp3',
-'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus, felis interdum condimentum consectetur, nisl libero elementum eros, vehicula congue lacus eros non diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus mauris lorem, lacinia id tempus non, imperdiet et leo. Cras sit amet erat sit amet lacus egestas placerat. Aenean ultricies ultrices mauris ac congue. In vel tortor vel velit tristique tempus ac id nisi. Proin quis lorem velit. Nunc dui dui, blandit a ullamcorper vitae, congue fringilla lectus. Aliquam ultricies malesuada feugiat. Vestibulum placerat turpis et eros lobortis vel semper sapien pulvinar. Pellentesque rhoncus aliquet porta. Sed vel magna eu turpis pharetra consequat ut vitae lectus. In molestie sollicitudin mi sit amet convallis. Aliquam erat volutpat. Nullam feugiat placerat ipsum eget malesuada. Nulla facilisis nunc non dolor vehicula pretium. Sed dui magna, sodales id pharetra non, ullamcorper eu sapien. Mauris ac consectetur leo. Mauris consequat, lectus ut bibendum pulvinar, leo magna feugiat enim, eu commodo lacus sem vel ante. Sed tempus metus eget leo mollis vulputate. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.');
-
+values ('主日信息 (一)', '劉同蘇牧師', '2014-02-01', '2014-02-01.flv', '2014-02-01.mp3', 'Acts 1:3-6');
+INSERT INTO videos (title, speaker, date, file_name, audio_name, scripture) 
+values ('主日信息 (二)', '劉同蘇牧師', '2014-02-02', '2014-02-02.flv', '2014-02-02.mp3', 'Exodus 4:6-8,10');
+INSERT INTO videos (title, speaker, date, file_name, audio_name, scripture) 
+values ('主日信息 (三)', '劉同蘇牧師', '2014-02-03', '2014-02-03.flv', '2014-02-03.mp3', 'John 3:1-3, 1 John 1:1');
+INSERT INTO videos (title, speaker, date, file_name, audio_name, scripture) 
+values ('主日信息 (四)', '劉同蘇牧師', '2014-02-04', '2014-02-04.flv', '2014-02-04.mp3', 'Isaiah 14:1,4-5, Song of Songs 5:2-4');
+INSERT INTO videos (title, speaker, date, file_name, audio_name, scripture) 
+values ('主日信息 (五)', '劉同蘇牧師', '2014-02-05', '2014-02-05.flv', '2014-02-05.mp3', '1 Corinthians 13:1');
+INSERT INTO videos (title, speaker, date, file_name, audio_name, scripture) 
+values ('給我一種新生活', '劉同蘇牧師', '2014-03-02', '2014-03-02.flv', '2014-03-02.mp3', '1 Peter 1:1, 2 Peter 1:1');
 
 -- prayers
 

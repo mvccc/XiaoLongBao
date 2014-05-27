@@ -53,7 +53,9 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">經文</label>
                 <div class="col-lg-10">
-                    <textarea class="form-control" rows="10" name="scripture"></textarea>
+                    <input type="text" class="form-control" name="scripture" 
+                    placeholder="e.g. John 1:1﹣3 or John 1:1-3,6, Acts 2:3,4-6" value="<?php echo set_value('scripture'); ?>">
+                    <?php echo form_error('scripture'); ?>
                 </div>
             </div>
             <div class="form-group">

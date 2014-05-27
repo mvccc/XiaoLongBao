@@ -48,5 +48,10 @@ class Validation_rules {
           'label'   => 'audio',
           'rules'   => "regex_match[/^\d\d\d\d-\d\d-\d\d\.mp3$/]"
       ),
+      array(
+          'field'   => 'scripture',
+          'label'   => 'scripture',
+          'rules'   => 'trim|required'
+      ),
   );
 }

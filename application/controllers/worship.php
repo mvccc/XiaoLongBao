@@ -13,6 +13,7 @@ class Worship extends CI_Controller
 		$this->load->helper("url");
 		$this->load->model('video_model', 'video');
 		$this->load->library("pagination");
+		$this->load->library("bible");
 	}
 
 	public function index($lang = 'ch')
@@ -26,13 +27,13 @@ class Worship extends CI_Controller
 	  {
 	    show_404();
 	  }
-	  
+
 	  // pagination
 	  $config = array();
 	  $config["base_url"] = site_url()."/worship/page";
 	  $config["total_rows"] = $this->video->get_video_count();
 	  $config["per_page"] = 5;
-	  //$config["uri_segment"] = 3;
+
 	  $this->pagination->initialize($config);
 	  
 	  $data['videos'] = $this->video->get_sunday_videos($config["per_page"], $page);
@@ -52,6 +53,8 @@ class Worship extends CI_Controller
 	  }
 	  
 	  $data['video'] = $this->video->get_video($id);
+	  $ranges = $data['video']['scripture'];
+	  $data['verses'] = $this->generate_verses($ranges);
 
 	  $this->load->library('javascript_plugins');
 	  $plugins = $this->javascript_plugins;
@@ -60,6 +63,29 @@ class Worship extends CI_Controller
 	  $this->load->view('templates/header_ch');
 	  $this->load->view('ch/worship/video', $data);
 	  $this->load->view('templates/footer', $footer_data);
+	}
+	
+	private function generate_verses($ranges)
+	{
+	  $xml = Bible::getVerses($ranges);
+	  $quoted_verses = '';
+	  foreach ($xml->range as $range)
+	  {
+	    // get range title
+	    $title = $range->result;
+	    $title = Bible::convertEngRangesToCh($title);
+
+	    $quoted_verses .= " <br><b>".$title."</b><br><br>";
+	    
+	    // get verses in this range
+	    foreach($range->item as $item)
+	    {
+	      $verses = " <b>".$item->verse."</b> ".$item->text;
+	      $quoted_verses .= " <p>".$verses."</p> ";
+	    }
+	  }
+
+	  return $quoted_verses;
 	}
 	
 	public function audio($id = NULL)

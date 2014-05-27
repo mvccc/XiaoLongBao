@@ -13,7 +13,7 @@
 		</div>
 
 		<table class="table table-striped table-hover">
-			<thead><th>時間</th><th>信息</th><th>講員</th><th>下載</th><th>收聽</th><th>錄像</th></thead>
+			<thead><th>時間</th><th>信息</th><th>經文</th><th>講員</th><th>下載</th><th>收聽</th><th>錄像</th></thead>
 			<tbody>
 			<?php
 				foreach ($videos as $key => $video) 
@@ -24,6 +24,7 @@
 					printf("<tr>");
 					printf("<td>%s</td>", $video['date']);
 					printf("<td>%s</td>", $video['title']);
+					printf("<td>%s</td>", Bible::convertEngRangesToCh($video['scripture']));
 					printf("<td>%s</td>", $video['speaker']);
 					printf("<td><a href=\"%s\">", $download_url);
 					printf("&nbsp;&nbsp;<span class=\"glyphicon glyphicon-volume-up\"></span></a></td>");
