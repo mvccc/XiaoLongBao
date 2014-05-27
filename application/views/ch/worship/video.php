@@ -1,18 +1,16 @@
 <div class="well well-half">
   <div class="row">
-    <div class="col-lg-3">
-      <h3>經文</h3>
+    <div class="col-lg-4">
+      <h3>經文 <?php echo Bible::convertEngRangesToCh($video['scripture']);?></h3>
     </div>
     <div class="col-lg-8">
       <h3><?php echo $video['title']; ?></h3>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div id="scroll_panel">
-        <p>
-        <?php echo $video['scripture']; ?>
-        </p>
+        <?php echo $verses; ?>
       </div>
     </div>
     <div class="col-lg-8">
