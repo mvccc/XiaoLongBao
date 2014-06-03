@@ -91,7 +91,7 @@
                 <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
         </div>
-
+    </div>
     <div class="row mvccc-block-item">      
         <div class="headline3">
         牧者的話
