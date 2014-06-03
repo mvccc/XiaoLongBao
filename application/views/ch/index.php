@@ -60,26 +60,6 @@
     <br>
 
     <!-- Block Items-->
-    <div class="row">
-    <div class="col-lg-8">
-    <div class="row mvccc-block-item">      
-        <div class="headline3">
-        牧者的話
-        </div>
-        <br>
-        <br>
-        <div class="col-lg-3">
-            <img class="img-circle mvccc-home-img pull-right" src="<?php echo base_url()?>/assets/img/pastorliu6.png" alt="Pastor Liu"/>
-        </div>
-        <div class="col-lg-8">
-            <div class="word-block">
-                <p>盼望教會能夠成為神在硅谷地區設立的金燈臺，使更多的同胞成為基督的追隨者；使教會成為基督恩典的管道，人人作耶穌的門徒、基督的使者！</p>
-            </div>
-        </div>
-        <div class="col-lg-1"></div>
-    </div>
-    <br>
-    <br>
 
     <div class="row mvccc-block-item">
         <div class="headline3">
@@ -111,9 +91,27 @@
                 <p><a class="btn btn-default" href="#" role="button">詳細內容 &raquo;</a></p>
             </div>
         </div>
-    </div><!-- row -->
     </div>
+    <div class="row mvccc-block-item">      
+        <div class="headline3">
+        牧者的話
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-3">
+            <img class="img-circle mvccc-home-img pull-right" src="<?php echo base_url()?>/assets/img/pastorliu6.png" alt="Pastor Liu"/>
+        </div>
+        <div class="col-lg-8">
+            <div class="word-block">
+                <p>盼望教會能夠成為神在硅谷地區設立的金燈臺，使更多的同胞成為基督的追隨者；使教會成為基督恩典的管道，人人作耶穌的門徒、基督的使者！</p>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <br>
 
+<!--
     <div class="col-lg-4">
         <div class="stitched">
             <h3>最新消息</h3>
@@ -132,6 +130,7 @@
         </div>
     </div>
     </div>
+-->
 
     <div class="row mvccc-block-item">
             <div class="headline3">
@@ -142,16 +141,6 @@
             <div class="col-lg-4">
                 <div class="thumbnail">
                     <iframe src="//player.vimeo.com/video/81478531" width="100%" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="thumbnail">
-                    <iframe src="//player.vimeo.com/video/81567675" width="100%" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="thumbnail">
-                    <iframe src="//player.vimeo.com/video/82405507" width="100%" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
             </div>
 

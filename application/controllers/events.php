@@ -215,7 +215,7 @@ class Events extends Pages {
                'month_type'   => 'long',
                'day_type'     => 'short',
                'show_next_prev'  => TRUE,
-               'next_prev_url'   => site_url() . '/events/calendar'
+               'next_prev_url'   => site_url() . '/events/calendar/' . $lang
              );
 
         #          <a href="{content}">{day}</a></div>;
