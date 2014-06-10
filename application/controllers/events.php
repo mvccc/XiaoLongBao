@@ -64,7 +64,7 @@ class Events extends Pages {
     public function createEvent($lang = 'ch')
     {
         $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if ( ! Access::hasPrivilege(Access::PRI_UPDATE_CALENDER))
         {
             // TODO: show authentication error.
             show_404();
@@ -128,7 +128,7 @@ class Events extends Pages {
     public function updateEvent($id, $lang='ch')
     {
         $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if ( ! Access::hasPrivilege(Access::PRI_UPDATE_CALENDER))
         {
             // TODO: show authentication error.
             show_404();
@@ -186,7 +186,7 @@ class Events extends Pages {
     public function doDeleteEvent($id)
     {
         $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if ( ! Access::hasPrivilege(Access::PRI_UPDATE_CALENDER))
         {
             // TODO: show authentication error.
             show_404();
