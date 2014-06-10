@@ -104,8 +104,7 @@
               </ul>
             </li>
             <?php
-              $logged_in = $this->session->userdata('logged_in');
-              if(isset($logged_in) && $logged_in == TRUE)
+              if (Access::isLoggedIn())
               {
                 printf('<li class="dropdown">');
                 printf('<a href="#" class="dropdown-toggle" data-toggle="dropdown">Member<b class="caret"></b></a>');

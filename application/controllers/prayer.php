@@ -88,8 +88,7 @@ class Prayer extends Pages {
       */
     public function prayerhistory($lang = 'ch')
     {
-        $logged_in = $this->session->userdata('logged_in');
-        if (!isset($logged_in) || $logged_in === FALSE)
+        if (!Access::hasPrivilege(Access::PRI_READ_PRAYER))
         {
             // TODO: show authentication error.
             show_404();
