@@ -123,7 +123,7 @@ class Worship extends CI_Controller
 	}
 
 	/**
-	 * Loads page for adding Sunday message.
+	 * Create a new Sunday message.
 	 */
 	public function addSundayMessage($lang = 'ch')
 	{
@@ -142,12 +142,12 @@ class Worship extends CI_Controller
 		$this->load->library('form_validation');
 	  $this->load->library('validation_rules');
 	  $rules = $this->validation_rules;
-	  $this->form_validation->set_rules($rules::$addWorshipRules);
+	  $this->form_validation->set_rules($rules::$worshipRules);
 	  if ($this->form_validation->run() == FALSE)
 	  {
 	    $this->load->library('javascript_plugins');
 	    $plugins = $this->javascript_plugins;
-	    $footer_data['js_plugins'] = $plugins->generate(array($plugins::FuelUx, $plugins::DatePicker, $plugins::Tinymce));
+	    $footer_data['js_plugins'] = $plugins->generate(array($plugins::FuelUx, $plugins::DatePicker));
 	    $this->load->view('templates/header_'.$lang);
 	    $this->load->view($lang.'/worship/addSundayMessage');
 	    $this->load->view('templates/footer', $footer_data);
@@ -167,7 +167,71 @@ class Worship extends CI_Controller
 	    die();
 	  }
 	}
+
+	/**
+	 * Update a Sunday message.
+	 */
+	public function updateSundayMessage($id, $lang = 'ch')
+	{
+	  if (!Access::hasPrivilege(Access::PRI_UPDATE_WORSHIP))
+	  {
+	    // TODO: show authentication error.
+	    show_404();
+	  }
+
+	  if ( ! file_exists('application/views/'.$lang.'/worship/updateSundayMessage.php'))
+	  {
+	    // Whoops, we don't have a page for that!
+	    show_404();
+	  }
 	
+	  $this->load->library('form_validation');
+	  $this->load->library('validation_rules');
+	  $rules = $this->validation_rules;
+	  $this->form_validation->set_rules($rules::$worshipRules);
+	  if ($this->form_validation->run() == FALSE)
+	  {
+	    $data['video'] = $this->video->get_video($id);
+
+	    $this->load->library('javascript_plugins');
+	    $plugins = $this->javascript_plugins;
+	    $footer_data['js_plugins'] = $plugins->generate(array($plugins::FuelUx, $plugins::DatePicker));
+
+	    $this->load->view('templates/header_'.$lang);
+	    $this->load->view($lang.'/worship/updateSundayMessage', $data);
+	    $this->load->view('templates/footer', $footer_data);
+	  }
+	  else
+	  {
+	    $data = array(
+	        'title' => $this->input->post('title'),
+	        'speaker' => $this->input->post('speaker'),
+	        'file_name' => $this->input->post('video'),
+	        'audio_name' => $this->input->post('audio'),
+	        'scripture' => $this->input->post('scripture'),
+	        'date' => $this->input->post('date')
+	    );
+	    $this->video->update_video($id, $data);
+	    redirect('/worship/index');
+	    die();
+	  }
+	}
+
+	/**
+	 * Delete a Sunday message
+	 */
+	public function deleteSundayMessage($id, $lang = 'ch')
+	{
+	  if (!Access::hasPrivilege(Access::PRI_UPDATE_WORSHIP))
+	  {
+	    // TODO: show authentication error.
+	    show_404();
+	  }
+
+	  $this->video->delete_video($id);
+	  redirect('/worship/index');
+	  die();
+	}
 
 }
 ?>

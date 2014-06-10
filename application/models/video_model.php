@@ -1,15 +1,27 @@
 <?php
 class Video_model extends CI_Model {
 
+  const TABLE_VIDEO = 'videos';
+
 	public function __construct()
 	{
 		$this->load->database();
 	}
 	
-	function add_video($data, $sunday = 'Y')
+	public function add_video($data, $sunday = 'Y')
 	{
 	  $data['sunday_message'] = $sunday;
 	  $this->db->insert('videos', $data);
+	}
+
+	public function update_video($id, $data)
+	{
+	  $this->db->update(self::TABLE_VIDEO, $data, array('id' => $id));
+	}
+	
+	public function delete_video($id)
+	{
+	  $this->db->delete(self::TABLE_VIDEO, array('id' => $id));
 	}
 
 	public function get_video_count($sunday = TRUE)

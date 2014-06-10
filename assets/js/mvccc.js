@@ -7,7 +7,24 @@
             var url = $(this).attr('url');
             // alert(url);
             $(target).slideUp();
-            $.post(url, null,function(data,status){
+            $.post(url, null, function(data,status){
+                // TODO: 
+                // alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+    });
+}(jQuery);
+
+//Delete sunday message when delete button is clicked.
++function($){
+    $(document).ready(function(){
+        $("button[name='delete-sundaymessage']").click(function(){
+            var id = $(this).attr('target-id');
+            var target = "#sundaymessage-" + id;
+            var url = $(this).attr('url');
+            // alert(url);
+            $(target).slideUp();
+            $.post(url, null, function(data,status){
                 // TODO: 
                 // alert("Data: " + data + "\nStatus: " + status);
             });

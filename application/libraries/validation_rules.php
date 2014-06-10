@@ -22,11 +22,11 @@ class Validation_rules {
       )
   );
 
-  public static $addWorshipRules = array(
+  public static $worshipRules = array(
       array(
           'field'   => 'date',
           'label'   => 'date',
-          'rules'   => "regex_match[/^\d\d\d\d-\d\d-\d\d$/]"
+          'rules'   => 'regex_match[/^\d\d\d\d-\d\d-\d\d$/]'
       ),
       array(
           'field'   => 'title',
@@ -41,12 +41,12 @@ class Validation_rules {
       array(
           'field'   => 'video',
           'label'   => 'video',
-          'rules'   => "regex_match[/^\d\d\d\d-\d\d-\d\d\.flv$/]"
+          'rules'   => 'trim|required|regex_match[/^\d\d\d\d-\d\d-\d\d\.flv$/]'
       ),
       array(
           'field'   => 'audio',
           'label'   => 'audio',
-          'rules'   => "regex_match[/^\d\d\d\d-\d\d-\d\d\.mp3$/]"
+          'rules'   => 'trim|required|regex_match[/^\d\d\d\d-\d\d-\d\d\.mp3$/]'
       ),
       array(
           'field'   => 'scripture',
