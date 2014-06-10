@@ -229,7 +229,6 @@ class Worship extends CI_Controller
 	  }
 
 	  $this->video->delete_video($id);
-	  echo 'deleted video '.$id;
 	  redirect('/worship/index');
 	  die();
 	}

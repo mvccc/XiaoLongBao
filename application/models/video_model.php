@@ -22,7 +22,6 @@ class Video_model extends CI_Model {
 	public function delete_video($id)
 	{
 	  $this->db->delete(self::TABLE_VIDEO, array('id' => $id));
-	  echo 'db delete';
 	  exit;
 	}
 
