@@ -8,8 +8,7 @@
                     <li><a href="<?php printf("%s/events/calendar/%s", site_url(), $lang); ?>"><?php echo $this->lang->line('button_calendar')?></a></li>
                     <li><a href="<?php printf("%s/events/eventList/%s/%s/%s", site_url(), $lang, $next['year'], $next['month']);?>"><?php echo $this->lang->line('button_next')?></a></li>
                     <?php
-                        $logged_in = $this->session->userdata('logged_in');
-                        if(isset($logged_in) && $logged_in == TRUE)
+                        if(Access::hasPrivilege(Access::PRI_UPDATE_CALENDER))
                         {
                             $url = site_url() . "/events/createEvent/" . $lang;
                             printf('<li><a href="%s">%s</a></li>', $url, $this->lang->line('button_create'));
@@ -88,8 +87,7 @@
                 printf('</div>');
 
 
-                $logged_in = $this->session->userdata('logged_in');
-                if(isset($logged_in) && $logged_in == TRUE)
+                if(Access::hasPrivilege(Access::PRI_UPDATE_CALENDER))
                 {
                     # Update button
                     printf('&nbsp;');
