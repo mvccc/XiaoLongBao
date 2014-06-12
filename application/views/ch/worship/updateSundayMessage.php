@@ -65,5 +65,29 @@
                 </div>
             </div>
         </form>
+        
+        <br><br>
+        <h4>聖經書卷目錄</h4>
+        <table class="table table-bordered table-hover">
+        <?php 
+        $titles = Bible::getArrayTitles();
+        $array_en = array_keys($titles);
+        $array_ch = array_values($titles);
+        for ($i=0; $i<39; $i++)
+        {
+          printf("<tr>");
+          printf("<td>%s</td>", $array_ch[$i][1]);
+          printf("<td>%s</td>", $array_en[$i]);
+
+          if ($i<27)
+          {
+            printf("<td>%s</td>", $array_ch[$i+39][1]);
+            printf("<td>%s</td>", $array_en[$i+39]);
+          }
+          printf("</tr>");
+        }
+        ?>
+        </table>
+        
     </div>
 </div>
