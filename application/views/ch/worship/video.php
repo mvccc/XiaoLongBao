@@ -1,7 +1,7 @@
 <div class="well well-half">
   <div class="row">
     <div class="col-lg-4">
-      <h3>經文 <?php echo Bible::convertEngRangesToCh($video['scripture']);?></h3>
+      <h3>經文 <?php echo Bible::convertEngRangesToCh($video['scripture'], false);?></h3>
     </div>
     <div class="col-lg-8">
       <h3><?php echo $video['title']; ?></h3>
