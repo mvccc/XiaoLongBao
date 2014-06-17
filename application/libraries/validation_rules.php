@@ -41,12 +41,12 @@ class Validation_rules {
       array(
           'field'   => 'video',
           'label'   => 'video',
-          'rules'   => 'trim|required|regex_match[/^\d\d\d\d-\d\d-\d\d\.flv$/]'
+          'rules'   => 'trim|required|regex_match[/^\d\d-\d\d-\d\d\d\d\.flv$/]'
       ),
       array(
           'field'   => 'audio',
           'label'   => 'audio',
-          'rules'   => 'trim|required|regex_match[/^\d\d\d\d-\d\d-\d\d\.mp3$/]'
+          'rules'   => 'trim|required|regex_match[/^\d\d-\d\d-\d\d\d\d\.mp3$/]'
       ),
       array(
           'field'   => 'scripture',

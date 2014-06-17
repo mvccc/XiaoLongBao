@@ -48,7 +48,7 @@ class Prayer extends Pages {
             // TODO: show authentication error.
             show_404();
         }
-        date_default_timezone_set('America/Los_Angeles');
+
         $this->load->library('form_validation');
         $data['lang'] = $lang;
        	$data['items'] = $this->prayerData->get_latestPrayerItems();

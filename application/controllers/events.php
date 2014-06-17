@@ -31,7 +31,6 @@ class Events extends Pages {
         $this->loadResouces($lang);
 
         // Set the default year and month to the current date.
-        date_default_timezone_set('America/Los_Angeles');
         $currentTime = time();
         if ($year == '')
             $year  = date("Y", $currentTime);
@@ -69,7 +68,6 @@ class Events extends Pages {
             show_404();
         }
 
-        date_default_timezone_set('America/Los_Angeles');
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
@@ -132,7 +130,6 @@ class Events extends Pages {
             show_404();
         }
 
-        date_default_timezone_set('America/Los_Angeles');
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
@@ -199,7 +196,6 @@ class Events extends Pages {
     public function calendar($lang = 'ch', $year='', $month='')
     {
         // Set the default year and month to the current date.
-        date_default_timezone_set('America/Los_Angeles');
         $currentTime = time();
         if ($year == '')
             $year  = date("Y", $currentTime);
