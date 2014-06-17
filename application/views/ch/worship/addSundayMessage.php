@@ -39,14 +39,14 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">視頻</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="video" value="<?php echo date("Y-m-d").'.flv'; ?>">
+                    <input type="text" class="form-control" name="video" value="<?php echo date("m-d-Y").'.flv'; ?>">
                     <?php echo form_error('video'); ?>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-2 control-label">音頻</label>
                 <div class="col-lg-10">
-                    <input type="text" class="form-control" name="audio" value="<?php echo date("Y-m-d").'.mp3'; ?>">
+                    <input type="text" class="form-control" name="audio" value="<?php echo date("m-d-Y").'.mp3'; ?>">
                     <?php echo form_error('audio'); ?>
                 </div>
             </div>

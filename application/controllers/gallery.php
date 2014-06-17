@@ -372,7 +372,6 @@ class Gallery extends Pages {
             show_404();
         }
 
-        date_default_timezone_set('America/Los_Angeles');
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
@@ -441,7 +440,6 @@ class Gallery extends Pages {
             show_404();
         }
 
-        date_default_timezone_set('America/Los_Angeles');
         $this->load->library('form_validation');
         $this->load->library('validation_rules');
         $rules = $this->validation_rules;
