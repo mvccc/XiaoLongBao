@@ -28,15 +28,18 @@ class Worship extends CI_Controller
 	    show_404();
 	  }
 
+	  // could only see paster Hou's message after logging in
+	  $includePasterHou = Access::isLoggedIn();
+
 	  // pagination
 	  $config = array();
 	  $config["base_url"] = site_url()."/worship/page";
-	  $config["total_rows"] = $this->video->get_video_count();
+	  $config["total_rows"] = $this->video->get_video_count(true, $includePasterHou);
 	  $config["per_page"] = 5;
 
 	  $this->pagination->initialize($config);
-	  
-	  $data['videos'] = $this->video->get_sunday_videos($config["per_page"], $page);
+
+	  $data['videos'] = $this->video->get_sunday_videos($config["per_page"], $page, $includePasterHou);
 	  $data["links"] = $this->pagination->create_links(); // TODO, make it looks better
 	  
 	  $this->load->view('templates/header_'.$lang);
@@ -53,6 +56,13 @@ class Worship extends CI_Controller
 	  }
 	  
 	  $data['video'] = $this->video->get_video($id);
+
+	  // check privilege to see Paster Hou's message
+	  if ($data['video']['speaker'] == '侯君麗牧師' && !Access::isLoggedIn())
+	  {
+	    show_404();
+	  }
+
 	  $ranges = $data['video']['scripture'];
 	  $data['verses'] = $this->generate_verses($ranges);
 
@@ -97,6 +107,13 @@ class Worship extends CI_Controller
 	  }
 	   
 	  $data['video'] = $this->video->get_video($id);
+	  
+	  // check privilege to see Paster Hou's message
+	  if ($data['video']['speaker'] == '侯君麗牧師' && !Access::isLoggedIn())
+	  {
+	    show_404();
+	  }
+	  
 	  $this->load->library('javascript_plugins');
 	  $plugins = $this->javascript_plugins;
 	  $footer_data['js_plugins'] = $plugins->generate(array($plugins::FlowPlayer));
