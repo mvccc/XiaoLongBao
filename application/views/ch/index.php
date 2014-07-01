@@ -138,13 +138,17 @@
             </div>
             <br>
             <br>
-            <div class="col-lg-4">
-                <div class="thumbnail">
-                    <iframe src="//player.vimeo.com/video/81478531" width="100%" height="240" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
+            <div class="col-lg-8">
+              <a href="<?php echo base_url(); ?>/videos/<?php echo $video['file_name']; ?>"
+                style="display: block; width: 425px; height: 300px;" id="player"
+                player-src="<?php echo base_url(); ?>/assets/plugin/flowplayer/flowplayer-3.2.18.swf">
+                </a>
+              <h4>
+                <?php echo $video['speaker']." | ".$video['date']; ?>
+              </h4>
             </div>
 
-            <!--
+    <!--
             <h4>主日信息 (一)</h4>
             <p>講員: 劉同蘇</p>
             <p>經文 羅馬書 1:1-17</p>

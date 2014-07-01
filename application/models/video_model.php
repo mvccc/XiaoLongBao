@@ -2,6 +2,7 @@
 class Video_model extends CI_Model {
 
   const TABLE_VIDEO = 'videos';
+  const PASTER_HOU = '侯君麗牧師';
 
 	public function __construct()
 	{
@@ -24,28 +25,36 @@ class Video_model extends CI_Model {
 	  $this->db->delete(self::TABLE_VIDEO, array('id' => $id));
 	}
 
-	public function get_video_count($sunday = TRUE)
+	public function get_video_count($sunday = true, $includePasterHou = false)
 	{
 	  $this->db->from('videos');
-	  if ($sunday == TRUE)
+	  if ($sunday)
 	  {
-	    $this->db->where(array('sunday_message' => 'Y'));
+	    $this->db->where('sunday_message', 'Y');
+	  }
+		if (!$includePasterHou)
+	  {
+	    $this->db->where('speaker !=', self::PASTER_HOU);
 	  }
 	  return $this->db->count_all_results();
 	}
 	
-	public function get_video($id)
+	public function get_video($id, $includePasterHou = false)
 	{
 	  if (!isset($id))
 	  {
-	    return $this->get_last_video();
+	    return $this->get_last_video($includePasterHou);
 	  }
 	  $query = $this->db->get_where('videos', array('id' => $id));
 	  return $query->row_array();
 	}
 	
-	public function get_last_video()
+	public function get_last_video($includePasterHou = false)
 	{
+	  if (!$includePasterHou)
+	  {
+	    $this->db->where('speaker !=', self::PASTER_HOU);
+	  }
 	  $this->db->order_by('date desc');
 	  $this->db->limit(1);
 	  $query = $this->db->get('videos');
@@ -55,10 +64,15 @@ class Video_model extends CI_Model {
 	/**
 	 * get limit rows from video table
 	 */
-	public function get_sunday_videos($limit = 5, $start = 0)
+	public function get_sunday_videos($limit = 5, $start = 0, $includePasterHou = false)
 	{
+	  $this->db->where('sunday_message', 'Y');
+	  if (!$includePasterHou)
+	  {
+	    $this->db->where('speaker !=', self::PASTER_HOU);
+	  }
 	  $this->db->order_by('date desc');
-	  $query = $this->db->get_where('videos', array('sunday_message' => 'Y'), $limit, $start);
+	  $query = $this->db->get('videos', $limit, $start);
 	  return $query->result_array();
 	}
 	

@@ -29,9 +29,16 @@ class Pages extends CI_Controller {
 			show_404();
 		}
 
+		$this->load->model('video_model', 'video');
+		$data['video'] = $this->video->get_last_video(Access::isLoggedIn());
+
+		$this->load->library('javascript_plugins');
+		$plugins = $this->javascript_plugins;
+		$footer_data['js_plugins'] = $plugins->generate(array($plugins::FlowPlayer));
+
 		$this->loadHeader($lang);
-		$this->load->view($lang.'/index');
-		$this->load->view('templates/footer');
+		$this->load->view($lang.'/index', $data);
+		$this->load->view('templates/footer', $footer_data);
 	}
 
 	/**
