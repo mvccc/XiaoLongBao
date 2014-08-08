@@ -1,4 +1,4 @@
-
+/*
 body
 {
   background: url(../img/bg002.jpg) no-repeat center center fixed;
@@ -7,7 +7,7 @@ body
   -o-background-size: cover;
   background-size: cover;
 }
-
+*/
 
 /*
 body
@@ -164,14 +164,14 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 /* Home Page Slides */
 .mvccc-slides
 {
-    max-height: 400px;
-    width:1200px;
+    max-height: 700px;
+    width:1440px;
 }
 .mvccc-slides-text
 {
     position:absolute;
     top:150px;
-    left:300px;
+    left:450px;
     /* width:300px; */
     color: #151B54;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
@@ -251,7 +251,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
   font-family: "Kaiti TC";
 }
 
-.mvccc-navbar { background: #151B54; /* midnight blue */ }
+.mvccc-navbar { background: #151B54; /* midnight blue */ margin-bottom: 0 }
 .mvccc-navbar .navbar-collapse { border-color: #463265; }
 .mvccc-navbar .navbar-brand { color: #fff; }
 .mvccc-navbar .navbar-nav > li > a { /* color: #a1dbff;*/}

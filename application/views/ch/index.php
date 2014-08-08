@@ -1,4 +1,6 @@
-<div class="well well-half">
+</div>
+<!-- <div class="well well-half"> -->
+
 
     <!-- Home Page Slides -->
     <div class="row">
@@ -14,16 +16,16 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/001.jpg" alt="First slide"/>
+                        <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/004.jpg" alt="First slide"/>
                         <div class="mvccc-slides-text">歡迎來到山景城中國基督教會</div>
                         <div class="carousel-caption">First Slide</div>
                     </div>
                     <div class="item">
-                        <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/002.jpg" alt="Second slide"/>
+                        <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/005.jpg" alt="Second slide"/>
                         <div class="carousel-caption">Second Slide</div>
                     </div>
                     <div class="item">
-                        <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/003.jpg" alt="Third slide"/>
+                        <img class="mvccc-slides" src="<?php echo base_url()?>/assets/img/slides/006.jpg" alt="Third slide"/>
                         <div class="carousel-caption">Third Slide</div>
                     </div>
                 </div>
@@ -43,6 +45,7 @@
     </div><!-- row -->
     <br>
 
+<div class="container">
     <!-- Worship Time -->
     <div class="row">
         <div class="col-lg-12">
@@ -62,9 +65,6 @@
     <!-- Block Items-->
 
     <div class="row mvccc-block-item">
-        <div class="headline3">
-            教會資源
-        </div>
         <br>
         <br>
         <div class="col-lg-4">
@@ -92,53 +92,23 @@
             </div>
         </div>
     </div>
+
+
+    <hr class="mvccc-hr">
+
     <div class="row mvccc-block-item">      
-        <div class="headline3">
-        牧者的話
-        </div>
         <br>
         <br>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
             <img class="img-circle mvccc-home-img pull-right" src="<?php echo base_url()?>/assets/img/pastorliu6.png" alt="Pastor Liu"/>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-3">
             <div class="word-block">
                 <p>盼望教會能夠成為神在硅谷地區設立的金燈臺，使更多的同胞成為基督的追隨者；使教會成為基督恩典的管道，人人作耶穌的門徒、基督的使者！</p>
             </div>
         </div>
         <div class="col-lg-1"></div>
-    </div>
-    <br>
-    <br>
-
-<!--
-    <div class="col-lg-4">
-        <div class="stitched">
-            <h3>最新消息</h3>
-            <hr>
-            <h4>abc</h4>
-            <p>detail detail</p>
-            <hr>
-            <h4>aaa</h4>
-            <p>detail deatil</p>
-            <hr>
-            <h4>bbb</h4>
-            <p>detail detail</p>
-            <hr>
-            <h4>ccc</h4>
-            <p>detail detail</p>
-        </div>
-    </div>
-    </div>
--->
-
-    <div class="row mvccc-block-item">
-            <div class="headline3">
-                最新主日信息
-            </div>
-            <br>
-            <br>
-            <div class="col-lg-8">
+            <div class="col-lg-6">
               <a href="<?php echo base_url(); ?>/videos/<?php echo $video['file_name']; ?>"
                 style="display: block; width: 425px; height: 300px;" id="player"
                 player-src="<?php echo base_url(); ?>/assets/plugin/flowplayer/flowplayer-3.2.18.swf">
@@ -147,12 +117,8 @@
                 <?php echo $video['speaker']." | ".$video['date']; ?>
               </h4>
             </div>
-
-    <!--
-            <h4>主日信息 (一)</h4>
-            <p>講員: 劉同蘇</p>
-            <p>經文 羅馬書 1:1-17</p>
-            -->
     </div>
-    <!-- <div class="stitched"></div> -->
-</div>
+    <br>
+    <br>
+
+<!-- </div> -->
