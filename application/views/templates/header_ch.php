@@ -115,6 +115,3 @@
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
-
-
-    <div class="container">
