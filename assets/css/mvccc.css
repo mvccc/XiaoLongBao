@@ -27,6 +27,53 @@ h3 { color: #151B54; }
 hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin: 1em 0;  padding: 0; }
 .mvccc-hr { display: block; height: 1px; border: 0; border-top: 1px solid #eeeeee; margin: 1em 0; padding: 0; }
 
+/* Footer */
+.mvccc-footer{ background: #222; color: #A0A0A0; border-top: 4px solid #4F8DB3; margin-top: 20px; box-shadow: 0 -1px 12px rgba(0,0,0,0.4);}
+.mvccc-footer h3{color: #E4E4E4; font-size: 1.3em; border-bottom: 1px dotted #7C7C7C; font-family: "Kaiti TC";}
+
+/* General profile row */
+.mvccc-wrapper-row {
+  padding: 10px 0;
+}
+.mvccc-wrapper-row h3 {
+  padding-top: 15px;
+}
+
+/* General profile image */
+.mvccc-profile-img
+{
+  padding-top: 15px;
+  text-align: center;
+}
+
+.mvccc-profile-img img
+{
+  max-width: 288px;
+  max-height: 163px;
+  vertical-align: bottom;
+  bottom: 0;
+  border: 7px solid #FFF;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 8px #999;
+  -moz-box-shadow: 0 0 8px #999;
+  box-shadow: 0 0 8px #999;
+  color: 0 0 8px #999;
+}
+
+.mvccc-schedule
+{
+  background-image: url(../img/Blessing.JPG);
+  background-attachment: fixed;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  height: 250px;
+  position: relative;
+}
 /* Well */
 .well { 
    padding: 20px;
