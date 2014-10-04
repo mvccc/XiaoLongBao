@@ -41,7 +41,7 @@
         }
         else
         {
-          $url = site_url() . '/auth/login';
+          $url = site_url() . '/auth/loginForm';
           printf("<li><a href=\"%s\">登錄</a></li>", $url);
         }
         ?>

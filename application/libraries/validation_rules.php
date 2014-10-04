@@ -22,6 +22,19 @@ class Validation_rules {
       )
   );
 
+  public static $loginRules = array(
+      array(
+          'field'   => 'username',
+          'label'   => 'username',
+          'rules'   => 'trim|required'
+      ),
+      array(
+          'field'   => 'password',
+          'label'   => 'password',
+          'rules'   => 'trim|required'
+      ),
+  );
+  
   public static $worshipRules = array(
       array(
           'field'   => 'date',
