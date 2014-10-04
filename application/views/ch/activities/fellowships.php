@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row well well-half">
+    <div class="col-lg-12">
         <div class="page-header">   
             <h1>團契生活</h1>
         </div>
