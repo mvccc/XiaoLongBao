@@ -1,15 +1,21 @@
 <div class="container">
   <div class="well well-half">
-    <form class="form-signin" method="post" action="<?php echo site_url().'/auth/doLogin/'.$lang?>">
+    <form class="form-signin" method="post" action="<?php echo site_url().'/auth/loginForm/'.$lang?>">
       <h2 class="form-signin-heading"><?php echo $this->lang->line('auth_title_sign_in') ?></h2>
       <div class="form-group has-error">
-        <label class="help-block"><?php echo $this->session->flashdata('dologin_error')?></label>
+        <label class="help-block"><?php if (isset($_REQUEST['login_error'])) {echo $_REQUEST['login_error'];}?></label>
       </div>
 
       <!-- sign in -->
       <div class="form-group">
-        <input type="text" name="username" class="form-control" placeholder="<?php echo $this->lang->line('auth_email')?>" required autofocus>
-        <input type="password" name="password" class="form-control" placeholder="<?php echo $this->lang->line('auth_password')?>" required>
+        <div class="form-group has-error">
+        <label class="help-block">
+          <?php echo form_error('username'); ?>
+          <?php echo form_error('password'); ?>
+        </label>
+        </div>
+        <input type="text" name="username" class="form-control" value="<?php echo set_value('username');?>" placeholder="<?php echo $this->lang->line('auth_email')?>" autofocus>
+        <input type="password" name="password" class="form-control" value="<?php echo set_value('password');?>" placeholder="<?php echo $this->lang->line('auth_password')?>" >
         <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo $this->lang->line('auth_sign_in') ?></button>
       </div>
       <br>
