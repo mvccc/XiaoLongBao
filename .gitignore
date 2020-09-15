@@ -1,0 +1,17 @@
+*.swp
+*~
+
+*.bak
+*.old
+*.orig
+*_orig.php
+
+*.mp3
+*.mp4
+*.flv
+
+backup/
+old/
+temp/
+tmp/
+zold/
