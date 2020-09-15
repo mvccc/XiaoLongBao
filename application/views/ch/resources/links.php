@@ -3,19 +3,6 @@
         <div class="page-header">   
             <h1>重要鏈接</h1>
         </div>
-
-        <h3>牧師博客</h3>
-        <table class="table table-striped table-hover">
-            <tbody>
-                <tr>
-                    <td style="width: 20%"><a href="http://www.liutongsu.net" target="_blank">劉同蘇牧師博客</a></td>
-                    <td style="width: 30%"><a href="http://www.liutongsu.net" target="_blank">http://www.liutongsu.net</a></td>
-                    <td>劉同蘇牧師個人網頁, 最新布道, 文章和評論</td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <br>
         <h3>讀經靈修</h3>
         <table class="table table-striped table-hover">
             <tbody>
@@ -57,18 +44,9 @@
             </tbody>
         </table>
         <br>
-        <br>
         <h3>文字影音</h3>
         <table class="table table-striped table-hover">
             <tbody>
-                <tr>
-                    <td style="width: 20%"><a href="http://ocm.oc.org/" target="_blank">海外校園</a></td>
-                    <td style="width: 30%"><a href="http://ocm.oc.org/" target="_blank">http://ocm.oc.org</a></td>
-                    <td>《海外校园》是一本杂志。《海外校园》杂志于1992年在洛杉矶创刊，是一个特别针对中国学生学者的信仰探索，引领海内外的知识分子认识真理、
-                        分享见证的刊物。目前有北美版、欧洲版和亚洲版，在全世界各地发行。成长于传统的纸媒时代， 丰盛于多媒体的E世代。
-                        2013年创建《海外校园》杂志独立网站。
-                    </td>
-                </tr>
                 <tr>
                     <td style="width: 20%"><a href="http://www.afcinc.org/" target="_blank">基督使者协会</a></td>
                     <td style="width: 30%"><a href="http://www.afcinc.org/" target="_blank">http://www.afcinc.org</a></td>
@@ -138,9 +116,16 @@
                     <td style="width: 30%"><a href="http://www.liangyou.net/" target="_blank">http://www.liangyou.net</a></td>
                     <td>良友电台为基督教福音电台，一直致力向中国内地广播福音信息和教导圣经真理，是同胞的良朋益友。</td>
                 </tr>
+                <tr>
+                    <td style="width: 20%"><a href="http://ocm.oc.org/" target="_blank">海外校園</a></td>
+                    <td style="width: 30%"><a href="http://ocm.oc.org/" target="_blank">http://ocm.oc.org</a></td>
+                    <td>《海外校园》是一本杂志。《海外校园》杂志于1992年在洛杉矶创刊，是一个特别针对中国学生学者的信仰探索，引领海内外的知识分子认识真理、
+                        分享见证的刊物。目前有北美版、欧洲版和亚洲版，在全世界各地发行。成长于传统的纸媒时代， 丰盛于多媒体的E世代。
+                        2013年创建《海外校园》杂志独立网站。
+                    </td>
+                </tr>
             </tbody>
         </table>
-        <br/>
         <br/>
         <h3>普世宣教</h3>
         <table class="table table-striped table-hover">

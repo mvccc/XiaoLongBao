@@ -11,27 +11,12 @@
 				Mountain View, CA 94041<br>
     			<span>電話</span> 650-964-1591<br>
     			<span>傳真</span> 650-964-8491<br>
-    			本會的分會： <a target="_blank" href="http://www.ccba-sm.org/Frameindexc.htm">灣區中國基督教會</a>
+    			<span>email: </span> mvccc.chinese.church@gmail.com<br>
     		</address>
     		<div class="col-md-12">
 	    		<div class ="row">
-		    		<div class="col-md-5">主任牧師: 劉同蘇</div><div class="col-md-7">Senior Pastor: Tongsu Liu</div>
-		    		<a class="col-md-5" href="mailto:tsmvccc@gmail.com">tsmvccc@gmail.com</a><div class="col-md-7">(650) 964-1591  ext. 1</div>
-		    	</div>
-		    	<br>
-		    	<div class ="row">
-		    		<div class="col-md-5">中文牧師: 候君麗</div><div class="col-md-7">Pastor: Junli Hou</div>
-		    		<a class="col-md-5" href="mailto:pastorjunli@gmail.com">pastorjunli@gmail.com</a><div class="col-md-7">(650) 588-6977</div>
-		    	</div>
-		    	<br>
-		    	<div class="row">
-		    		<div class="col-md-5">英文牧師: 康有完</div><div class="col-md-7">Pastor: Youwan Kang</div>
-		    		<a class="col-md-5" href="mailto:youwan@mvccc.org">youwan@mvccc.org</a><div class="col-md-7">(650) 964-1591  ext. 3</div>
-		    	</div>
-		    	<br>
-		    	<div class="row">
-		    		<div class="col-md-5">少年傳道: 姚培文</div><div class="col-md-7">Youth Minister: Patrick Yao</div>
-		    		<a class="col-md-5" href="mailto:pyaoliang@gmail.com">pyaoliang@gmail.com</a><div class="col-md-7">(650) 964-1591  ext. 4</div>
+		    		<div class="col-md-5"></div><div class="col-md-7"></div>
+		    		<a class="col-md-5" href=""></a><div class="col-md-7"></div>
 		    	</div>
 		    	<br>
     		</div>

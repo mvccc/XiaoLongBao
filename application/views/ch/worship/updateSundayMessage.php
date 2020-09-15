@@ -28,8 +28,11 @@
                             <input class="mvccc_combobox_input" type="text" name="speaker" value="<?php echo $video['speaker']; ?>"/>
                             <button type="button" class="btn btn-default mvccc_combobox_button" data-toggle="dropdown"><i class="caret"></i></button>
                             <ul class="dropdown-menu">
-                                <li data-value="1"><a href="#">劉同蘇牧師</a></li>
-                                <li data-value="2"><a href="#">侯君麗牧師</a></li>
+                                <li data-value="1"><a href="#">孫通牧師</a></li>
+                                <li data-value="2"><a href="#">蘇名冠長老</a></li>
+                                <li data-value="3"><a href="#">聶台岡長老</a></li>
+                                <li data-value="4"><a href="#">劉志信牧師</a></li>
+                                <li data-value="5"><a href="#">陳若愚牧師</a></li>
                             </ul>
                         </div>
                     </div>

@@ -1,4 +1,3 @@
-
     <footer class="mvccc-footer">
         <div class="container">
             <div class="row">
@@ -7,7 +6,7 @@
                     <b>主日崇拜</b><br>
                     <b>日歷活動</b><br>
                     <b>AWANA</b><br>
-                    
+
                 </div>
                 <div class="col-lg-3">
                     <h3>資源中心</h3>
@@ -29,9 +28,10 @@
                         Mountain View, CA 94041<br>
                         <span>電話</span> 650-964-1591<br>
                         <span>傳真</span> 650-964-8491<br>
+                        <span>email:</span> mvccc.chinese.church@gmail.com<br>
                 </div>
             </div>
-    	   <p>&copy; MVCCC 2014</p>
+    	   <p>&copy; MVCCC 1964-2020</p>
         </div>
     </footer>
     <!-- Bootstrap core JavaScript

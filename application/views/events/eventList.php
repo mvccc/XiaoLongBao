@@ -33,7 +33,6 @@
 
                 # Get the weekday name from timestamp.
                 $dateTime = DateTime::createFromFormat('Y-m-d', $event['date']);
-                $dateTime->setTimeZone(new DateTimeZone("America/Los_Angeles"));
                 # $dateTime->setTimestamp($event['timestamp']);
                 $weekDay  = $dateTime->format('D');
 

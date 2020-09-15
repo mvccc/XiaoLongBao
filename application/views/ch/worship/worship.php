@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="col-lg-12">
 		<div class="page-header">
-			<h2>主日信息 
+			<h2>主日信息 <a href="https://www.youtube.com/channel/UCtyV4FmPPsZpHNXht2aOcNA"><span style="font-family:Kaiti TC">(3/22/2020 之後信息 轉往YouTube頻道) </span></a>
 				<?php
 					if (Access::hasPrivilege(Access::PRI_UPDATE_WORSHIP))
 					{
@@ -18,9 +18,15 @@
 			<?php
 				foreach ($videos as $key => $video) 
 				{
+                                  if ($video['date'] > "2020-03-16") {
+				  $video_url = "https://bit.ly/398SoTB";
+				  $audio_url = "https://bit.ly/398SoTB";
+				  $download_url = "https://bit.ly/398SoTB";
+                                  } else {
 				  $video_url = site_url().'/worship/video/'.$video['id'];
 				  $audio_url = site_url().'/worship/audio/'.$video['id'];
 				  $download_url = site_url().'/worship/direct_download/'.$video['audio_name'];
+                                  }
 					printf("<tr id='sundaymessage-%s'>", $video['id']);
 					printf("<td>%s</td>", $video['date']);
 					printf("<td>%s</td>", $video['title']);
