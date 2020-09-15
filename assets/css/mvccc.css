@@ -204,18 +204,37 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid black; margin
 .word-block p { font-size: 1.2em; font-family: "Kaiti TC"; }
 
 /* Home page detail item */
-.mvccc-block-item { padding-left: 15px; padding-right: 15px; } 
+.mvccc-block-item { margin: 0px auto; } 
 .mvccc-block-item .col-lg-4 { text-align: center; margin-bottom: 20px; }
+.mvccc-block-item.col-lg-13 { float:left; margin-left: 10px; margin-right: 10px; }
+.mvccc-block-item.col-lg-14 { float:left; padding-left: 10px; margin-left: 10px; margin-right: 10px; }
 .mvccc-block-item h2 { font-weight: normal; }
 .mvccc-block-item .col-lg-4 p { margin-left: 10px; margin-right: 10px; }
 
 /* Home Page Slides */
 .mvccc-slides
 {
+    max-height: 400px;
+    width:800px;
+}
+.mvccc-slides1
+{
     max-height: 700px;
     width:1440px;
 }
 .mvccc-slides-text
+{
+    position:absolute;
+    top:150px;
+    left:50px;
+    /* width:300px; */
+    color: #151B54;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white; 
+    font-size: 2.0em;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.mvccc-slides-text1
 {
     position:absolute;
     top:150px;
