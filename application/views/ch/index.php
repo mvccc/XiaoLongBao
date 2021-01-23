@@ -84,18 +84,6 @@ p {
     </div><!-- row -->
 
 <div class="container">
-
-    <div class="row">
-        <div class="col-lg-12">
-            <hr class="mvccc-hr">
-            <p class="text-center mvccc-h4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_E0Rkz1onZ620AcezdxrPzkRL6S279VXEddwewzYodgE-DA/viewform"><span style="font-family:Kaiti TC">MVCCC Christmas Drive-Thru Sign up</span></a>
-            </p>
-
-            <hr class="mvccc-hr">
-        </div>
-    </div>
-
   <div class="row">
         <div class="col-lg-12">
             <hr class="mvccc-hr">
@@ -105,7 +93,7 @@ p {
             <p class="text-center mvccc-h4">
                 <a href="http://mvccc.org/index.php/pages/awana/forms/ch"><span style="font-family:Kaiti TC">Awana 新一年報名表</span></a>
             </p>
-
+            
             <hr class="mvccc-hr">
         </div>
     </div>
@@ -120,7 +108,7 @@ p {
             <p class="text-center mvccc-h4">
                 <a href="https://www.youtube.com/channel/UCtyV4FmPPsZpHNXht2aOcNA"><span style="font-family:Kaiti TC">教會 YouTube 頻道 (主日崇拜及週六團契線上直播由此進入)</span></a>
             </p>
-
+            
             <hr class="mvccc-hr">
         </div>
     </div>
